@@ -1,6 +1,7 @@
 import pyautogui
 import win32gui
 import win32process
+import psutil
 
 def get_metin_needle_path():
     return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/needle_metin.png'
@@ -12,10 +13,10 @@ def get_respawn_needle_path():
     return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/needle_respawn.png'
 
 def get_login_needle_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/needle_login.png'
+    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/needle_login800.png'
 
 def get_empty_img_1024_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/emptyImg1024.png'
+    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot-main/needles/emptyImg800.png'
 
 def countdown():
     pyautogui.countdown(3)
@@ -31,3 +32,14 @@ def get_hwnds_for_pid(pid):
     hwnds = []
     win32gui.EnumWindows(callback, hwnds)
     return hwnds[0]
+
+def get_pid_by_name(processName):
+    pids = []
+    for proc in psutil.process_iter():
+        try:
+            # Check if process name contains the given name string.
+            if processName.lower() in proc.name().lower():
+                pids.append(proc.pid)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+    return pids

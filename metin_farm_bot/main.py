@@ -1,6 +1,5 @@
-import sys
-
 import cv2 as cv
+
 from captureAndDetect import CaptureAndDetect
 from utils.window import MetinWindow, OskWindow
 import utils.utils
@@ -18,8 +17,8 @@ def exitGui():
 def shutdown(capt_detect1, capt_detect2, bot1, bot2):
     capt_detect1.stop()
     bot1.stop()
-    # capt_detect2.stop()
-    # bot2.stop()
+    capt_detect2.stop()
+    bot2.stop()
     cv.destroyAllWindows()
     sys.exit(0)
 
@@ -51,6 +50,10 @@ def main():
         # print(clients)
         startApp(clients)
 
+
+    testPid = utils.get_pid_by_name('Aeldra')
+    #print(testPid)
+
     root = Tk()
     root.title("Metin 2 Aeldra bot")
     root.geometry("460x460")
@@ -74,7 +77,8 @@ def main():
 
     account_id1 = 3
     maxMetinTime1 = 22
-    pid1 = 4084
+    pid1 = testPid[0] if len(testPid) > 0 else 0
+
 
     account_id_entry1 = Entry(width="10")
     account_id_entry1.insert(END, account_id1)
@@ -112,7 +116,8 @@ def main():
 
     account_id2 = 5
     maxMetinTime2 = 22
-    pid2 = 4208
+
+    pid2 = testPid[1] if len(testPid) > 1 else 0
 
     account_id_entry2 = Entry(width="10")
     account_id_entry2.insert(END, account_id2)
