@@ -1,5 +1,5 @@
 from threading import Thread, Lock
-from utils import Vision, SnowManFilter
+from utils.vision import Vision
 import time
 import numpy as np
 import cv2 as cv
@@ -46,10 +46,11 @@ class CaptureAndDetect:
 
             # Preprocess image for object detection
             processed_img = self.vision.apply_hsv_filter(screenshot, hsv_filter=self.snowman_hsv_filter)
-            self.vision.black_out_area(processed_img, (350, 271), (676, 461))
+            self.vision.black_out_area(processed_img, (490, 350), (550, 428))
 
             # Detect objects
-            output = self.classifier.detectMultiScale2(processed_img)
+            #output = self.classifier.detectMultiScale2(processed_img)
+            output = self.classifier.detectMultiScale2(image=processed_img, minSize=(65, 65), maxSize=(300, 300))
 
             # Parse results and generate image
             detection_time = time.time()

@@ -9,7 +9,7 @@ pyperclip==1.8.1
 PyRect==0.1.4
 PyScreeze==0.1.26
 PyTweening==1.0.3
-pywin32==227
+pywin32==300
 tqdm==4.54.1
 wincertstore==0.2
 

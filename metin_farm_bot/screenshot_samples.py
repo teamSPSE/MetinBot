@@ -2,7 +2,7 @@ from utils.window import MetinWindow, OskWindow
 import pyautogui
 import time
 import cv2 as cv
-from utils.vision import Vision, SnowManFilter
+from utils.vision import Vision, SnowManFilter, MobInfoFilter, SnowManFilterRedForest, TestFilter
 
 
 def command_pause():
@@ -10,11 +10,15 @@ def command_pause():
 
 
 def main():
-    pyautogui.countdown(3)
-    aeldra = MetinWindow('Aeldra')
+    #pyautogui.countdown(3)
+    USE_FILTER = False;
+
+    aeldra = MetinWindow('Aeldra', 0, 0)
     vision = Vision()
     # vision.init_control_gui()
-    sm_filter = SnowManFilter()
+
+    if USE_FILTER:
+        sm_filter = TestFilter() #SnowManFilterRedForest() #MobInfoFilter() #SnowManFilter() #TestFilter()
 
     count = {'p': 0, 'n': 0}
 
@@ -22,7 +26,10 @@ def main():
         loop_time = time.time()
         screenshot = aeldra.capture()
 
-        processed_screenshot = vision.apply_hsv_filter(screenshot, hsv_filter=sm_filter)
+        if USE_FILTER:
+            processed_screenshot = vision.apply_hsv_filter(screenshot, hsv_filter=sm_filter)
+        else:
+            processed_screenshot = screenshot
 
         cv.imshow('Video Feed', processed_screenshot)
         # print(f'{round(1 / (time.time() - loop_time),2)} FPS')
@@ -34,11 +41,11 @@ def main():
             cv.destroyAllWindows()
             break
         elif key == ord('p'):
-            cv.imwrite('classifier/positive_2020_12_22_01/{}.jpg'.format(int(loop_time)), processed_screenshot)
+            cv.imwrite('classifier/positive/{}.jpg'.format(int(loop_time)), processed_screenshot)
             count['p'] += 1
             print(f'Saved positive sample. {count["p"]} total.')
         elif key == ord('n'):
-            cv.imwrite('classifier/negative_2020_12_22_01/{}.jpg'.format(int(loop_time)), processed_screenshot)
+            cv.imwrite('classifier/negative/{}.jpg'.format(int(loop_time)), processed_screenshot)
             count['n'] += 1
             print(f'Saved negative sample. {count["n"]} total.')
 

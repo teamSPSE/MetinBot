@@ -1,5 +1,4 @@
-from utils.window import MetinWindow, OskWindow
-import utils.utils as ut
+from bravery_cape_bot.utils.window import MetinWindow, OskWindow
 import pyautogui
 import time
 
@@ -10,11 +9,17 @@ def command_pause():
 
 def main():
     pyautogui.countdown(3)
-    osk = OskWindow('On-Screen Keyboard')
-    osk.move_window(x=-1495, y=810)
+    print('Count down ready')
+    #bylo nutno prejmenovat na CZ
+    osk = OskWindow('Klávesnice na obrazovce')
+    print('OskWindow ok')
+    #need to be lowest left corner (i have 2 monitors (1280x1040 is on left)
+    osk.move_window(x=-1280, y=810)
+    print('OskWindow move ok')
     aeldra = MetinWindow('Aeldra')
+    print('aeldra test ok')
 
-    for i in range(1000):
+    for i in range(5):
         print(f'\nIteration {i}:')
 
         print('Pulling mobs')
