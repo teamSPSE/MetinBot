@@ -1,11 +1,11 @@
 import time
 import cv2 as cv
-from utils.vision import MobInfoFilter
+from utils.vision import MobInfoFilter, Vision
+import utils.utils
 import numpy as np
 import enum
 from threading import Thread, Lock
 import datetime
-from utils import *
 import pytesseract
 import re
 
@@ -20,7 +20,7 @@ class BotState(enum.Enum):
     RESTART = 6
     ERROR = 100
     DEBUG = 101
-    
+
 
 class MetinFarmBot:
 
@@ -62,7 +62,7 @@ class MetinFarmBot:
         self.overlay_lock = Lock()
 
         self.started = time.time()
-        #self.send_telegram_message('Started')
+        # self.send_telegram_message('Started')
         print('Started')
         self.metin_count = 0
         self.last_error = None
@@ -78,7 +78,7 @@ class MetinFarmBot:
 
     def run(self):
         while not self.stopped:
-            #print(self.account_id)
+            # print(self.account_id)
             if self.state == BotState.INITIALIZING:
                 self.relog_if_loggout(self.account_id)
                 self.respawn_if_dead()
@@ -96,8 +96,8 @@ class MetinFarmBot:
                         self.detection_time > self.time_entered_state + 0.1:
                     # If no matches were found
                     if self.detection_result is not None and self.detection_result['click_pos'] is not None:
-                        #self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
-                        self.metin_window.activate()    #aktivace
+                        # self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
+                        self.metin_window.activate()  # aktivace
                         try:
                             self.metin_window.mouse_move(*self.detection_result['click_pos'])
                         except:
@@ -111,7 +111,7 @@ class MetinFarmBot:
                             self.put_info_text(f'Rotated {self.rotate_count} times -> Recalibrate!')
                             if self.calibrate_count >= self.calibrate_threshold:
                                 self.put_info_text(f'Recalibrated {self.calibrate_count} times -> Error!')
-                                #self.send_telegram_message('Entering error mode because no metin could be found!')
+                                # self.send_telegram_message('Entering error mode because no metin could be found!')
                                 print('Entering error mode because no metin could be found!')
                                 self.switch_state(BotState.ERROR)
                             else:
@@ -126,8 +126,8 @@ class MetinFarmBot:
             if self.state == BotState.CHECKING_MATCH:
                 if self.screenshot_time > self.time_entered_state:
                     pos = self.metin_window.get_relative_mouse_pos()
-                    self.metin_window.deactivate()  #deaktivace
-                    #velikost obdelniku, kde budu hledat needle_metin
+                    self.metin_window.deactivate()  # deaktivace
+                    # velikost obdelniku, kde budu hledat needle_metin
                     width = 300
                     height = 250
                     top_left = self.metin_window.limit_coordinate((int(pos[0] - width / 2), pos[1] - height))
@@ -137,7 +137,8 @@ class MetinFarmBot:
                     mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
                     self.info_lock.release()
 
-                    match_loc, match_val = self.vision.template_match_alpha(mob_title_box, utils.get_metin_needle_path())
+                    match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
+                                                                            utils.get_metin_needle_path())
                     if match_loc is not None:
                         self.put_info_text('Metin found!')
                         self.runMetinMouse_click(pos[0], pos[1])
@@ -148,7 +149,7 @@ class MetinFarmBot:
                         self.rotate_view()
                         self.switch_state(BotState.SEARCHING)
                 else:
-                    self.metin_window.deactivate() #uvolnim, protoze jsem prisel do CHECKING_MATCH se zamknutym UVIDIM JESTE
+                    self.metin_window.deactivate()  # uvolnim, protoze jsem prisel do CHECKING_MATCH se zamknutym UVIDIM JESTE
 
             if self.state == BotState.MOVING:
                 if self.started_moving_time is None:
@@ -191,7 +192,7 @@ class MetinFarmBot:
                     self.metin_count += 1
                     total = int(time.time() - self.started)
                     avg = round(total / self.metin_count, 1)
-                    #self.send_telegram_message(f'{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
+                    # self.send_telegram_message(f'{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
                     print(f'{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
                     self.last_metin_time = time.time()
                     self.switch_state(BotState.COLLECTING_DROP)
@@ -209,9 +210,9 @@ class MetinFarmBot:
 
             if self.state == BotState.ERROR:
                 self.put_info_text('Went into error mode!')
-                #self.send_telegram_message('Went into error mode')
+                # self.send_telegram_message('Went into error mode')
                 print('Went into error mode')
-                #vykona se vzdy, nechci aby spadlo, ale restartovalo se
+                # vykona se vzdy, nechci aby spadlo, ale restartovalo se
                 if True or self.last_error is None or time.time() - self.last_error > 300:
                     self.last_error = time.time()
                     self.put_info_text('Error not persistent! Will restart!')
@@ -225,7 +226,7 @@ class MetinFarmBot:
                     self.switch_state(BotState.SEARCHING)
                 else:
                     self.put_info_text('Error persistent!')
-                    #self.send_telegram_message('Shutdown')
+                    # self.send_telegram_message('Shutdown')
                     print('Shutdown')
                     while True:
                         time.sleep(1)
@@ -305,7 +306,7 @@ class MetinFarmBot:
         self.metin_window.activate()
         # Camera option: Near, Perspective all the way to the right
         self.osk_window.start_rotating_up()
-        time.sleep(0.8) #-1 s
+        time.sleep(0.8)  # -1 s
         self.osk_window.stop_rotating_up()
         self.osk_window.start_rotating_down()
         time.sleep(0.3)
@@ -321,7 +322,7 @@ class MetinFarmBot:
     def rotate_view(self):
         self.metin_window.activate()
         self.osk_window.start_rotating_horizontally()
-        time.sleep(0.5) #bylo 0.5
+        time.sleep(0.5)  # bylo 0.5
         self.osk_window.stop_rotating_horizontally()
         self.metin_window.deactivate()
 
@@ -358,7 +359,7 @@ class MetinFarmBot:
             return name, health
 
     def get_mob_info(self):
-        #pozice okna s mob health barem
+        # pozice okna s mob health barem
         top_left = (300, 21)
         bottom_right = (560, 37)
 
@@ -383,9 +384,9 @@ class MetinFarmBot:
         self.osk_window.un_mount()
         self.metin_window.deactivate()
 
-    #def send_telegram_message(self, msg):
-        #bot = telegram.Bot(token="bot_token")
-        #bot.sendMessage(chat_id=10, text=msg)
+    # def send_telegram_message(self, msg):
+    # bot = telegram.Bot(token="bot_token")
+    # bot.sendMessage(chat_id=10, text=msg)
 
     def teleport_back(self):
         self.metin_window.activate()
@@ -399,7 +400,7 @@ class MetinFarmBot:
         """
         # for 800x600
         coords = {'lv_40': [(400, 320), (400, 290)],
-                  'lv_60': [(400, 380), (400, 380)],    # predposledni
+                  'lv_60': [(400, 380), (400, 380)],  # predposledni
                   'lv_70': [(540, 330), (400, 220), (400, 290)],
                   'lv_90': [(540, 330), (400, 290), (400, 350)]}
         for coord in coords[self.metin]:
@@ -417,7 +418,7 @@ class MetinFarmBot:
         self.info_lock.release()
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
         if match_loc is not None:
-            #self.send_telegram_message('Respawn cause dead!')
+            # self.send_telegram_message('Respawn cause dead!')
             print('Respawn cause dead!')
             self.put_info_text('Respawn!')
             self.metin_window.mouse_move(match_loc[0], match_loc[1] + 5)
@@ -439,10 +440,9 @@ class MetinFarmBot:
             time.sleep(3)
         self.metin_window.deactivate()
 
-
     def close_minimap(self):
         self.metin_window.activate()
-        self.metin_window.mouse_move(788, 16) # 1012, 11 for 1024x768 | 788x16 for 800x600
+        self.metin_window.mouse_move(788, 16)  # 1012, 11 for 1024x768 | 788x16 for 800x600
         time.sleep(0.3)
         self.metin_window.mouse_click()
         self.metin_window.deactivate()
