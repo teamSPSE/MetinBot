@@ -32,6 +32,8 @@ class MetinFarmBot:
 
         self.osk_window = osk_window
 
+        self.debug = False
+
         self.vision = Vision()
         self.mob_info_hsv_filter = MobInfoFilter()
 
@@ -67,7 +69,7 @@ class MetinFarmBot:
         self.metin_count = 0
         self.last_error = None
 
-        self.buff_interval = 300
+        self.buff_interval = 650
         self.last_buff = time.time()
 
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
@@ -80,6 +82,7 @@ class MetinFarmBot:
         while not self.stopped:
             # print(self.account_id)
             if self.state == BotState.INITIALIZING:
+                self.metin_window.activate()
                 self.relog_if_loggout(self.account_id)
                 self.respawn_if_dead()
                 self.teleport_back()
@@ -101,17 +104,20 @@ class MetinFarmBot:
                         try:
                             self.metin_window.mouse_move(*self.detection_result['click_pos'])
                         except:
+                            self.metin_window.deactivate()
                             self.switch_state(BotState.ERROR)
                         time.sleep(0.1)
                         self.switch_state(BotState.CHECKING_MATCH)
                     else:
-                        self.put_info_text('No metin found, will rotate!')
+                        if self.debug:
+                            self.put_info_text('No metin found, will rotate!')
 
                         if self.rotate_count >= self.rotate_threshold:
-                            self.put_info_text(f'Rotated {self.rotate_count} times -> Recalibrate!')
+                            if self.debug:
+                                self.put_info_text(f'Rotated {self.rotate_count} times -> Recalibrate!')
                             if self.calibrate_count >= self.calibrate_threshold:
-                                self.put_info_text(f'Recalibrated {self.calibrate_count} times -> Error!')
-                                # self.send_telegram_message('Entering error mode because no metin could be found!')
+                                if self.debug:
+                                    self.put_info_text(f'Recalibrated {self.calibrate_count} times -> Error!')
                                 print('Entering error mode because no metin could be found!')
                                 self.switch_state(BotState.ERROR)
                             else:
@@ -140,12 +146,14 @@ class MetinFarmBot:
                     match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                             utils.get_metin_needle_path())
                     if match_loc is not None:
-                        self.put_info_text('Metin found!')
+                        if self.debug:
+                            self.put_info_text('Metin found!')
                         self.runMetinMouse_click(pos[0], pos[1])
                         self.runRide_through_units()
                         self.switch_state(BotState.MOVING)
                     else:
-                        self.put_info_text('No metin found -> rotate and search again!')
+                        if self.debug:
+                            self.put_info_text('No metin found -> rotate and search again!')
                         self.rotate_view()
                         self.switch_state(BotState.SEARCHING)
                 else:
@@ -159,7 +167,8 @@ class MetinFarmBot:
                 if result is not None and result[1] < 100:
                     self.started_moving_time = None
                     self.move_fail_count = 0
-                    self.put_info_text(f'Started hitting {result[0]}')
+                    if self.debug:
+                        self.put_info_text(f'Started hitting {result[0]}')
                     self.switch_state(BotState.HITTING)
 
                 elif (time.time() - self.started_moving_time) >= 10:
@@ -168,12 +177,14 @@ class MetinFarmBot:
                     self.move_fail_count += 1
                     if self.move_fail_count >= 4:
                         self.move_fail_count = 0
-                        self.put_info_text(f'Failed to move to metin {self.move_fail_count} times -> Error!')
+                        if self.debug:
+                            self.put_info_text(f'Failed to move to metin {self.move_fail_count} times -> Error!')
                         # self.send_telegram_message('Entering error mode because couldn\'t move to metin!')
                         print('Entering error mode because couldn\'t move to metin!')
                         self.switch_state(BotState.ERROR)
                     else:
-                        self.put_info_text(f'Failed to move to metin ({self.move_fail_count} time) -> search again')
+                        if self.debug:
+                            self.put_info_text(f'Failed to move to metin ({self.move_fail_count} time) -> search again')
                         self.rotate_view()
                         self.switch_state(BotState.SEARCHING)
 
@@ -188,7 +199,8 @@ class MetinFarmBot:
                 result = self.get_mob_info()
                 if result is None or time.time() - self.started_hitting_time >= self.maxMetinTime:
                     self.started_hitting_time = None
-                    self.put_info_text('Finished -> Collect drop')
+                    if self.debug:
+                        self.put_info_text('Finished -> Collect drop')
                     self.metin_count += 1
                     total = int(time.time() - self.started)
                     avg = round(total / self.metin_count, 1)
@@ -203,34 +215,31 @@ class MetinFarmBot:
 
             if self.state == BotState.RESTART:
                 if (time.time() - self.last_buff) > self.buff_interval:
-                    self.put_info_text('Turning on buffs...')
+                    if self.debug:
+                        self.put_info_text('Turning on buffs...')
                     self.turn_on_buffs()
                     self.last_buff = time.time()
                 self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.ERROR:
-                self.put_info_text('Went into error mode!')
+                if self.debug:
+                    self.put_info_text('Went into error mode!')
                 # self.send_telegram_message('Went into error mode')
                 print('Went into error mode')
                 # vykona se vzdy, nechci aby spadlo, ale restartovalo se
-                if True or self.last_error is None or time.time() - self.last_error > 300:
-                    self.last_error = time.time()
+                # if True: #or self.last_error is None or time.time() - self.last_error > 300:
+                self.last_error = time.time()
+                if self.debug:
                     self.put_info_text('Error not persistent! Will restart!')
-                    self.relog_if_loggout(self.account_id)
-                    self.respawn_if_dead()
-                    self.teleport_back()
-                    self.close_minimap()
-                    self.runRecall_mount()
-                    self.turn_on_buffs()
-                    self.calibrate_view()
-                    self.switch_state(BotState.SEARCHING)
-                else:
-                    self.put_info_text('Error persistent!')
-                    # self.send_telegram_message('Shutdown')
-                    print('Shutdown')
-                    while True:
-                        time.sleep(1)
-                    self.stop()
+                print('Error not persistent! Will restart!')
+                self.relog_if_loggout(self.account_id)
+                self.respawn_if_dead()
+                self.teleport_back()
+                self.close_minimap()
+                self.runRecall_mount()
+                self.turn_on_buffs()
+                self.calibrate_view()
+                self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.DEBUG:
                 self.metin_window.activate()
@@ -264,7 +273,8 @@ class MetinFarmBot:
         self.state = state
         self.time_entered_state = time.time()
         self.state_lock.release()
-        self.put_info_text()
+        if self.debug:
+            self.put_info_text()
 
     def get_state(self):
         self.state_lock.acquire()
@@ -420,7 +430,8 @@ class MetinFarmBot:
         if match_loc is not None:
             # self.send_telegram_message('Respawn cause dead!')
             print('Respawn cause dead!')
-            self.put_info_text('Respawn!')
+            if self.debug:
+                self.put_info_text('Respawn!')
             self.metin_window.mouse_move(match_loc[0], match_loc[1] + 5)
             time.sleep(0.5)
             self.metin_window.mouse_click()
@@ -435,7 +446,8 @@ class MetinFarmBot:
         # print(utils.get_login_needle_path(),screenshot)
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_path())
         if match_loc is not None:
-            self.put_info_text('Relog because you are not logged.')
+            if self.debug:
+                self.put_info_text('Relog because you are not logged.')
             self.osk_window.login(fkey)
             time.sleep(3)
         self.metin_window.deactivate()

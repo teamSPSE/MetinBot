@@ -130,13 +130,9 @@ dmypy.json
 
 .idea/
 *.bmp
-negative/
-positive/
-cascade/
 *.vec
 *.jpg
 backup/
-classifier/
 credentials.py
 writeup/
 
