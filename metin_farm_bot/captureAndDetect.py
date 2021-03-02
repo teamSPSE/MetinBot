@@ -1,6 +1,6 @@
 from threading import Thread, Lock
 
-from metin_farm_bot.utils import get_empty_img_1024_path
+from utils.utils import get_empty_img_1024_path
 from utils.vision import Vision
 import time
 import numpy as np
