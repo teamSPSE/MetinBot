@@ -401,7 +401,7 @@ class MetinFarmBot:
         self.info_lock.release()
         if mob_info_box is None:
             return -1
-        
+
         mob_info_box = self.vision.apply_hsv_filter(mob_info_box, hsv_filter=self.mob_info_hsv_filter)
         mob_info_text = pytesseract.image_to_string(mob_info_box)
 
