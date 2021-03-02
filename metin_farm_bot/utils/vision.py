@@ -206,7 +206,10 @@ class Vision:
         # cv.rectangle(image, top_left, bottom_right, (255, 0, 0), cv.LINE_4)
 
     def extract_section(self, image, top_left, bottom_right):
-        return image[top_left[1] : bottom_right[1], top_left[0] : bottom_right[0]]
+        try:
+            return image[top_left[1] : bottom_right[1], top_left[0] : bottom_right[0]]
+        except:
+            return None
 
     def template_match_alpha(self, haystack_img, needle_path):
         #return None, None

@@ -24,11 +24,14 @@ class BotState(enum.Enum):
 
 class MetinFarmBot:
 
-    def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime):
+    def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime, skipInit, skillDuration):
         self.account_id = account_id
         self.maxMetinTime = maxMetinTime
         self.metin_window = metin_window
         self.metin = metin_selection
+        self.skipInit = skipInit
+        self.buff_interval = skillDuration
+        self.last_buff = time.time()
 
         self.osk_window = osk_window
 
@@ -69,34 +72,35 @@ class MetinFarmBot:
         self.metin_count = 0
         self.last_error = None
 
-        self.buff_interval = 650
-        self.last_buff = time.time()
-
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
 
         self.time_entered_state = None
         self.state = None
         self.switch_state(BotState.INITIALIZING)
 
+
     def run(self):
         while not self.stopped:
             if self.state == BotState.INITIALIZING:
                 if self.threadSwtichType == 2:
                     self.metin_window.activate()
-                self.relog_if_loggout(self.account_id)
-                self.respawn_if_dead()
-                self.teleport_back()
-                self.close_minimap()
-                self.runRecall_mount()
-                self.turn_on_buffs()
-                self.calibrate_view()
+
+                if self.skipInit == 0:
+                    self.relog_if_loggout(self.account_id)
+                    self.respawn_if_dead()
+                    self.teleport_back()
+                    self.close_minimap()
+                    self.runRecall_mount()
+                    self.turn_on_buffs()
+                    self.calibrate_view()
+
                 self.started = time.time()
                 self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.SEARCHING:
+                #print(self.screenshot is not None, self.detection_time is not None,  self.detection_time, self.time_entered_state)
                 # Check if screenshot is recent
-                if self.screenshot is not None and self.detection_time is not None and \
-                        self.detection_time > self.time_entered_state + 0.1:
+                if self.screenshot is not None and self.detection_time is not None and self.detection_time > self.time_entered_state + 0.1:
                     # If no matches were found
                     if self.detection_result is not None and self.detection_result['click_pos'] is not None:
                         # self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
@@ -171,6 +175,9 @@ class MetinFarmBot:
                     self.started_moving_time = time.time()
 
                 result = self.get_mob_info()
+                if(result is None): #dvojite overeni
+                    time.sleep(0.5)
+                    result = self.get_mob_info()
                 if result is not None and result[1] < 100:
                     self.started_moving_time = None
                     self.move_fail_count = 0
@@ -392,7 +399,9 @@ class MetinFarmBot:
         self.info_lock.acquire()
         mob_info_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
         self.info_lock.release()
-
+        if mob_info_box is None:
+            return -1
+        
         mob_info_box = self.vision.apply_hsv_filter(mob_info_box, hsv_filter=self.mob_info_hsv_filter)
         mob_info_text = pytesseract.image_to_string(mob_info_box)
 

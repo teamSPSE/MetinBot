@@ -1,4 +1,6 @@
 from threading import Thread, Lock
+
+from metin_farm_bot.utils import get_empty_img_1024_path
 from utils.vision import Vision
 import time
 import numpy as np
@@ -12,7 +14,7 @@ class CaptureAndDetect:
     def __init__(self, metin_window, model_path, hsv_filter):
         self.metin_window = metin_window
         self.vision = Vision()
-        self.snowman_hsv_filter = hsv_filter
+        self.hsv_filter = hsv_filter
         self.classifier = cv.CascadeClassifier(model_path)
 
         self.screenshot = None
@@ -38,6 +40,8 @@ class CaptureAndDetect:
             # Take screenshot
             screenshot = self.metin_window.capture()
             screenshot_time = time.time()
+            if screenshot is None:
+                screenshot = cv.imread(get_empty_img_1024_path(), cv.IMREAD_UNCHANGED)
 
             self.lock.acquire()
             self.screenshot = screenshot
@@ -45,7 +49,7 @@ class CaptureAndDetect:
             self.lock.release()
 
             # Preprocess image for object detection
-            processed_img = self.vision.apply_hsv_filter(screenshot, hsv_filter=self.snowman_hsv_filter)
+            processed_img = self.vision.apply_hsv_filter(screenshot, hsv_filter=self.hsv_filter)
             self.vision.black_out_area(processed_img, (490, 350), (550, 428))
 
             # Detect objects
@@ -55,7 +59,10 @@ class CaptureAndDetect:
             # Parse results and generate image
             detection_time = time.time()
             detection = None
-            detection_image = screenshot.copy()
+            try:
+                detection_image = screenshot.copy()
+            except:
+                continue
 
             if len(output[0]):
                 detection = {'rectangles': output[0], 'scores': output[1]}
