@@ -25,6 +25,7 @@ class BotState(enum.Enum):
 class MetinFarmBot:
 
     def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime, skipInit, skillDuration):
+        self.metinLocType = 0
         self.account_id = account_id
         self.maxMetinTime = maxMetinTime
         self.metin_window = metin_window
@@ -70,7 +71,6 @@ class MetinFarmBot:
         self.started = time.time()
         print('Started')
         self.metin_count = 0
-        self.last_error = None
 
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
 
@@ -233,7 +233,7 @@ class MetinFarmBot:
                 self.switch_state(BotState.RESTART)
 
             if self.state == BotState.RESTART:
-                if (time.time() - self.last_buff) > self.buff_interval:
+                if (time.time() - self.last_buff) > utils.get_relative_time(self.buff_interval) :
                     if self.debug:
                         self.put_info_text('Turning on buffs...')
                     self.turn_on_buffs()
@@ -243,14 +243,10 @@ class MetinFarmBot:
             if self.state == BotState.ERROR:
                 if self.debug:
                     self.put_info_text('Went into error mode!')
-                # self.send_telegram_message('Went into error mode')
-                print('Went into error mode')
-                # vykona se vzdy, nechci aby spadlo, ale restartovalo se
-                # if True: #or self.last_error is None or time.time() - self.last_error > 300:
-                self.last_error = time.time()
-                if self.debug:
+                    print('Went into error mode')
                     self.put_info_text('Error not persistent! Will restart!')
-                print('Error not persistent! Will restart!')
+                    print('Error not persistent! Will restart!')
+                    
                 self.relog_if_loggout(self.account_id)
                 self.respawn_if_dead()
                 self.teleport_back()
@@ -336,16 +332,16 @@ class MetinFarmBot:
             self.metin_window.activate()
         # Camera option: Near, Perspective all the way to the right
         self.osk_window.start_rotating_up()
-        time.sleep(0.8)  # -1 s
+        time.sleep(utils.get_relative_time(0.8))  # -1 s
         self.osk_window.stop_rotating_up()
         self.osk_window.start_rotating_down()
-        time.sleep(0.3)
+        time.sleep(utils.get_relative_time(0.3))
         self.osk_window.stop_rotating_down()
         self.osk_window.start_zooming_out()
-        time.sleep(0.8)
+        time.sleep(utils.get_relative_time(0.8))
         self.osk_window.stop_zooming_out()
         self.osk_window.start_zooming_in()
-        time.sleep(0.03)
+        time.sleep(utils.get_relative_time(0.03))
         self.osk_window.stop_zooming_in()
         if self.threadSwtichType == 1:
             self.metin_window.deactivate()
@@ -354,7 +350,7 @@ class MetinFarmBot:
         if self.threadSwtichType == 1:
             self.metin_window.activate()
         self.osk_window.start_rotating_horizontally()
-        time.sleep(0.5)  # bylo 0.5
+        time.sleep(utils.get_relative_time(0.5))  # bylo 0.5
         self.osk_window.stop_rotating_horizontally()
         if self.threadSwtichType == 1:
             self.metin_window.deactivate()
@@ -415,11 +411,11 @@ class MetinFarmBot:
             self.metin_window.activate()
         self.last_buff = time.time()
         self.osk_window.un_mount()
-        time.sleep(0.5)
+        time.sleep(utils.get_relative_time(0.5))
         self.osk_window.activate_aura()
-        time.sleep(2)
+        time.sleep(utils.get_relative_time(2))
         self.osk_window.activate_berserk()
-        time.sleep(1.5)
+        time.sleep(utils.get_relative_time(1.5))
         self.osk_window.un_mount()
         if self.threadSwtichType == 1:
             self.metin_window.deactivate()
@@ -440,15 +436,21 @@ class MetinFarmBot:
                   'lv_90': [(654, 410), (508, 369), (513, 495)]}
         """
         # for 800x600
-        coords = {'lv_40': [(400, 320), (400, 290)],
-                  'lv_60': [(400, 380), (400, 380)],  # predposledni
-                  'lv_70': [(540, 330), (400, 220), (400, 290)],
-                  'lv_90': [(540, 330), (400, 290), (400, 350)]}
+        coords = {'lv_40': [[(400, 320), (400, 290)], [(400, 320), (400, 320)]],        #udoli orku
+                  'lv_60': [[(400, 380), (400, 380)], [(400, 380), (400, 410)]],  # predposledni chram hwang
+                  'lv_70': [[(540, 330), (400, 220), (400, 290)], [(540, 330), (400, 220), (400, 320)]], #ohniva zeme
+                  'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]} # cerveny les
         for coord in coords[self.metin]:
             time.sleep(1)
-            self.metin_window.mouse_move(coord[0], coord[1])
+            self.metin_window.mouse_move(coord[self.metinLocType][0], coord[1])
             time.sleep(0.3)
             self.metin_window.mouse_click()
+
+        if self.metinLocType == 0:
+            self.metinLocType = 1
+        else:
+            self.metinLocType = 0
+
         time.sleep(7.5)
         if self.threadSwtichType == 1:
             self.metin_window.deactivate()
@@ -483,7 +485,7 @@ class MetinFarmBot:
         if match_loc is not None:
             if self.debug:
                 self.put_info_text('Relog because you are not logged.')
-            print('Relog because you are not logged.')
+                print('Relog because you are not logged.')
             self.osk_window.login(fkey)
             time.sleep(3)
         if self.threadSwtichType == 1:

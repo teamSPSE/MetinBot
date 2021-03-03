@@ -1,3 +1,5 @@
+import random
+
 import pyautogui
 import win32gui
 import win32process
@@ -43,3 +45,8 @@ def get_pid_by_name(processName):
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             pass
     return pids
+
+def get_relative_time(time):
+    percentage = (time*0.05)
+    diff = random.uniform(-percentage, percentage)
+    return time + diff
