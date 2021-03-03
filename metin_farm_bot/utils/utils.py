@@ -4,19 +4,19 @@ import win32process
 import psutil
 
 def get_metin_needle_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot/needles/needle_metin.png'
+    return '../needles/needle_metin.png'
 
 def get_tesseract_path():
-    return r'C:/Program Files (x86)/Tesseract-OCR/tesseract.exe'
+    return r'../Tesseract-OCR/tesseract.exe'
 
 def get_respawn_needle_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot/needles/needle_respawn.png'
+    return '../needles/needle_respawn.png'
 
 def get_login_needle_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot/needles/needle_login800.png'
+    return '../needles/needle_login800.png'
 
 def get_empty_img_1024_path():
-    return 'C:/Virtuals/MCxMeTiNcze/Metin2-Bot/needles/emptyImg800.png'
+    return '../needles/emptyImg800.png'
 
 def countdown():
     pyautogui.countdown(3)

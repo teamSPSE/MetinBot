@@ -1,5 +1,4 @@
 from threading import Thread, Lock
-
 from utils.utils import get_empty_img_1024_path
 from utils.vision import Vision
 import time

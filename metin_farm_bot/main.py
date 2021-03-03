@@ -1,8 +1,8 @@
 import json
+from threading import Thread
 
 import cv2 as cv
-import numpy as np
-
+import sys
 from captureAndDetect import CaptureAndDetect
 from utils.window import MetinWindow, OskWindow
 import utils.utils
@@ -12,30 +12,36 @@ from tkinter import *
 from tkinter.font import Font
 from tkinter.ttk import Combobox
 
-
-def exitGui():
-    sys.exit(0)
-
+MainStop = False
 
 def loadSetting():
-    f = open('setting.txt',)
+    f = open('setting.txt', )
     data = json.loads(f.read())
     data[2][1] += 230
-    return data
     f.close()
+    return data
+
 
 def saveSetting(an_array):
     with open("setting.txt", "w") as txt_file:
         json.dump(an_array, txt_file)
 
-
-def shutdown(capt_detect1, capt_detect2, bot1, bot2):
-    capt_detect1.stop()
-    bot1.stop()
-    capt_detect2.stop()
-    bot2.stop()
+def shutdown():
+    global MainStop
+    print(MainStop)
+    MainStop = True
     cv.destroyAllWindows()
     sys.exit(0)
+
+def stopBot(capt_detect1, capt_detect2, bot1, bot2):
+    if capt_detect1 is not None:
+        capt_detect1.stop()
+    if bot1 is not None:
+        bot1.stop()
+    if capt_detect2 is not None:
+        capt_detect2.stop()
+    if bot2 is not None:
+        bot2.stop()
 
 
 def getSelectedMetin(metin):
@@ -45,16 +51,25 @@ def getSelectedMetin(metin):
               'Lvl. 90: Metin Jeon-Un': 'lv_90'}
     return metins[metin]
 
+
 def getIdSelectedMetin(metin):
-    metins = {'lv_40':0,
-              'lv_60':1,
-              'lv_70':2,
-              'lv_90':3}
+    metins = {'lv_40': 0,
+              'lv_60': 1,
+              'lv_70': 2,
+              'lv_90': 3}
     return metins[metin]
 
 
 # client [pid, account_id, maxMetinTIme, selectedMetin, skip_init]
 def main():
+    def closeKeyPressed(e):
+        if e.char == '*':
+            shutdown()
+
+    def start():
+        MainThread = Thread(target=saveStart)
+        MainThread.start()
+
     def saveStart():
         clients = [
             [
@@ -74,7 +89,7 @@ def main():
         startApp(clients)
 
     testPid = utils.get_pid_by_name('Aeldra')
-    #print(testPid)
+    # print(testPid)
     pid1 = testPid[0] if len(testPid) > 0 else 0
     pid2 = testPid[1] if len(testPid) > 1 else 0
 
@@ -82,23 +97,24 @@ def main():
     try:
         defparams = loadSetting()
     except:
-        defparams =[
-                        [
-                            int(pid1), int(4), int(25),
-                            'lv_40', int(0), 300
-                        ],
-                        [
-                            int(pid2), int(6), int(25),
-                            'lv_40', int(0), 300
-                        ],
-                        [
-                            int(-1280), int(1040)
-                        ]
-                    ]
+        defparams = [
+            [
+                int(pid1), int(4), int(25),
+                'lv_40', int(0), 300
+            ],
+            [
+                int(pid2), int(6), int(25),
+                'lv_40', int(0), 300
+            ],
+            [
+                int(-1280), int(1040)
+            ]
+        ]
 
     root = Tk()
     root.title("Metin 2 Aeldra bot")
     root.geometry("460x550")
+    root.bind("<KeyRelease>", closeKeyPressed)
 
     padding = 20
     client_y = 30
@@ -124,7 +140,8 @@ def main():
     account_id1 = defparams[0][1]
     maxMetinTime1 = defparams[0][2]
     skill_duration1 = defparams[0][5]
-
+    skip_init1 = IntVar()
+    skip_init1.set(defparams[0][4])
 
     account_id_entry1 = Entry(width="10")
     account_id_entry1.insert(END, account_id1)
@@ -132,7 +149,6 @@ def main():
     maxMetinTime_entry1.insert(END, maxMetinTime1)
     pid_entry1 = Entry(width="10")
     pid_entry1.insert(END, pid1)
-    skip_init1 = IntVar()
     skip_init_entry1 = Checkbutton(variable=skip_init1, onvalue=1, offvalue=0)
     skill_duration_entry1 = Entry(width="10")
     skill_duration_entry1.insert(END, skill_duration1)
@@ -173,6 +189,8 @@ def main():
     account_id2 = defparams[1][1]
     maxMetinTime2 = defparams[1][2]
     skill_duration2 = defparams[1][5]
+    skip_init2 = IntVar()
+    skip_init2.set(defparams[1][4])
 
     account_id_entry2 = Entry(width="10")
     account_id_entry2.insert(END, account_id2)
@@ -180,7 +198,6 @@ def main():
     maxMetinTime_entry2.insert(END, maxMetinTime2)
     pid_entry2 = Entry(width="10")
     pid_entry2.insert(END, pid2)
-    skip_init2 = IntVar()
     skip_init_entry2 = Checkbutton(variable=skip_init2, onvalue=1, offvalue=0)
     skill_duration_entry2 = Entry(width="10")
     skill_duration_entry2.insert(END, skill_duration2)
@@ -214,21 +231,22 @@ def main():
     left_cornery_entry.insert(END, left_cornery)
     left_cornery_entry.place(x=200, y=client_y + (17 * padding))
 
-    start = Button(root, text="Start", width="60", height="2", command=saveStart, bg="green")
+    start = Button(root, text="Start", width="60", height="2", command=start, bg="green")
     start.place(x=15, y=client_y + (19 * padding))
-    stop = Button(root, text="Stop", width="60", height="2", command=root.destroy, bg="grey")
+    stop = Button(root, text="Stop", width="60", height="2", command=shutdown, bg="grey")
     stop.place(x=15, y=client_y + (19 * padding) + 50)
 
     root.mainloop()
 
-
+bot2 = None
+bot1 = None
+capt_detect2 = None
+capt_detect1 = None
 # client [pid, account_id, maxMetinTIme, selectedMetin]
 def startApp(clients, debug=False):
     # Parse array
     # Choose which metin
-    global bot2, bot1, capt_detect2, capt_detect1, client_hwnd2, client_hwnd1,\
-           screenshot1, screenshot_time1, detection1, detection_time1, detection_image1,\
-           screenshot2, screenshot_time2, detection2, detection_time2, detection_image2
+    global bot2, bot1, capt_detect2, capt_detect1
 
     metin_selection1 = clients[0][3]
     metin_selection2 = clients[1][3]
@@ -280,18 +298,23 @@ def startApp(clients, debug=False):
     if client_pid1 > 0:
         metin_window1 = MetinWindow('Aeldra', client_hwnd1, window_focus_locked)
         capt_detect1 = CaptureAndDetect(metin_window1, cascade_path, hsv_filter)
-        bot1 = MetinFarmBot(metin_window1, osk_window, metin_selection1, account_id1, maxMetinTime1, skipInit1, skillDuration1)
+        bot1 = MetinFarmBot(metin_window1, osk_window, metin_selection1, account_id1, maxMetinTime1, skipInit1,
+                            skillDuration1)
         capt_detect1.start()
         bot1.start()
 
     if client_pid2 > 0:
         metin_window2 = MetinWindow('Aeldra', client_hwnd2, window_focus_locked)
         capt_detect2 = CaptureAndDetect(metin_window2, cascade_path, hsv_filter)
-        bot2 = MetinFarmBot(metin_window2, osk_window, metin_selection2, account_id2, maxMetinTime2, skipInit2, skillDuration2)
+        bot2 = MetinFarmBot(metin_window2, osk_window, metin_selection2, account_id2, maxMetinTime2, skipInit2,
+                            skillDuration2)
         capt_detect2.start()
         bot2.start()
 
     while True:
+        if(MainStop):
+            stopBot(capt_detect1, capt_detect2, bot1, bot2)
+            break
 
         # Get new detections
         # Update bot with new image
@@ -302,7 +325,6 @@ def startApp(clients, debug=False):
         if client_pid2 > 0:
             screenshot2, screenshot_time2, detection2, detection_time2, detection_image2 = capt_detect2.get_info()
             bot2.detection_info_update(screenshot2, screenshot_time2, detection2, detection_time2)
-
 
         if debug:
             print(window_focus_locked)
@@ -324,7 +346,7 @@ def startApp(clients, debug=False):
             key = cv.waitKey(1)
 
             if key == ord('q'):
-                shutdown(capt_detect1, capt_detect2, bot1, bot2)
+                stopBot(capt_detect1, capt_detect2, bot1, bot2)
                 break
 
     print('Done.')

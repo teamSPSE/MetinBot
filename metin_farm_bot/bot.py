@@ -403,7 +403,10 @@ class MetinFarmBot:
             return -1
 
         mob_info_box = self.vision.apply_hsv_filter(mob_info_box, hsv_filter=self.mob_info_hsv_filter)
-        mob_info_text = pytesseract.image_to_string(mob_info_box)
+        try:
+            mob_info_text = pytesseract.image_to_string(mob_info_box)
+        except:
+            return -1
 
         return self.process_metin_info(mob_info_text)
 

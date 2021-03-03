@@ -6,10 +6,7 @@ import pygetwindow as gw
 import numpy as np
 import pythoncom
 import cv2 as cv
-
-# 1024 x 768
-#from utils import utils.utils
-from utils import get_empty_img_1024_path
+import utils
 
 
 class Window:
@@ -110,7 +107,7 @@ class Window:
             img = np.ascontiguousarray(img)
             return img
         except:
-            return cv.imread(get_empty_img_1024_path(), cv.IMREAD_UNCHANGED)
+            return cv.imread(utils.get_empty_img_1024_path(), cv.IMREAD_UNCHANGED)
 
 
 class MetinWindow(Window):
