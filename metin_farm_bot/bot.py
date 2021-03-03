@@ -178,7 +178,7 @@ class MetinFarmBot:
                 if(result is None): #dvojite overeni
                     time.sleep(0.5)
                     result = self.get_mob_info()
-                if result is not None and result[1] < 100:
+                if result is not None and result != -1 and result[1] < 100:
                     self.started_moving_time = None
                     self.move_fail_count = 0
                     if self.debug:
