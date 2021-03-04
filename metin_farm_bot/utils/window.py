@@ -107,7 +107,7 @@ class Window:
             img = np.ascontiguousarray(img)
             return img
         except:
-            return cv.imread(utils.get_empty_img_1024_path(), cv.IMREAD_UNCHANGED)
+            return cv.imread(utils.get_empty_img_800_path(), cv.IMREAD_UNCHANGED)
 
 
 class MetinWindow(Window):

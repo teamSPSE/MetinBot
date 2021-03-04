@@ -78,7 +78,6 @@ class MetinFarmBot:
         self.state = None
         self.switch_state(BotState.INITIALIZING)
 
-
     def run(self):
         while not self.stopped:
             if self.state == BotState.INITIALIZING:
@@ -98,7 +97,7 @@ class MetinFarmBot:
                 self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.SEARCHING:
-                #print(self.screenshot is not None, self.detection_time is not None,  self.detection_time, self.time_entered_state)
+                # print(self.screenshot is not None, self.detection_time is not None,  self.detection_time, self.time_entered_state)
                 # Check if screenshot is recent
                 if self.screenshot is not None and self.detection_time is not None and self.detection_time > self.time_entered_state + 0.1:
                     # If no matches were found
@@ -143,18 +142,31 @@ class MetinFarmBot:
                     if self.threadSwtichType == 1:
                         self.metin_window.deactivate()  # deaktivace
 
+                    #self.relog_if_loggout(self.account_id)
+                    #self.respawn_if_dead()
+
                     # velikost obdelniku, kde budu hledat needle_metin
                     width = 300
                     height = 250
                     top_left = self.metin_window.limit_coordinate((int(pos[0] - width / 2), pos[1] - height))
                     bottom_right = self.metin_window.limit_coordinate((int(pos[0] + width / 2), pos[1]))
 
+                    tries = 0
                     self.info_lock.acquire()
                     mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
                     self.info_lock.release()
-
                     match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                             utils.get_metin_needle_path())
+                    while match_val is None:
+                        if tries > 5:
+                            break
+                        self.info_lock.acquire()
+                        mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
+                        self.info_lock.release()
+                        match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
+                                                                                utils.get_metin_needle_path())
+                        tries += 1
+
                     if match_loc is not None:
                         if self.debug:
                             self.put_info_text('Metin found!')
@@ -164,8 +176,12 @@ class MetinFarmBot:
                     else:
                         if self.debug:
                             self.put_info_text('No metin found -> rotate and search again!')
+                        self.rotate_count += 1
                         self.rotate_view()
-                        self.switch_state(BotState.SEARCHING)
+                        if self.rotate_count > self.rotate_threshold:
+                            self.switch_state(BotState.ERROR)
+                        else:
+                            self.switch_state(BotState.SEARCHING)
                 else:
                     if self.threadSwtichType == 1:
                         self.metin_window.deactivate()  # uvolnim, protoze jsem prisel do CHECKING_MATCH se zamknutym UVIDIM JESTE
@@ -175,9 +191,6 @@ class MetinFarmBot:
                     self.started_moving_time = time.time()
 
                 result = self.get_mob_info()
-                if(result is None): #dvojite overeni
-                    time.sleep(0.5)
-                    result = self.get_mob_info()
                 if result is not None and result != -1 and result[1] < 100:
                     self.started_moving_time = None
                     self.move_fail_count = 0
@@ -199,8 +212,12 @@ class MetinFarmBot:
                     else:
                         if self.debug:
                             self.put_info_text(f'Failed to move to metin ({self.move_fail_count} time) -> search again')
+                        self.rotate_count += 1
                         self.rotate_view()
-                        self.switch_state(BotState.SEARCHING)
+                        if self.rotate_count > self.rotate_threshold:
+                            self.switch_state(BotState.ERROR)
+                        else:
+                            self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.HITTING:
                 if self.threadSwtichType == 2:
@@ -214,6 +231,9 @@ class MetinFarmBot:
                     self.started_hitting_time = time.time()
 
                 result = self.get_mob_info()
+                if result is None:
+                    time.sleep(0.5)  # double check
+                    result = self.get_mob_info()
                 if result is None or time.time() - self.started_hitting_time >= self.maxMetinTime:
                     self.started_hitting_time = None
                     if self.debug:
@@ -233,7 +253,7 @@ class MetinFarmBot:
                 self.switch_state(BotState.RESTART)
 
             if self.state == BotState.RESTART:
-                if (time.time() - self.last_buff) > utils.get_relative_time(self.buff_interval) :
+                if (time.time() - self.last_buff) > utils.get_relative_time(self.buff_interval):
                     if self.debug:
                         self.put_info_text('Turning on buffs...')
                     self.turn_on_buffs()
@@ -247,6 +267,8 @@ class MetinFarmBot:
                     self.put_info_text('Error not persistent! Will restart!')
                     print('Error not persistent! Will restart!')
 
+                self.rotate_count = 0
+                self.calibrate_count = 0
                 self.relog_if_loggout(self.account_id)
                 self.respawn_if_dead()
                 self.teleport_back()
@@ -436,10 +458,10 @@ class MetinFarmBot:
                   'lv_90': [(654, 410), (508, 369), (513, 495)]}
         """
         # for 800x600
-        coords = {'lv_40': [[(400, 320), (400, 290)], [(400, 320), (400, 320)]],        #udoli orku
+        coords = {'lv_40': [[(400, 320), (400, 290)], [(400, 320), (400, 320)]],  # udoli orku
                   'lv_60': [[(400, 380), (400, 380)], [(400, 380), (400, 410)]],  # predposledni chram hwang
-                  'lv_70': [[(540, 330), (400, 220), (400, 290)], [(540, 330), (400, 220), (400, 320)]], #ohniva zeme
-                  'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]} # cerveny les
+                  'lv_70': [[(540, 330), (400, 220), (400, 290)], [(540, 330), (400, 220), (400, 320)]],  # ohniva zeme
+                  'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]}  # cerveny les
         for coord in coords[self.metin][self.metinLocType]:
             time.sleep(1)
             self.metin_window.mouse_move(coord[0], coord[1])
@@ -458,10 +480,22 @@ class MetinFarmBot:
     def respawn_if_dead(self):
         if self.threadSwtichType == 1:
             self.metin_window.activate()
+
+        tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
         self.info_lock.release()
+        # print(utils.get_respawn_needle_path(),screenshot)
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
+        while match_val is None:
+            if tries > 10:
+                break
+            self.info_lock.acquire()
+            screenshot = self.screenshot
+            self.info_lock.release()
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
+            tries += 1
+
         if match_loc is not None:
             # self.send_telegram_message('Respawn cause dead!')
             print('Respawn cause dead!')
@@ -477,11 +511,22 @@ class MetinFarmBot:
     def relog_if_loggout(self, fkey):
         if self.threadSwtichType == 1:
             self.metin_window.activate()
+
+        tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
         self.info_lock.release()
-        # print(utils.get_login_needle_path(),screenshot)
-        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_path())
+        # print(utils.get_login_needle_800_path(),screenshot)
+        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path())
+        while match_val is None:
+            if tries > 10:
+                break
+            self.info_lock.acquire()
+            screenshot = self.screenshot
+            self.info_lock.release()
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path())
+            tries += 1
+
         if match_loc is not None:
             if self.debug:
                 self.put_info_text('Relog because you are not logged.')
@@ -529,4 +574,3 @@ class MetinFarmBot:
         self.osk_window.pick_up()
         if self.threadSwtichType == 1:
             self.metin_window.deactivate()
-

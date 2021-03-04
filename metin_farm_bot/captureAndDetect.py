@@ -1,5 +1,5 @@
 from threading import Thread, Lock
-from utils.utils import get_empty_img_1024_path
+from utils.utils import get_empty_img_800_path
 from utils.vision import Vision
 import time
 import numpy as np
@@ -40,7 +40,7 @@ class CaptureAndDetect:
             screenshot = self.metin_window.capture()
             screenshot_time = time.time()
             if screenshot is None:
-                screenshot = cv.imread(get_empty_img_1024_path(), cv.IMREAD_UNCHANGED)
+                screenshot = cv.imread(get_empty_img_800_path(), cv.IMREAD_UNCHANGED)
 
             self.lock.acquire()
             self.screenshot = screenshot

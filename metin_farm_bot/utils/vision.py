@@ -222,6 +222,7 @@ class Vision:
             return None, None
         needle = cv.imread(needle_path, cv.IMREAD_UNCHANGED)
         if needle is None:
+            print("failed to load needle")
             return None, None
         #print(needle)
 
