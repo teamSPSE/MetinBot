@@ -49,10 +49,10 @@ class SnowManFilterRedForest(HsvFilter):
 
 class TestFilter(HsvFilter):
     def __init__(self):
-        self.hMin = 130
-        self.sMin = 0
-        self.vMin = 0
-        self.hMax = 138
+        self.hMin = 20
+        self.sMin = 50
+        self.vMin = 50
+        self.hMax = 28
         self.sMax = 255
         self.vMax = 255
         self.sAdd = 0
@@ -211,7 +211,7 @@ class Vision:
         except:
             return None
 
-    def template_match_alpha(self, haystack_img, needle_path):
+    def template_match_alpha(self, haystack_img, needle_path, method=cv.TM_SQDIFF):
         #return None, None
         if(haystack_img is None or needle_path is None):
             print("null values in template_match_alpha")
@@ -227,7 +227,7 @@ class Vision:
         #print(needle)
 
         try:
-            result = cv.matchTemplate(haystack_img, needle[:, :, :3], cv.TM_SQDIFF, mask=needle[:, :, 3])
+            result = cv.matchTemplate(haystack_img, needle[:, :, :3], method, mask=needle[:, :, 3])
             match_val, _, match_loc, _ = cv.minMaxLoc(result)
         except:
             return None, None

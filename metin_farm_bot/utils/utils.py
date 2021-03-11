@@ -17,6 +17,14 @@ def get_respawn_needle_path():
     return r'../needles/needle_respawn.png'
 
 
+def get_gm_needle_path():
+    return r'../needles/gm_needle.png'
+
+
+def get_close_btn_needle_path():
+    return r'../needles/close_btn_needle.png'
+
+
 def get_login_needle_1024_path():
     return r'../needles/needle_login1024.png'
 
@@ -31,6 +39,7 @@ def get_login_needle_800_path():
 
 def get_empty_img_800_path():
     return r'../needles/emptyImg800.png'
+
 
 
 def countdown():

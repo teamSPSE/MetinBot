@@ -1,3 +1,5 @@
+import random
+
 import pyautogui
 import win32gui, win32ui, win32con, win32com.client
 from time import sleep
@@ -130,7 +132,7 @@ class MetinWindow(Window):
             sleep(0.15)
             self.mouse_click()
         else:
-            sleep(2) # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
+            sleep(2)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
             self.activate()
 
     def deactivate(self):  # odemceni
@@ -147,14 +149,18 @@ class OskWindow(Window):
         self.width, self.height = 576, 173
         self.gw_object.resizeTo(self.width, self.height)
 
-        self.key_pos = {'space': (148, 155), 'Fn': (11, 150), 'Ctrl': (35, 150), 'Enter': (324, 100),
+        self.key_pos = {'space': (148, 155), 'Fn': (11, 150), 'Ctrl': (35, 150), 'Enter': (324, 100), 'Shift': (11, 130), 'Esc': (11, 65),
 
                         '1': (55, 65), '2': (79, 65), '3': (100, 65), '4': (122, 65), '5': (145, 65), '6': (165, 65),
-                        '7': (190, 65),  '8': (210, 65), '9': (230, 65),
+                        '7': (190, 65), '8': (210, 65), '9': (230, 65),
 
-                        'z': (67, 132), 'e': (87, 87),
-                        'q': (40, 85), 'g': (134, 107), 't': (129, 86),
-                        'h': (159, 109), 'r': (107, 88), 'f': (114, 109), 'b': (156, 134)
+                        'q': (40, 85), 'w': (65, 85), 'e': (90, 85), 'r': (110, 85), 't': (130, 85), 'z': (155, 85),
+                        'u': (170, 85), 'i': (200, 85), 'o': (220, 85), 'p': (240, 85),
+                        'a': (50, 110), 's': (75, 110), 'd': (100, 110), 'f': (120, 110), 'g': (140, 110),
+                        'h': (165, 110), 'j': (185, 110), 'k': (210, 110), 'l': (230, 110),
+                        'y': (65, 130), 'x': (90, 130), 'c': (110, 130), 'v': (130, 130), 'b': (150, 130),
+                        'n': (175, 130), 'm': (200, 130)
+
                         }
 
     def start_hitting(self):
@@ -258,3 +264,37 @@ class OskWindow(Window):
             pyautogui.mouseDown()
         elif mode == 'up':
             pyautogui.mouseUp()
+
+    def write_text(self, text):
+        if len(text) <= 0:
+            print("Text input invalid.")
+            return -1
+
+        for char in text:
+            if ord(char) == ord(' '):
+                self.press_key(button='space')
+            elif ord(char) == ord('?'):
+                self.press_key(button='Shift')
+                sleep(0.1)
+                self.press_key(button=char)
+            else:
+                self.press_key(button=char)
+            sleep(0.1)
+
+        self.press_key(button='Enter')
+        sleep(0.1)
+
+    def get_random_text(self):
+        texts = [
+            "hi", "hi", "hi", "hi", "hi",
+            "yes", "yes", "yes", "yes", "yes",
+            "dont spak english", "dont speak english", "dont speak english", "dont speak english",
+            "??", "?",
+            "ok", "ok", "ok", "ok", "ok", "ok", "ok",
+            "hello", "hello",
+            "bye", "bye", "bye", "bye",
+            "nice day", "nice day"
+        ]
+
+        text_index = int(random.randrange(0, len(texts)))
+        return texts[text_index]
