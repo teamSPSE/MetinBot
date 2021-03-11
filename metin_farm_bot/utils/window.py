@@ -173,7 +173,7 @@ class OskWindow(Window):
         self.press_key(button='2', mode='click', count=3)
 
     def pick_up(self):
-        self.press_key(button='y', mode='click', count=1)
+        self.press_key(button='y', mode='click', count=2)
 
     def activate_tp_ring(self):
         self.press_key(button='3', mode='click', count=1)
