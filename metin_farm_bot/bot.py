@@ -456,7 +456,7 @@ class MetinFarmBot:
             self.metinLocType = 1
         else:
             self.metinLocType = 0
-        time.sleep(7.5)
+        time.sleep(9)
 
         self.metin_window.deactivate()
 
@@ -493,23 +493,23 @@ class MetinFarmBot:
     def relog_if_loggout(self, fkey):
         self.metin_window.activate()
 
-
         tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
         self.info_lock.release()
         # print(utils.get_login_needle_800_path(),screenshot)
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
-        while match_loc is None:
-            if tries > 10:
+        while match_val is None or match_val > 0.001 :
+            if tries > 4:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
             self.info_lock.release()
             match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
+            time.sleep(0.03)
             tries += 1
 
-        if match_loc is not None:
+        if match_loc is not None and 0.001 > match_val > -0.001:
             if self.debug:
                 self.put_info_text('Relog because you are not logged.')
                 print('Relog because you are not logged.')

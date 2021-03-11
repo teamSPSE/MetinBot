@@ -182,9 +182,9 @@ class OskWindow(Window):
         self.press_key(button='Fn', mode='click')
         sleep(0.2)
         self.press_key(button=str(fkey), mode='click')
-        sleep(utils.get_relative_time(5))
+        sleep(utils.get_relative_time(8))
         self.press_key(button='Enter', mode='click')
-        sleep(8)
+        sleep(15)
 
     def send_mount_away(self):
         self.press_key(button='Ctrl', mode='click')
