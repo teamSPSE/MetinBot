@@ -493,19 +493,20 @@ class MetinFarmBot:
     def relog_if_loggout(self, fkey):
         self.metin_window.activate()
 
+
         tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
         self.info_lock.release()
         # print(utils.get_login_needle_800_path(),screenshot)
-        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path())
-        while match_val is None:
+        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
+        while match_loc is None:
             if tries > 10:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
             self.info_lock.release()
-            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path())
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
             tries += 1
 
         if match_loc is not None:

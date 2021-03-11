@@ -253,10 +253,12 @@ def startApp(clients, debug=False):
 
     # Client PIDs
     client_pid1 = clients[0][0]
+    client_hwnd1 = 0
     if client_pid1 > 0:
         client_hwnd1 = utils.get_hwnds_for_pid(clients[0][0])  # 6476
 
     client_pid2 = clients[1][0]
+    client_hwnd2 = 0
     if client_pid2 > 0:
         client_hwnd2 = utils.get_hwnds_for_pid(clients[1][0])  # 15980
 
