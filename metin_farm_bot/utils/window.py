@@ -129,7 +129,7 @@ class MetinWindow(Window):
         if (self.getWindow_focus_locked() == 0):
             self.setWindow_focus_locked(1)  # zamceni
             self.mouse_move(40, -15)
-            sleep(0.15)
+            sleep(0.05)
             self.mouse_click()
         else:
             sleep(2)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
@@ -282,7 +282,7 @@ class OskWindow(Window):
             sleep(0.1)
 
         self.press_key(button='Enter')
-        sleep(0.1)
+        sleep(0.05)
 
     def get_random_text(self):
         texts = [

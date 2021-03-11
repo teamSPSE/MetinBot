@@ -149,7 +149,7 @@ class MetinFarmBot:
                     match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                             utils.get_metin_needle_path())
                     while match_val is None:
-                        if tries > 5:
+                        if tries > 3:
                             break
                         self.info_lock.acquire()
                         mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
@@ -188,7 +188,7 @@ class MetinFarmBot:
                         self.put_info_text(f'Started hitting {result[0]}')
                     self.switch_state(BotState.HITTING)
 
-                elif (time.time() - self.started_moving_time) >= 10:
+                elif (time.time() - self.started_moving_time) >= 7:
                     self.started_moving_time = None
                     self.runPick_up()
                     self.move_fail_count += 1
@@ -219,7 +219,7 @@ class MetinFarmBot:
 
                 result = self.get_mob_info()
                 if result is None:
-                    time.sleep(0.35)  # double check
+                    time.sleep(0.1)  # double check
                     result = self.get_mob_info()
                 if result is None or time.time() - self.started_hitting_time >= self.maxMetinTime:
                     self.started_hitting_time = None
@@ -244,7 +244,6 @@ class MetinFarmBot:
                         self.put_info_text('Turning on buffs...')
                     self.turn_on_buffs()
                     self.last_buff = time.time()
-                    self.handle_gm_message()
                 self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.ERROR:
@@ -351,7 +350,7 @@ class MetinFarmBot:
         time.sleep(utils.get_relative_time(0.8))
         self.osk_window.stop_zooming_out()
         self.osk_window.start_zooming_in()
-        time.sleep(utils.get_relative_time(0.03))
+        time.sleep(utils.get_relative_time(0.01))
         self.osk_window.stop_zooming_in()
 
         self.metin_window.deactivate()
@@ -449,7 +448,7 @@ class MetinFarmBot:
         for coord in coords[self.metin][self.metinLocType]:
             time.sleep(1)
             self.metin_window.mouse_move(coord[0], coord[1])
-            time.sleep(0.3)
+            time.sleep(0.1)
             self.metin_window.mouse_click()
 
         if self.metinLocType == 0:
@@ -470,7 +469,7 @@ class MetinFarmBot:
         # print(utils.get_respawn_needle_path(),screenshot)
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
         while match_val is None:
-            if tries > 10:
+            if tries > 3:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
@@ -484,7 +483,7 @@ class MetinFarmBot:
             if self.debug:
                 self.put_info_text('Respawn!')
             self.metin_window.mouse_move(match_loc[0], match_loc[1] + 5)
-            time.sleep(0.5)
+            time.sleep(0.1)
             self.metin_window.mouse_click()
             time.sleep(3)
 
@@ -506,7 +505,6 @@ class MetinFarmBot:
             screenshot = self.screenshot
             self.info_lock.release()
             match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
-            time.sleep(0.03)
             tries += 1
 
         if match_loc is not None and 0.001 > match_val > -0.001:
@@ -514,14 +512,13 @@ class MetinFarmBot:
                 self.put_info_text('Relog because you are not logged.')
                 print('Relog because you are not logged.')
             self.osk_window.login(fkey)
-            time.sleep(3)
 
         self.metin_window.deactivate()
 
     def close_minimap(self):
         self.metin_window.activate()
         self.metin_window.mouse_move(788, 16)  # 1012, 11 for 1024x768 | 788x16 for 800x600
-        time.sleep(0.3)
+        time.sleep(0.1)
         self.metin_window.mouse_click()
         self.metin_window.deactivate()
 
@@ -538,7 +535,7 @@ class MetinFarmBot:
     def runMetinMouse_click(self, x, y):
         self.metin_window.activate()
         self.metin_window.mouse_move(x, y)
-        time.sleep(0.3)
+        time.sleep(0.1)
         self.metin_window.mouse_click()
         self.metin_window.deactivate()
 
@@ -563,28 +560,24 @@ class MetinFarmBot:
             posClick = (match_loc[0] + 720 + 23, match_loc[1] + 160 + 10)
 
             self.metin_window.mouse_move(posClick[0], posClick[1])
-            time.sleep(0.3)
+            time.sleep(0.1)
             self.metin_window.mouse_click()
-            time.sleep(0.2)
 
             text = self.osk_window.get_random_text()
             self.osk_window.write_text(text)
-            time.sleep(0.1)
 
             # zavreni okna chatu
             close_match_loc, close_match_val = self.vision.template_match_alpha(self.screenshot,
                                                                                 utils.get_close_btn_needle_path(),
                                                                                 method=cv.TM_SQDIFF_NORMED)
             if close_match_loc is None or close_match_val > 0.001:  # double check
-                time.sleep(0.2)
                 close_match_loc, close_match_val = self.vision.template_match_alpha(self.screenshot,
                                                                                     utils.get_close_btn_needle_path(),
                                                                                     method=cv.TM_SQDIFF_NORMED)
             if close_match_loc is not None and close_match_val < 0.001:
                 self.metin_window.mouse_move(close_match_loc[0] + 7, close_match_loc[1] + 7)
-                time.sleep(0.3)
+                time.sleep(0.1)
                 self.metin_window.mouse_click()
-                time.sleep(0.2)
             else:
                 self.osk_window.press_key(button='Esc', mode='click')
 
