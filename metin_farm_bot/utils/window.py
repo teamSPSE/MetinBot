@@ -182,7 +182,7 @@ class OskWindow(Window):
         self.press_key(button='Fn', mode='click')
         sleep(0.2)
         self.press_key(button=str(fkey), mode='click')
-        sleep(utils.get_relative_time(3))
+        sleep(utils.get_relative_time(5))
         self.press_key(button='Enter', mode='click')
         sleep(8)
 
