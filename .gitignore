@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-setting.txt
+metin_farm_bot/setting.txt
 
 # Distribution / packaging
 .Python
