@@ -44,22 +44,15 @@ def main():
         else:
             processed_screenshot = screenshot
 
-        mob_title_box = vision.extract_section(processed_screenshot, (720, 160), (800, 370))
-        #cv.imshow('Video Fee2', mob_title_box)
-
-        close_match_loc, close_match_val = vision.template_match_alpha(processed_screenshot,
-                                                                       '../needles/needle_login800.png',
-                                                                       method=cv.TM_SQDIFF_NORMED)
-        if close_match_loc is not None and close_match_val < 0.097:
-            print(close_match_loc, close_match_val)
-            vision.draw_marker(processed_screenshot, (close_match_loc[0], close_match_loc[1]))
-        match_loc, match_val = vision.template_match_alpha(mob_title_box, '../needles/needle_login800.png', method=cv.TM_SQDIFF_NORMED)
+        tries = 0
+        match_loc, match_val = vision.template_match_alpha(processed_screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
         print(match_loc, match_val)
-        if match_loc is not None and match_val < 0.097:
-            print(match_loc, match_val)
-            vision.draw_marker(processed_screenshot, (match_loc[0]+720+23, match_loc[1]+160+10))
+        vision.draw_marker(processed_screenshot, match_loc)
+        cv.imshow("test",processed_screenshot)
 
-        cv.imshow('Video Feed', processed_screenshot)
+
+
+
 
         # print(f'{round(1 / (time.time() - loop_time),2)} FPS')
 

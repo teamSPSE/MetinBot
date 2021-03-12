@@ -49,7 +49,9 @@ class CaptureAndDetect:
 
             # Preprocess image for object detection
             processed_img = self.vision.apply_hsv_filter(screenshot, hsv_filter=self.hsv_filter)
-            self.vision.black_out_area(processed_img, (490, 350), (550, 428))
+            self.vision.black_out_area(processed_img, (490, 350), (550, 428)) # player
+            self.vision.black_out_area(processed_img, (0, 565), (800, 600))   # bottom menu
+            self.vision.black_out_area(processed_img, (0, 450), (90, 600))    # left bottom corner (becouse of osk window cover)
 
             # Detect objects
             #output = self.classifier.detectMultiScale2(processed_img)
@@ -70,10 +72,11 @@ class CaptureAndDetect:
                 # best = detection['rectangles'][np.argmax(detection['scores'])]
                 detection['best_rectangle'] = best
                 detection['click_pos'] = int(best[0] + best[2] / 2), int(best[1] + 0.66 * best[3])
-                self.vision.draw_rectangles(detection_image, detection['rectangles'])
-                self.vision.draw_rectangles(detection_image, [detection['best_rectangle']],
-                                            bgr_color=(0, 0, 255))
-                self.vision.draw_marker(detection_image, detection['click_pos'])
+                if self.DEBUG:
+                    self.vision.draw_rectangles(detection_image, detection['rectangles'])
+                    self.vision.draw_rectangles(detection_image, [detection['best_rectangle']],
+                                                bgr_color=(0, 0, 255))
+                    self.vision.draw_marker(detection_image, detection['click_pos'])
 
             # Acquire lock and set new images
             self.lock.acquire()

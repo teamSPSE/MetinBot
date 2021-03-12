@@ -58,7 +58,6 @@ class Window:
         pyautogui.moveTo(self.x + x, self.y + y, duration=0.1)
 
     def mouse_click(self, x=None, y=None):
-        sleep(0.2)
         if x is None and y is None:
             x, y = self.get_relative_mouse_pos()
         pyautogui.click(self.x + x, self.y + y, duration=0.1)

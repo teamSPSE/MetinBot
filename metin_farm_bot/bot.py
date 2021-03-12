@@ -137,8 +137,8 @@ class MetinFarmBot:
                     self.metin_window.deactivate()  # deaktivace z search
 
                     # velikost obdelniku, kde budu hledat needle_metin
-                    width = 300
-                    height = 250
+                    width = 190
+                    height = 220
                     top_left = self.metin_window.limit_coordinate((int(pos[0] - width / 2), pos[1] - height))
                     bottom_right = self.metin_window.limit_coordinate((int(pos[0] + width / 2), pos[1]))
 
@@ -467,17 +467,17 @@ class MetinFarmBot:
         screenshot = self.screenshot
         self.info_lock.release()
         # print(utils.get_respawn_needle_path(),screenshot)
-        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
-        while match_val is None:
+        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
+        while match_val is None or match_val > 0.005:
             if tries > 3:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
             self.info_lock.release()
-            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path())
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
             tries += 1
 
-        if match_loc is not None:
+        if match_loc is not None and match_val is not None and 0.005 > match_val:
             # self.send_telegram_message('Respawn cause dead!')
             print('Respawn cause dead!')
             if self.debug:
