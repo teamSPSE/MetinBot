@@ -58,6 +58,7 @@ class Window:
         pyautogui.moveTo(self.x + x, self.y + y, duration=0.1)
 
     def mouse_click(self, x=None, y=None):
+        sleep(0.05)
         if x is None and y is None:
             x, y = self.get_relative_mouse_pos()
         pyautogui.click(self.x + x, self.y + y, duration=0.1)
@@ -116,6 +117,9 @@ class MetinWindow(Window):
         super().__init__(window_name, hwnd)
         self.window_focus_locked = window_focus_locked
 
+    def center_metin_window(self):
+        win32gui.MoveWindow(self.hwnd, self.x - 8, self.y - 31, self.width + 16, self.height + 39, True)
+
     def getWindow_focus_locked(self):
         return self.window_focus_locked[0]
 
@@ -125,13 +129,17 @@ class MetinWindow(Window):
     def activate(self):
         # if(win32gui.GetForegroundWindow() != self.hwnd):
         #    win32gui.SetForegroundWindow(self.hwnd)
-        if (self.getWindow_focus_locked() == 0):
+        if self.getWindow_focus_locked() == 0:
             self.setWindow_focus_locked(1)  # zamceni
+            if self.x != win32gui.GetWindowRect(self.hwnd)[0] + 8 or \
+                    self.y != win32gui.GetWindowRect(self.hwnd)[1] + 31:
+                self.center_metin_window()
+
             self.mouse_move(40, -15)
             sleep(0.05)
             self.mouse_click()
         else:
-            sleep(2)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
+            sleep(3)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
             self.activate()
 
     def deactivate(self):  # odemceni
@@ -148,7 +156,8 @@ class OskWindow(Window):
         self.width, self.height = 576, 173
         self.gw_object.resizeTo(self.width, self.height)
 
-        self.key_pos = {'space': (148, 155), 'Fn': (11, 150), 'Ctrl': (35, 150), 'Enter': (324, 100), 'Shift': (11, 130), 'Esc': (11, 65),
+        self.key_pos = {'space': (148, 155), 'Fn': (11, 150), 'Ctrl': (35, 150), 'Enter': (324, 100),
+                        'Shift': (11, 130), 'Esc': (11, 65),
 
                         '1': (55, 65), '2': (79, 65), '3': (100, 65), '4': (122, 65), '5': (145, 65), '6': (165, 65),
                         '7': (190, 65), '8': (210, 65), '9': (230, 65),
@@ -189,11 +198,19 @@ class OskWindow(Window):
         self.press_key(button='Ctrl', mode='click')
         sleep(0.2)
         self.press_key(button='b', mode='click')
+        sleep(0.4)
 
     def call_mount(self):
         self.press_key(button='Fn', mode='click')
         sleep(0.2)
         self.press_key(button='1', mode='click')
+        sleep(0.4)
+
+    def un_mount(self):
+        self.press_key(button='Ctrl', mode='click')
+        sleep(0.2)
+        self.press_key(button='h', mode='click')
+        sleep(0.4)
 
     def recall_mount(self):
         self.send_mount_away()
@@ -222,11 +239,6 @@ class OskWindow(Window):
 
     def ride_through_units(self):
         self.press_key(button='4', mode='click', count=1)
-
-    def un_mount(self):
-        self.press_key(button='Ctrl', mode='click')
-        sleep(0.4)
-        self.press_key(button='h', mode='click')
 
     def activate_aura(self):
         self.press_key(button='1', mode='click')
