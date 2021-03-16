@@ -44,10 +44,6 @@ def main():
         else:
             processed_screenshot = screenshot
 
-        tries = 0
-        match_loc, match_val = vision.template_match_alpha(processed_screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
-        print(match_loc, match_val)
-        vision.draw_marker(processed_screenshot, match_loc)
         cv.imshow("test",processed_screenshot)
 
 

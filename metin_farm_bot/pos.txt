@@ -1,396 +1,499 @@
-classifier/cascadeMetinSoul/positive/1614019998.jpg 5 326 271 46 55 57 225 53 72 635 148 35 58 858 187 64 67 153 115 35 41
-classifier/cascadeMetinSoul/positive/1614020049.jpg 4 448 244 49 82 803 264 50 58 778 183 46 38 648 132 16 36
-classifier/cascadeMetinSoul/positive/1614020053.jpg 1 680 372 65 118
-classifier/cascadeMetinSoul/positive/1614020054.jpg 1 77 172 34 45
-classifier/cascadeMetinSoul/positive/1614020064.jpg 5 255 442 77 90 131 244 41 61 608 191 45 54 954 186 38 61 301 206 37 46
-classifier/cascadeMetinSoul/positive/1614020067.jpg 4 375 276 46 65 628 307 68 66 597 159 39 58 222 92 30 51
-classifier/cascadeMetinSoul/positive/1614020073.jpg 1 590 246 71 80
-classifier/cascadeMetinSoul/positive/1614020081.jpg 2 255 509 112 99 453 211 69 71
-classifier/cascadeMetinSoul/positive/1614020086.jpg 3 679 302 59 102 197 188 35 45 715 133 46 39
-classifier/cascadeMetinSoul/positive/1614020090.jpg 2 250 252 64 75 601 250 61 68
-classifier/cascadeMetinSoul/positive/1614020094.jpg 3 365 201 59 92 704 200 55 78 752 85 38 51
-classifier/cascadeMetinSoul/positive/1614020097.jpg 2 598 295 55 67 128 108 59 48
-classifier/cascadeMetinSoul/positive/1614020101.jpg 2 425 258 71 65 329 53 45 49
-classifier/cascadeMetinSoul/positive/1614020105.jpg 2 557 275 73 87 290 109 55 53
-classifier/cascadeMetinSoul/positive/1614020109.jpg 1 561 221 50 63
-classifier/cascadeMetinSoul/positive/1614020117.jpg 1 337 309 83 86
-classifier/cascadeMetinSoul/positive/1614020122.jpg 4 359 135 49 68 753 153 37 53 6 150 53 79 356 83 38 51
-classifier/cascadeMetinSoul/positive/1614020125.jpg 3 328 319 84 114 581 205 80 65 128 149 60 85
-classifier/cascadeMetinSoul/positive/1614020128.jpg 2 840 473 105 129 532 272 70 95
-classifier/cascadeMetinSoul/positive/1614020132.jpg 4 472 193 48 61 150 159 60 55 931 238 92 65 473 134 35 47
-classifier/cascadeMetinSoul/positive/1614020136.jpg 3 164 326 70 74 388 154 43 63 502 295 65 71
-classifier/cascadeMetinSoul/positive/1614020140.jpg 2 655 299 74 100 607 241 49 100
-classifier/cascadeMetinSoul/positive/1614020147.jpg 2 151 270 72 75 275 247 73 82
-classifier/cascadeMetinSoul/positive/1614020151.jpg 3 198 255 96 69 275 135 58 49 568 176 56 64
-classifier/cascadeMetinSoul/positive/1614020156.jpg 3 766 210 63 106 440 112 46 52 1 354 101 84
-classifier/cascadeMetinSoul/positive/1614020162.jpg 2 580 219 75 77 96 71 56 45
-classifier/cascadeMetinSoul/positive/1614020166.jpg 3 628 260 80 96 440 140 46 70 21 95 41 44
-classifier/cascadeMetinSoul/positive/1614020183.jpg 2 679 180 70 55 403 125 60 68
-classifier/cascadeMetinSoul/positive/1614020188.jpg 3 428 209 58 66 387 86 56 54 227 108 45 66
-classifier/cascadeMetinSoul/positive/1614020193.jpg 3 394 139 68 65 616 3 35 65 447 1 43 56
-classifier/cascadeMetinSoul/positive/1614020198.jpg 2 278 179 64 99 133 66 51 64
-classifier/cascadeMetinSoul/positive/1614020212.jpg 1 712 226 53 94
-classifier/cascadeMetinSoul/positive/1614020218.jpg 2 575 537 152 146 488 154 49 70
-classifier/cascadeMetinSoul/positive/1614020225.jpg 4 331 343 87 118 647 281 71 73 230 196 55 78 22 180 45 71
-classifier/cascadeMetinSoul/positive/1614020245.jpg 3 66 293 159 140 451 234 63 67 493 214 38 39
-classifier/cascadeMetinSoul/positive/1614020248.jpg 4 507 196 71 94 772 376 111 122 786 115 98 79 771 64 68 63
-classifier/cascadeMetinSoul/positive/1614020252.jpg 4 727 343 122 115 195 275 89 73 267 163 38 61 519 103 45 41
-classifier/cascadeMetinSoul/positive/1614020257.jpg 3 730 430 133 84 479 167 65 78 189 104 61 54
-classifier/cascadeMetinSoul/positive/1614020264.jpg 2 173 164 72 76 701 184 70 60
-classifier/cascadeMetinSoul/positive/1614020275.jpg 4 748 235 62 109 244 203 75 78 390 111 41 48 436 101 41 48
-classifier/cascadeMetinSoul/positive/1614020301.jpg 2 578 249 77 103 415 156 37 58
-classifier/cascadeMetinSoul/positive/1614020306.jpg 1 509 177 56 84
-classifier/cascadeMetinSoul/positive/1614020310.jpg 1 775 398 95 99
-classifier/cascadeMetinSoul/positive/1614020314.jpg 1 289 206 67 71
-classifier/cascadeMetinSoul/positive/1614020317.jpg 2 286 207 59 70 701 242 80 103
-classifier/cascadeMetinSoul/positive/1614020323.jpg 2 195 315 78 78 527 177 59 68
-classifier/cascadeMetinSoul/positive/1614020328.jpg 2 97 330 81 98 576 178 45 79
-classifier/cascadeMetinSoul/positive/1614020332.jpg 1 341 276 83 83
-classifier/cascadeMetinSoul/positive/1614020338.jpg 2 736 268 59 98 197 192 67 84
-classifier/cascadeMetinSoul/positive/1614020344.jpg 2 166 140 83 85 628 133 58 60
-classifier/cascadeMetinSoul/positive/1614020351.jpg 3 825 359 115 107 62 316 98 80 614 165 67 62
-classifier/cascadeMetinSoul/positive/1614020356.jpg 3 720 319 98 90 199 237 71 67 524 168 44 51
-classifier/cascadeMetinSoul/positive/1614020366.jpg 1 183 266 116 107
-classifier/cascadeMetinSoul/positive/1614020370.jpg 2 671 428 182 141 853 306 69 86
-classifier/cascadeMetinSoul/positive/1614020376.jpg 2 188 247 58 70 550 181 52 70
-classifier/cascadeMetinSoul/positive/1614020380.jpg 2 186 369 145 105 305 126 75 97
-classifier/cascadeMetinSoul/positive/1614020386.jpg 2 286 277 74 119 235 154 45 68
-classifier/cascadeMetinSoul/positive/1614020395.jpg 1 262 319 90 99
-classifier/cascadeMetinSoul/positive/1614020403.jpg 3 88 441 105 102 472 154 65 66 849 258 99 79
-classifier/cascadeMetinSoul/positive/1614020410.jpg 2 251 207 74 92 99 201 97 73
-classifier/cascadeMetinSoul/positive/1614020416.jpg 1 332 250 69 102
-classifier/cascadeMetinSoul/positive/1614020429.jpg 1 602 196 74 92
-classifier/cascadeMetinSoul/positive/1614020438.jpg 3 64 492 156 130 747 341 154 99 515 113 48 82
-classifier/cascadeMetinSoul/positive/1614020442.jpg 3 34 299 132 129 851 310 149 119 646 74 63 70
-classifier/cascadeMetinSoul/positive/1614020458.jpg 2 152 296 79 121 193 159 56 94
-classifier/cascadeMetinSoul/positive/1614020470.jpg 2 487 174 80 94 717 182 78 95
-classifier/cascadeMetinSoul/positive/1614020473.jpg 2 726 388 134 167 757 250 82 117
-classifier/cascadeMetinSoul/positive/1614020480.jpg 2 232 265 115 123 178 99 55 70
-classifier/cascadeMetinSoul/positive/1614020483.jpg 2 89 254 136 122 821 368 150 97
-classifier/cascadeMetinSoul/positive/1614020488.jpg 1 530 176 61 103
-classifier/cascadeMetinSoul/positive/1614020492.jpg 2 398 166 82 80 191 376 113 172
-classifier/cascadeMetinSoul/positive/1614020504.jpg 2 754 257 80 104 74 146 77 92
-classifier/cascadeMetinSoul/positive/1614020509.jpg 0
-classifier/cascadeMetinSoul/positive/1614020513.jpg 1 714 308 208 121
-classifier/cascadeMetinSoul/positive/1614020519.jpg 1 746 369 170 130
-classifier/cascadeMetinSoul/positive/1614020524.jpg 1 736 320 170 150
-classifier/cascadeMetinSoul/positive/1614020528.jpg 1 708 283 170 129
-classifier/cascadeMetinSoul/positive/1614020537.jpg 1 276 437 132 125
-classifier/cascadeMetinSoul/positive/1614020544.jpg 2 196 210 69 96 700 188 98 134
-classifier/cascadeMetinSoul/positive/1614020551.jpg 1 141 306 91 142
-classifier/cascadeMetinSoul/positive/1614020557.jpg 3 200 302 101 85 874 288 86 146 314 54 47 65
-classifier/cascadeMetinSoul/positive/1614020562.jpg 2 303 269 100 125 499 129 52 67
-classifier/cascadeMetinSoul/positive/1614020594.jpg 3 179 230 69 89 118 121 42 72 638 161 53 74
-classifier/cascadeMetinSoul/positive/1614020597.jpg 2 169 259 70 128 643 171 78 89
-classifier/cascadeMetinSoul/positive/1614020601.jpg 3 58 345 99 158 611 265 98 93 636 104 60 63
-classifier/cascadeMetinSoul/positive/1614020604.jpg 3 227 286 131 114 510 137 69 110 838 121 56 89
-classifier/cascadeMetinSoul/positive/1614020609.jpg 3 238 218 84 93 552 140 83 87 435 59 55 54
-classifier/cascadeMetinSoul/positive/1614020615.jpg 3 146 281 91 82 811 244 103 113 45 197 51 63
-classifier/cascadeMetinSoul/positive/1614020625.jpg 3 257 346 92 94 632 277 85 95 386 141 58 72
-classifier/cascadeMetinSoul/positive/1614020631.jpg 2 819 253 118 114 138 149 60 81
-classifier/cascadeMetinSoul/positive/1614020639.jpg 3 151 418 119 123 388 101 37 59 702 108 47 59
-classifier/cascadeMetinSoul/positive/1614020648.jpg 3 159 388 148 119 352 152 82 77 392 99 80 84
-classifier/cascadeMetinSoul/positive/1614020652.jpg 3 313 210 79 127 404 119 72 79 853 246 132 85
-classifier/cascadeMetinSoul/positive/1614020659.jpg 3 302 214 76 87 642 247 81 81 419 97 56 66
-classifier/cascadeMetinSoul/positive/1614020667.jpg 3 197 286 126 102 406 130 68 67 801 71 48 68
-classifier/cascadeMetinSoul/positive/1614020671.jpg 2 76 287 81 79 724 200 78 95
-classifier/cascadeMetinSoul/positive/1614020684.jpg 2 603 327 101 63 180 83 78 79
-classifier/cascadeMetinSoul/positive/1614020694.jpg 3 339 206 74 64 706 319 60 44 395 66 50 52
-classifier/cascadeMetinSoul/positive/1614020700.jpg 3 111 357 86 66 591 167 42 59 491 128 40 52
-classifier/cascadeMetinSoul/positive/1614020709.jpg 4 225 336 77 50 101 235 77 58 603 256 48 72 905 325 58 59
-classifier/cascadeMetinSoul/positive/1614020721.jpg 3 303 226 77 79 754 257 67 68 740 457 123 93
-classifier/cascadeMetinSoul/positive/1614021334.jpg 3 662 340 103 79 486 170 43 64 342 81 30 50
-classifier/cascadeMetinSoul/positive/1614021341.jpg 2 666 306 76 110 347 171 45 40
-classifier/cascadeMetinSoul/positive/1614021346.jpg 1 263 293 93 77
-classifier/cascadeMetinSoul/positive/1614021350.jpg 1 551 203 81 66
-classifier/cascadeMetinSoul/positive/1614032339.jpg 1 688 411 120 89
-classifier/cascadeMetinSoul/positive/1614032354.jpg 1 704 385 109 127
-classifier/cascadeMetinSoul/positive/1614032356.jpg 1 604 428 139 150
-classifier/cascadeMetinSoul/positive/1614032360.jpg 1 213 337 116 104
-classifier/cascadeMetinSoul/positive/1614032362.jpg 1 185 380 149 134
-classifier/cascadeMetinSoul/positive/1614032370.jpg 1 190 382 136 123
-classifier/cascadeMetinSoul/positive/1614032372.jpg 1 320 409 127 151
-classifier/cascadeMetinSoul/positive/1614032375.jpg 1 188 343 103 119
-classifier/cascadeMetinSoul/positive/1614032378.jpg 1 215 339 146 168
-classifier/cascadeMetinSoul/positive/1614032382.jpg 1 178 321 131 168
-classifier/cascadeMetinSoul/positive/1614032387.jpg 1 249 325 118 126
-classifier/cascadeMetinSoul/positive/1614032390.jpg 1 212 373 142 137
-classifier/cascadeMetinSoul/positive/1614032392.jpg 1 362 189 109 113
-classifier/cascadeMetinSoul/positive/1614032395.jpg 1 658 360 145 124
-classifier/cascadeMetinSoul/positive/1614032400.jpg 1 206 367 160 144
-classifier/cascadeMetinSoul/positive/1614032407.jpg 2 104 305 127 123 826 237 136 147
-classifier/cascadeMetinSoul/positive/1614032410.jpg 2 88 348 209 155 560 188 60 80
-classifier/cascadeMetinSoul/positive/1614032413.jpg 2 52 434 193 107 678 103 84 108
-classifier/cascadeMetinSoul/positive/1614032415.jpg 1 707 288 141 106
-classifier/cascadeMetinSoul/positive/1614032433.jpg 2 728 314 148 106 22 128 131 151
-classifier/cascadeMetinSoul/positive/1614032436.jpg 2 154 482 213 175 839 191 102 122
-classifier/cascadeMetinSoul/positive/1614032518.jpg 1 216 194 117 152
-classifier/cascadeMetinSoul/positive/1614032521.jpg 2 70 280 135 211 580 151 73 87
-classifier/cascadeMetinSoul/positive/1614032524.jpg 1 67 313 179 167
-classifier/cascadeMetinSoul/positive/1614032527.jpg 1 247 172 128 119
-classifier/cascadeMetinSoul/positive/1614032530.jpg 1 296 131 151 110
-classifier/cascadeMetinSoul/positive/1614032533.jpg 2 204 170 111 125 639 219 130 147
-classifier/cascadeMetinSoul/positive/1614032537.jpg 1 367 135 112 110
-classifier/cascadeMetinSoul/positive/1614032541.jpg 2 326 140 83 133 579 99 92 133
-classifier/cascadeMetinSoul/positive/1614032543.jpg 3 116 220 155 158 370 141 98 113 830 131 73 127
-classifier/cascadeMetinSoul/positive/1614032546.jpg 1 857 210 161 186
-classifier/cascadeMetinSoul/positive/1614032548.jpg 1 117 177 134 153
-classifier/cascadeMetinSoul/positive/1614032550.jpg 2 164 157 132 177 401 53 126 133
-classifier/cascadeMetinSoul/positive/1614032555.jpg 2 284 133 129 99 554 128 93 110
-classifier/cascadeMetinSoul/positive/1614032557.jpg 2 89 196 129 119 379 140 109 117
-classifier/cascadeMetinSoul/positive/1614032559.jpg 2 166 166 160 128 784 137 97 137
-classifier/cascadeMetinSoul/positive/1614032562.jpg 2 477 132 100 98 709 197 111 107
-classifier/cascadeMetinSoul/positive/1614032568.jpg 2 139 187 146 113 670 150 70 105
-classifier/cascadeMetinSoul/positive/1614032591.jpg 1 426 72 90 149
-classifier/cascadeMetinSoul/positive/1614032594.jpg 1 614 124 94 120
-classifier/cascadeMetinSoul/positive/1614032597.jpg 1 529 162 97 108
-classifier/cascadeMetinSoul/positive/1614032600.jpg 1 697 139 91 98
-classifier/cascadeMetinSoul/positive/1614032602.jpg 1 556 79 89 110
-classifier/cascadeMetinSoul/positive/1614032604.jpg 1 681 98 108 112
-classifier/cascadeMetinSoul/positive/1614032607.jpg 1 583 121 114 126
-classifier/cascadeMetinSoul/positive/1614032609.jpg 1 677 161 115 146
-classifier/cascadeMetinSoul/positive/1614032611.jpg 1 677 186 117 130
-classifier/cascadeMetinSoul/positive/1614032613.jpg 1 774 193 125 165
-classifier/cascadeMetinSoul/positive/1614032615.jpg 1 607 160 116 140
-classifier/cascadeMetinSoul/positive/1614032618.jpg 1 671 209 100 121
-classifier/cascadeMetinSoul/positive/1614032650.jpg 2 530 163 125 115 147 161 117 165
-classifier/cascadeMetinSoul/positive/1614032655.jpg 2 784 230 138 151 665 19 107 119
-classifier/cascadeMetinSoul/positive/1614032658.jpg 2 220 151 110 163 689 293 175 185
-classifier/cascadeMetinSoul/positive/1614032664.jpg 2 329 88 122 110 668 220 138 145
-classifier/cascadeMetinSoul/positive/1614032667.jpg 2 347 135 122 133 799 181 144 155
-classifier/cascadeMetinSoul/positive/1614032669.jpg 2 206 193 143 146 735 163 154 162
-classifier/cascadeMetinSoul/positive/1614032675.jpg 2 543 86 93 134 765 282 192 174
-classifier/cascadeMetinSoul/positive/1614032734.jpg 2 605 138 117 138 379 115 82 117
-classifier/cascadeMetinSoul/positive/1614032803.jpg 2 266 202 110 98 453 113 115 137
-classifier/cascadeMetinSoul/positive/1614032881.jpg 1 680 220 154 199
-classifier/cascadeMetinSoul/positive/1614032884.jpg 1 186 272 170 127
-classifier/cascadeMetinSoul/positive/1614032889.jpg 2 289 103 108 116 403 40 102 140
-classifier/cascadeMetinSoul/positive/1614032895.jpg 2 116 174 141 128 286 161 99 151
-classifier/cascadeMetinSoul/positive/1614032909.jpg 2 185 149 146 140 316 153 143 178
-classifier/cascadeMetinSoul/positive/1614032912.jpg 2 190 155 132 125 338 164 127 164
-classifier/cascadeMetinSoul/positive/1614032916.jpg 1 689 237 177 158
-classifier/cascadeMetinSoul/positive/1614032922.jpg 2 70 239 184 131 740 187 115 140
-classifier/cascadeMetinSoul/positive/1614032961.jpg 4 204 179 103 116 481 83 92 88 627 81 91 115 747 555 202 142
-classifier/cascadeMetinSoul/positive/1614032967.jpg 3 294 133 85 130 593 61 86 98 738 84 108 124
-classifier/cascadeMetinSoul/positive/1614032971.jpg 3 223 103 81 75 511 87 94 104 626 137 100 98
-classifier/cascadeMetinSoul/positive/1614033076.jpg 4 101 243 81 61 250 197 66 55 525 221 72 63 890 296 76 69
-classifier/cascadeMetinSoul/positive/1614033083.jpg 2 114 325 153 93 692 359 98 93
-classifier/cascadeMetinSoul/positive/1614033086.jpg 2 350 166 90 60 702 206 117 88
-classifier/cascadeMetinSoul/positive/1614033089.jpg 2 318 195 82 60 667 85 76 74
-classifier/cascadeMetinSoul/positive/1614033091.jpg 1 601 200 92 99
-classifier/cascadeMetinSoul/positive/1614033095.jpg 3 728 443 113 118 459 198 62 64 259 209 84 54
-classifier/cascadeMetinSoul/positive/1614033102.jpg 1 655 244 149 124
-classifier/cascadeMetinSoul/positive/1614033106.jpg 2 334 103 86 146 608 93 80 121
-classifier/cascadeMetinSoul/positive/1614033107.jpg 2 318 105 104 134 600 95 91 127
-classifier/cascadeMetinSoul/positive/1614033108.jpg 2 316 105 130 154 602 77 84 147
-classifier/cascadeMetinSoul/positive/1614033113.jpg 2 232 48 84 119 747 142 110 155
-classifier/cascadeMetinSoul/positive/1614033117.jpg 1 227 176 154 137
-classifier/cascadeMetinSoul/positive/1614033121.jpg 2 719 198 120 174 329 29 74 97
-classifier/cascadeMetinSoul/positive/1614033124.jpg 2 194 126 120 133 683 159 121 141
-classifier/cascadeMetinSoul/positive/1614033128.jpg 2 335 111 116 97 759 95 133 121
-classifier/cascadeMetinSoul/positive/1614033136.jpg 1 548 197 84 84
-classifier/cascadeMetinSoul/positive/1614033187.jpg 2 476 186 84 79 763 209 67 87
-classifier/cascadeMetinSoul/positive/1614033232.jpg 2 229 235 73 107 708 259 106 119
-classifier/cascadeMetinSoul/positive/1614033236.jpg 1 614 268 104 107
-classifier/cascadeMetinSoul/positive/1614033240.jpg 1 247 294 128 95
-classifier/cascadeMetinSoul/positive/1614033299.jpg 2 200 391 146 220 904 187 96 139
-classifier/cascadeMetinSoul/positive/1614033302.jpg 1 624 192 110 120
-classifier/cascadeMetinSoul/positive/1614033310.jpg 1 320 196 88 86
-classifier/cascadeMetinSoul/positive/1614033340.jpg 2 152 223 141 96 712 240 99 135
-classifier/cascadeMetinSoul/positive/1614033344.jpg 2 133 270 151 96 724 270 112 139
-classifier/cascadeMetinSoul/positive/1614033349.jpg 2 171 206 81 98 665 229 120 132
-classifier/cascadeMetinSoul/positive/1614033355.jpg 2 221 256 93 113 738 225 88 117
-classifier/cascadeMetinSoul/positive/1614033414.jpg 1 656 174 157 281
-classifier/cascadeMetinSoul/positive/1614033420.jpg 1 628 277 278 310
-classifier/cascadeMetinSoul/positive/1614033423.jpg 1 108 280 226 220
-classifier/cascadeMetinSoul/positive/1614033426.jpg 1 655 233 165 255
-classifier/cascadeMetinSoul/positive/1614033448.jpg 2 38 184 199 209 696 188 181 266
-classifier/cascadeMetinSoul/positive/1614033452.jpg 2 253 121 146 151 750 172 209 200
-classifier/cascadeMetinSoul/positive/1614033456.jpg 3 91 217 232 202 28 65 91 96 669 100 102 173
-classifier/cascadeMetinSoul/positive/1614033459.jpg 2 69 296 276 204 434 117 120 136
-classifier/cascadeMetinSoul/positive/1614033463.jpg 1 590 364 291 260
-classifier/cascadeMetinSoul/positive/1614033467.jpg 3 125 167 155 163 662 136 115 206 769 31 92 136
-classifier/cascadeMetinSoul/positive/1614033471.jpg 2 340 127 95 134 679 218 193 213
-classifier/cascadeMetinSoul/positive/1614033489.jpg 3 691 242 198 209 398 108 90 140 216 87 118 103
-classifier/cascadeMetinSoul/positive/1614033491.jpg 2 95 286 242 177 139 66 50 73
-classifier/cascadeMetinSoul/positive/1614033493.jpg 1 116 231 225 229
-classifier/cascadeMetinSoul/positive/1614033497.jpg 2 402 234 228 297 704 268 83 90
-classifier/cascadeMetinSoul/positive/1614033503.jpg 2 674 194 130 137 193 139 102 140
-classifier/cascadeMetinSoul/positive/1614033508.jpg 1 165 66 101 171
-classifier/cascadeMetinSoul/positive/1614033519.jpg 2 280 149 120 138 604 156 144 172
-classifier/cascadeMetinSoul/positive/1614033528.jpg 2 249 138 124 124 677 166 145 169
-classifier/cascadeMetinSoul/positive/1614033538.jpg 5 80 266 174 188 343 149 105 121 211 104 68 71 76 93 85 65 752 149 90 108
-classifier/cascadeMetinSoul/positive/1614033547.jpg 4 372 169 145 133 630 210 151 159 648 53 89 104 399 41 88 95
-classifier/cascadeMetinSoul/positive/1614033553.jpg 4 36 301 147 142 120 163 113 139 581 77 81 108 729 182 179 136
-classifier/cascadeMetinSoul/positive/1614033558.jpg 5 75 277 193 131 370 141 91 84 530 135 116 103 734 313 157 190 698 63 61 83
-classifier/cascadeMetinSoul/positive/1614033583.jpg 4 164 180 141 138 589 162 125 167 744 78 97 113 285 44 92 86
-classifier/cascadeMetinSoul/positive/1614033590.jpg 3 70 122 120 102 437 89 99 97 759 249 168 128
-classifier/cascadeMetinSoul/positive/1614033593.jpg 3 118 259 140 146 461 118 95 115 827 164 148 100
-classifier/cascadeMetinSoul/positive/1614033597.jpg 2 441 136 105 126 834 221 132 191
-classifier/cascadeMetinSoul/positive/1614033600.jpg 2 540 87 97 149 272 0 66 123
-classifier/cascadeMetinSoul/positive/1614033603.jpg 3 153 173 149 136 599 103 111 170 685 1 93 107
-classifier/cascadeMetinSoul/positive/1614033606.jpg 4 204 440 210 152 764 227 122 196 711 58 99 122 74 103 125 112
-classifier/cascadeMetinSoul/positive/1614033610.jpg 3 225 59 90 104 521 62 106 116 782 240 133 148
-classifier/cascadeMetinSoul/positive/1614033612.jpg 3 179 231 115 119 596 154 109 129 596 154 109 129
-classifier/cascadeMetinSoul/positive/1614033616.jpg 2 300 127 109 145 659 156 101 199
-classifier/cascadeMetinSoul/positive/1614033623.jpg 2 322 212 96 116 644 234 121 123
-classifier/cascadeMetinSoul/positive/1614033626.jpg 2 159 234 172 166 690 245 156 179
-classifier/cascadeMetinSoul/positive/1614033631.jpg 2 188 261 156 122 546 158 124 129
-classifier/cascadeMetinSoul/positive/1614033640.jpg 3 166 191 110 156 234 111 95 105 686 187 109 177
-classifier/cascadeMetinSoul/positive/1614033648.jpg 2 202 318 188 238 626 175 119 131
-classifier/cascadeMetinSoul/positive/1614033659.jpg 3 102 260 148 166 401 171 108 163 783 185 209 211
-classifier/cascadeMetinSoul/positive/1614033664.jpg 3 211 381 226 181 282 160 134 137 698 312 206 388
-classifier/cascadeMetinSoul/positive/1614033674.jpg 3 194 189 196 211 43 64 157 174 591 121 134 226
-classifier/cascadeMetinSoul/positive/1614033676.jpg 2 181 182 201 207 595 101 146 234
-classifier/cascadeMetinSoul/positive/1614033679.jpg 2 305 128 182 175 725 96 169 317
-classifier/cascadeMetinSoul/positive/1614033687.jpg 3 524 161 128 155 661 93 93 117 772 131 177 281
-classifier/cascadeMetinSoul/positive/1614033695.jpg 3 112 215 182 199 587 135 100 139 788 186 161 154
-classifier/cascadeMetinSoul/positive/1614033696.jpg 3 128 208 161 201 590 147 108 115 767 180 186 153
-classifier/cascadeMetinSoul/positive/1614033701.jpg 3 327 105 121 143 497 68 112 135 795 164 130 221
-classifier/cascadeMetinSoul/positive/1614033711.jpg 2 537 139 126 139 367 160 122 136
-classifier/cascadeMetinSoul/positive/1614033725.jpg 1 509 76 164 186
-classifier/cascadeMetinSoul/positive/1614033735.jpg 1 101 174 244 228
-classifier/cascadeMetinSoul/positive/1614033740.jpg 1 617 168 231 272
-classifier/cascadeMetinSoul/positive/1614033745.jpg 1 67 120 198 226
-classifier/cascadeMetinSoul/positive/1614033756.jpg 0
-classifier/cascadeMetinSoul/positive/1614033807.jpg 1 313 80 167 227
-classifier/cascadeMetinSoul/positive/1614033811.jpg 1 689 139 203 313
-classifier/cascadeMetinSoul/positive/1614033863.jpg 2 291 156 155 209 562 97 94 120
-classifier/cascadeMetinSoul/positive/1614033870.jpg 1 636 151 139 215
-classifier/cascadeMetinSoul/positive/1614033880.jpg 3 690 166 144 194 41 207 124 197 141 155 98 113
-classifier/cascadeMetinSoul/positive/1614033888.jpg 3 105 209 175 168 744 210 179 166 518 95 71 89
-classifier/cascadeMetinSoul/positive/1614033895.jpg 4 198 214 206 193 630 224 174 230 512 78 68 105 176 73 71 114
-classifier/cascadeMetinSoul/positive/1614033899.jpg 6 199 247 210 189 626 225 223 227 810 54 75 136 183 83 88 89 355 58 56 75 494 42 50 62
-classifier/cascadeMetinSoul/positive/1614033905.jpg 2 400 196 208 282 886 218 78 95
-classifier/cascadeMetinSoul/positive/1614033921.jpg 6 632 166 186 173 477 67 84 114 562 14 58 71 188 64 77 85 345 43 84 86 793 24 65 92
-classifier/cascadeMetinSoul/positive/1614033925.jpg 4 503 136 126 166 162 161 148 122 261 55 70 91 592 33 73 85
-classifier/cascadeMetinSoul/positive/1614034000.jpg 1 204 120 189 185
-classifier/cascadeMetinSoul/positive/1614034032.jpg 2 650 185 162 168 450 90 90 108
-classifier/cascadeMetinSoul/positive/1614034040.jpg 1 637 146 116 184
-classifier/cascadeMetinSoul/positive/1614034108.jpg 3 564 146 138 209 273 169 159 194 196 65 112 130
-classifier/cascadeMetinSoul/positive/1614034112.jpg 4 157 234 192 169 639 101 121 151 568 26 75 104 3 77 88 108
-classifier/cascadeMetinSoul/positive/1614034119.jpg 2 72 194 159 181 525 144 104 176
-classifier/cascadeMetinSoul/positive/1614034124.jpg 4 259 207 141 160 461 111 103 114 420 14 82 112 709 3 42 77
-classifier/cascadeMetinSoul/positive/1614034128.jpg 2 140 206 166 139 649 142 161 153
-classifier/cascadeMetinSoul/positive/1614034132.jpg 2 157 233 184 152 636 131 144 174
-classifier/cascadeMetinSoul/positive/1614034136.jpg 3 224 221 149 138 326 55 114 119 474 0 96 88
-classifier/cascadeMetinSoul/positive/1614034141.jpg 2 357 164 90 119 687 263 135 154
-classifier/cascadeMetinSoul/positive/1614034147.jpg 4 371 122 137 158 635 171 156 164 665 4 74 103 390 2 70 84
-classifier/cascadeMetinSoul/positive/1614034153.jpg 4 460 174 143 156 159 236 151 126 507 52 83 99 232 39 61 73
-classifier/cascadeMetinSoul/positive/1614034161.jpg 1 669 177 253 248
-classifier/cascadeMetinSoul/positive/1614034164.jpg 3 85 185 247 310 186 104 134 129 690 109 90 121
-classifier/cascadeMetinSoul/positive/1614034167.jpg 2 175 153 175 283 381 84 110 123
-classifier/cascadeMetinSoul/positive/1614034176.jpg 2 422 92 136 164 683 185 238 192
-classifier/cascadeMetinSoul/positive/1614034181.jpg 2 290 104 153 173 609 54 180 198
-classifier/cascadeMetinSoul/positive/1614034260.jpg 1 719 129 197 253
-classifier/cascadeMetinSoul/positive/1614034265.jpg 1 133 90 178 181
-classifier/cascadeMetinSoul/positive/1614034268.jpg 1 600 116 172 229
-classifier/cascadeMetinSoul/positive/1614034273.jpg 1 700 187 176 302
-classifier/cascadeMetinSoul/positive/1614034279.jpg 1 671 160 191 276
-classifier/cascadeMetinSoul/positive/1614034283.jpg 5 313 280 375 380 752 147 118 139 221 156 59 84 307 138 40 66 543 135 42 56
-classifier/cascadeMetinSoul/positive/1614034290.jpg 2 421 252 209 255 782 131 70 77
-classifier/cascadeMetinSoul/positive/1614034299.jpg 2 411 190 209 282 705 224 70 95
-classifier/cascadeMetinSoul/positive/1614034306.jpg 2 138 147 168 185 617 96 97 175
-classifier/cascadeMetinSoul/positive/1614034313.jpg 1 255 128 181 165
-classifier/cascadeMetinSoul/positive/1614034326.jpg 2 620 227 236 237 745 59 88 106
-classifier/cascadeMetinSoul/positive/1614034355.jpg 3 228 119 158 159 633 175 131 242 788 72 147 129
-classifier/cascadeMetinSoul/positive/1614034378.jpg 3 270 60 195 196 785 139 203 274 874 23 82 117
-classifier/cascadeMetinSoul/positive/1614034398.jpg 4 118 171 279 351 510 69 89 102 388 42 75 95 692 31 63 74
-classifier/cascadeMetinSoul/positive/1614034404.jpg 2 291 99 163 170 646 137 165 190
-classifier/cascadeMetinSoul/positive/1614034408.jpg 2 171 149 157 149 486 82 153 186
-classifier/cascadeMetinSoul/positive/1614034412.jpg 3 152 200 125 155 296 49 122 165 856 33 126 106
-classifier/cascadeMetinSoul/positive/1614034416.jpg 2 91 126 154 189 756 239 222 315
-classifier/cascadeMetinSoul/positive/1614034734.jpg 2 330 117 116 197 655 134 211 209
-classifier/cascadeMetinSoul/positive/1614034739.jpg 2 653 123 156 236 284 24 111 179
-classifier/cascadeMetinSoul/positive/1614034765.jpg 5 593 169 127 202 247 229 151 161 141 94 142 143 749 100 83 99 633 94 54 62
-classifier/cascadeMetinSoul/positive/1614034772.jpg 3 163 165 149 138 328 128 116 114 853 242 169 303
-classifier/cascadeMetinSoul/positive/1614034779.jpg 2 168 180 145 205 693 153 205 205
-classifier/cascadeMetinSoul/positive/1614034782.jpg 3 296 118 139 141 518 20 81 108 731 196 123 119
-classifier/cascadeMetinSoul/positive/1614034786.jpg 2 241 102 142 204 772 196 152 196
-classifier/cascadeMetinSoul/positive/1614034792.jpg 2 322 156 146 140 596 138 187 181
-classifier/cascadeMetinSoul/positive/1614034796.jpg 2 276 126 163 152 602 92 137 179
-classifier/cascadeMetinSoul/positive/1614034801.jpg 1 113 131 177 170
-classifier/cascadeMetinSoul/positive/1614034804.jpg 2 228 129 102 187 628 104 136 208
-classifier/cascadeMetinSoul/positive/1614034808.jpg 2 324 146 117 150 693 212 106 138
-classifier/cascadeMetinSoul/positive/1614034811.jpg 2 315 174 123 159 603 169 108 122
-classifier/cascadeMetinSoul/positive/1614034819.jpg 2 343 175 99 149 627 160 108 129
-classifier/cascadeMetinSoul/positive/1614034826.jpg 3 752 190 135 175 457 151 130 149 698 98 78 76
-classifier/cascadeMetinSoul/positive/1614034850.jpg 2 131 198 195 299 706 115 104 120
-classifier/cascadeMetinSoul/positive/1614034859.jpg 2 203 150 101 185 664 184 131 125
-classifier/cascadeMetinSoul/positive/1614034866.jpg 3 465 162 106 113 300 113 68 83 100 216 156 209
-classifier/cascadeMetinSoul/positive/1614034873.jpg 3 67 221 178 194 456 122 117 120 665 83 80 94
-classifier/cascadeMetinSoul/positive/1614034877.jpg 2 113 226 189 203 584 148 138 188
-classifier/cascadeMetinSoul/positive/1614034881.jpg 2 76 236 165 246 824 194 112 156
-classifier/cascadeMetinSoul/positive/1614034893.jpg 3 132 233 120 140 770 274 191 179 740 163 79 100
-classifier/cascadeMetinSoul/positive/1614034899.jpg 2 253 152 110 126 752 267 170 144
-classifier/cascadeMetinSoul/positive/1614034902.jpg 4 262 194 96 171 702 262 102 206 393 91 89 123 42 90 80 109
-classifier/cascadeMetinSoul/positive/1614034908.jpg 3 182 237 135 172 392 207 53 95 740 256 170 174
-classifier/cascadeMetinSoul/positive/1614034913.jpg 2 215 166 114 166 672 124 99 168
-classifier/cascadeMetinSoul/positive/1614034931.jpg 2 97 254 178 165 514 119 108 139
-classifier/cascadeMetinSoul/positive/1614034934.jpg 2 339 201 106 140 768 213 161 133
-classifier/cascadeMetinSoul/positive/1614034941.jpg 3 141 215 134 132 761 240 175 172 478 83 92 111
-classifier/cascadeMetinSoul/positive/1614034947.jpg 2 77 206 166 121 674 226 128 208
-classifier/cascadeMetinSoul/positive/1614034952.jpg 2 212 131 93 151 632 232 132 131
-classifier/cascadeMetinSoul/positive/1614034955.jpg 2 148 247 138 165 662 256 167 142
-classifier/cascadeMetinSoul/positive/1614034961.jpg 2 205 220 141 181 696 201 115 185
-classifier/cascadeMetinSoul/positive/1614034968.jpg 2 80 239 192 138 763 214 133 210
-classifier/cascadeMetinSoul/positive/1614034974.jpg 2 91 249 200 239 325 211 90 107
-classifier/cascadeMetinSoul/positive/1614034978.jpg 7 103 249 165 165 496 150 100 120 810 245 163 228 448 117 54 83 263 118 54 75 600 108 43 64 818 122 70 79
-classifier/cascadeMetinSoul/positive/1614034984.jpg 5 342 203 115 136 367 72 65 81 508 48 50 68 601 25 51 68 656 189 147 170
-classifier/cascadeMetinSoul/positive/1614034989.jpg 3 179 211 157 147 739 190 114 148 688 49 62 72
-classifier/cascadeMetinSoul/positive/1614035016.jpg 2 392 133 135 133 691 181 155 175
-classifier/cascadeMetinSoul/positive/1614035020.jpg 2 648 163 133 197 63 97 48 64
-classifier/cascadeMetinSoul/positive/1614035024.jpg 4 368 152 99 166 374 23 87 93 186 32 87 88 753 55 75 84
-classifier/cascadeMetinSoul/positive/1614035028.jpg 2 587 166 112 133 216 89 75 100
-classifier/cascadeMetinSoul/positive/1614035032.jpg 1 113 232 164 196
-classifier/cascadeMetinSoul/positive/1614035038.jpg 6 235 268 167 160 674 250 146 205 775 169 83 85 694 145 44 62 500 166 47 57 7 183 86 77
-classifier/cascadeMetinSoul/positive/1614035042.jpg 3 259 217 108 143 623 271 164 184 454 94 54 78
-classifier/cascadeMetinSoul/positive/1614035047.jpg 1 223 231 167 148
-classifier/cascadeMetinSoul/positive/1614035051.jpg 3 239 249 151 187 406 105 77 109 527 62 54 76
-classifier/cascadeMetinSoul/positive/1614035060.jpg 3 227 135 89 164 600 126 111 149 739 52 71 111
-classifier/cascadeMetinSoul/positive/1614035073.jpg 4 214 280 145 165 735 253 208 149 470 97 53 111 831 101 54 87
-classifier/cascadeMetinSoul/positive/1614035079.jpg 3 238 194 140 231 705 266 143 157 921 305 102 118
-classifier/cascadeMetinSoul/positive/1614035085.jpg 2 252 235 121 176 730 225 103 166
-classifier/cascadeMetinSoul/positive/1614035089.jpg 3 60 256 196 158 367 108 109 121 558 24 91 90
-classifier/cascadeMetinSoul/positive/1614035095.jpg 2 65 218 205 143 736 213 115 196
-classifier/cascadeMetinSoul/positive/1614035099.jpg 2 714 194 144 186 409 54 95 109
-classifier/cascadeMetinSoul/positive/1614035107.jpg 2 188 173 106 134 489 123 92 105
-classifier/cascadeMetinSoul/positive/1614035113.jpg 4 170 252 122 183 677 199 135 136 581 99 61 96 173 108 59 99
-classifier/cascadeMetinSoul/positive/1614035116.jpg 4 257 167 81 141 379 96 56 107 671 197 96 175 36 106 62 94
-classifier/cascadeMetinSoul/positive/1614035120.jpg 3 190 214 139 162 530 127 93 121 726 91 78 102
-classifier/cascadeMetinSoul/positive/1614035124.jpg 1 663 132 92 128
-classifier/cascadeMetinSoul/positive/1614035136.jpg 1 754 141 111 139
-classifier/cascadeMetinSoul/positive/1614035154.jpg 6 209 246 129 124 216 140 65 101 572 126 77 86 730 291 108 141 704 106 56 88 422 82 35 63
-classifier/cascadeMetinSoul/positive/1614035161.jpg 3 297 170 92 135 184 99 66 107 689 175 120 109
-classifier/cascadeMetinSoul/positive/1614035165.jpg 2 316 182 79 154 664 235 112 140
-classifier/cascadeMetinSoul/positive/1614035167.jpg 2 386 144 83 136 716 150 106 149
-classifier/cascadeMetinSoul/positive/1614035171.jpg 6 173 255 139 168 412 165 98 95 343 101 53 79 804 194 87 94 626 83 66 72 729 82 49 63
-classifier/cascadeMetinSoul/positive/1614035177.jpg 4 497 179 98 101 735 214 133 128 216 94 64 98 583 67 47 77
-classifier/cascadeMetinSoul/positive/1614035183.jpg 6 102 291 117 110 296 174 114 96 586 93 86 77 826 238 117 149 399 66 54 72 149 95 58 83
-classifier/cascadeMetinSoul/positive/1614035190.jpg 3 94 273 170 126 632 217 106 130 940 200 76 135
-classifier/cascadeMetinSoul/positive/1614035195.jpg 4 109 272 149 99 660 224 136 152 74 65 56 79 570 24 58 66
-classifier/cascadeMetinSoul/positive/1614035200.jpg 8 38 266 152 97 354 205 110 119 674 105 72 83 854 198 118 93 750 60 72 79 424 90 60 76 357 59 44 60 178 101 58 65
-classifier/cascadeMetinSoul/positive/1614035204.jpg 6 219 232 108 166 49 142 106 95 247 78 62 68 317 42 49 58 721 124 108 89 703 227 122 157
-classifier/cascadeMetinSoul/positive/1614035211.jpg 7 105 261 151 158 378 150 86 90 324 71 51 89 778 180 71 107 618 55 71 73 464 21 34 57 732 53 45 70
-classifier/cascadeMetinSoul/positive/1614035216.jpg 3 153 232 114 159 349 166 88 120 814 116 71 93
-classifier/cascadeMetinSoul/positive/1614035228.jpg 7 89 165 83 96 527 162 46 76 593 256 116 98 804 105 75 82 499 59 67 69 272 73 63 78 187 41 34 70
-classifier/cascadeMetinSoul/positive/1614035240.jpg 7 109 171 80 92 203 70 51 68 300 96 50 64 513 84 68 68 520 163 68 89 595 268 110 97 824 122 69 85
-classifier/cascadeMetinSoul/positive/1614035245.jpg 7 45 149 63 81 233 150 85 95 451 109 65 75 159 288 137 123 645 191 65 77 823 241 121 100 757 118 54 61
-classifier/cascadeMetinSoul/positive/1614035250.jpg 4 62 370 116 162 340 180 77 119 632 167 81 85 199 139 72 89
-classifier/cascadeMetinSoul/positive/1614035258.jpg 3 318 257 82 113 604 369 97 148 727 198 45 72
-classifier/cascadeMetinSoul/positive/1614035263.jpg 3 262 184 80 132 607 231 101 95 214 105 54 93
-classifier/cascadeMetinSoul/positive/1614035269.jpg 3 361 202 63 122 631 197 85 118 751 113 69 89
-classifier/cascadeMetinSoul/positive/1614035274.jpg 5 208 240 102 136 456 161 87 81 463 55 44 72 746 61 92 77 820 256 91 94
-classifier/cascadeMetinSoul/positive/1614035280.jpg 3 485 132 84 125 261 173 105 116 199 22 66 70
-classifier/cascadeMetinSoul/positive/1614035287.jpg 5 242 294 111 100 108 530 137 127 786 283 109 122 462 112 77 79 226 86 46 92
-classifier/cascadeMetinSoul/positive/1614035294.jpg 3 143 248 120 212 713 257 182 174 36 226 100 130
-classifier/cascadeMetinSoul/positive/1614035299.jpg 2 243 247 149 206 740 267 170 211
-classifier/cascadeMetinSoul/positive/1614035315.jpg 2 275 47 500 597 146 248 123 150
-classifier/cascadeMetinSoul/positive/1614035322.jpg 2 215 46 437 542 852 245 129 115
-classifier/cascadeMetinSoul/positive/1614035327.jpg 2 357 166 294 471 817 219 109 125
-classifier/cascadeMetinSoul/positive/1614035333.jpg 3 428 218 223 304 224 160 114 153 409 152 76 95
-classifier/cascadeMetinSoul/positive/1614035337.jpg 1 341 243 292 355
-classifier/cascadeMetinSoul/positive/1614035341.jpg 1 410 256 217 369
-classifier/cascadeMetinSoul/positive/1614035346.jpg 1 364 264 295 321
-classifier/cascadeMetinSoul/positive/1614035353.jpg 3 153 202 101 169 701 189 157 178 731 59 125 107
-classifier/cascadeMetinSoul/positive/1614035362.jpg 2 196 233 112 144 651 229 144 150
+classifier/samples/all/positive/1615900005.jpg 8 190 232 100 81 365 89 39 62 943 237 101 68 957 156 81 57 1187 273 130 67 18 410 245 108 554 117 30 56 1173 164 121 64
+classifier/samples/all/positive/1615900019.jpg 6 615 95 31 66 704 166 49 95 948 171 100 66 785 100 56 77 763 35 31 60 930 248 87 111
+classifier/samples/all/positive/1615900021.jpg 6 891 273 132 96 1045 173 96 72 171 211 75 96 473 98 53 59 152 113 54 65 45 139 86 65
+classifier/samples/all/positive/1615900026.jpg 4 169 395 216 90 1089 129 79 82 757 126 46 57 317 87 72 65
+classifier/samples/all/positive/1615900030.jpg 7 90 236 143 78 180 110 58 76 537 119 53 72 1057 297 145 72 1020 138 61 70 736 44 39 61 839 43 48 58
+classifier/samples/all/positive/1615900034.jpg 7 20 281 160 146 706 253 58 76 724 117 55 65 1101 177 70 94 600 13 45 60 569 14 40 61 330 53 55 80
+classifier/samples/all/positive/1615900038.jpg 8 254 94 72 94 273 47 72 73 429 217 68 97 786 194 54 58 888 343 66 45 1056 198 38 68 1201 221 62 54 878 99 30 51
+classifier/samples/all/positive/1615900044.jpg 9 112 205 150 94 359 318 94 137 858 395 68 79 911 362 75 92 520 130 68 107 320 99 89 80 974 174 57 57 802 12 36 68 954 28 70 61
+classifier/samples/all/positive/1615900049.jpg 6 328 295 64 103 218 203 70 73 955 371 77 121 945 251 121 86 30 375 99 87 327 186 82 55
+classifier/samples/all/positive/1615900055.jpg 7 194 227 50 62 356 217 57 37 628 197 38 90 751 188 61 62 815 397 83 87 394 401 118 61 558 62 33 55
+classifier/samples/all/positive/1615900069.jpg 9 593 493 91 106 931 362 89 62 799 243 91 72 731 105 41 49 483 62 47 45 546 223 66 70 1030 97 79 46 1213 86 83 77 1192 70 85 53
+classifier/samples/all/positive/1615900074.jpg 3 152 246 138 114 940 299 68 49 1111 247 49 48
+classifier/samples/all/positive/1615900079.jpg 6 856 262 84 64 991 59 102 79 1101 7 55 70 986 8 59 60 248 191 56 42 141 296 99 51
+classifier/samples/all/positive/1615900095.jpg 9 485 338 91 82 864 297 70 107 1056 215 74 107 1021 86 71 69 727 204 45 81 597 151 51 51 413 106 42 43 333 78 32 65 290 83 49 57
+classifier/samples/all/positive/1615900104.jpg 5 334 78 83 111 566 125 88 135 651 119 79 144 858 209 95 73 1037 100 65 95
+classifier/samples/all/positive/1615900110.jpg 6 172 268 82 77 245 133 63 61 519 169 40 62 472 340 95 157 759 376 112 131 860 384 190 130
+classifier/samples/all/positive/1615900121.jpg 9 146 263 103 63 374 387 64 68 777 234 43 93 980 209 94 77 1024 370 74 144 1079 422 138 98 505 168 36 50 431 188 51 49 311 99 66 57
+classifier/samples/all/positive/1615900130.jpg 9 191 229 137 70 500 247 54 52 930 413 67 77 1018 167 54 87 789 179 50 54 331 118 50 61 375 134 57 51 412 136 55 58 995 347 73 106
+classifier/samples/all/positive/1615900138.jpg 6 408 460 83 118 594 152 33 64 629 178 42 61 811 191 52 64 809 148 33 48 425 320 64 55
+classifier/samples/all/positive/1615900145.jpg 10 510 273 53 70 747 289 65 71 565 164 35 45 603 125 43 54 295 107 79 55 883 119 38 62 1082 131 36 82 1105 140 61 70 1188 175 91 43 974 61 52 62
+classifier/samples/all/positive/1615900151.jpg 9 36 245 121 108 320 304 122 69 372 257 92 91 503 199 52 70 770 237 47 52 845 187 62 76 920 290 100 71 1105 379 163 62 1013 593 108 99
+classifier/samples/all/positive/1615900156.jpg 5 189 233 215 134 325 185 118 149 546 171 56 91 914 247 69 99 1027 213 128 102
+classifier/samples/all/positive/1615900167.jpg 9 565 242 68 76 695 212 46 54 735 193 51 70 922 210 86 56 914 307 89 57 309 597 102 79 384 142 72 58 491 110 47 55 300 92 55 64
+classifier/samples/all/positive/1615900191.jpg 4 473 226 68 91 295 61 57 75 752 156 43 61 662 94 37 55
+classifier/samples/all/positive/1615900196.jpg 9 94 280 110 129 85 174 127 76 432 191 81 81 366 108 54 70 313 91 41 57 598 129 39 75 804 356 76 67 1024 612 138 109 1027 251 88 63
+classifier/samples/all/positive/1615900199.jpg 7 289 570 200 109 200 291 145 107 755 228 68 74 871 229 60 47 1183 429 91 114 153 65 86 70 282 66 56 52
+classifier/samples/all/positive/1615900201.jpg 4 26 495 274 107 677 212 55 74 749 194 50 42 1021 276 48 66
+classifier/samples/all/positive/1615900203.jpg 5 578 237 49 78 616 196 41 50 1087 185 49 70 247 225 82 71 181 240 77 55
+classifier/samples/all/positive/1615900206.jpg 6 305 505 152 120 140 454 99 121 985 358 155 100 827 193 89 64 1085 169 80 87 1183 137 103 68
+classifier/samples/all/positive/1615900218.jpg 5 421 232 64 119 590 196 54 72 849 241 109 89 980 533 361 156 129 485 253 231
+classifier/samples/all/positive/1615900230.jpg 6 283 378 277 153 77 218 192 143 831 288 155 98 1025 169 115 88 158 181 98 76 912 105 32 43
+classifier/samples/all/positive/1615900238.jpg 5 42 377 95 97 391 239 42 70 730 257 50 82 893 143 40 82 745 124 53 57
+classifier/samples/all/positive/1615900245.jpg 11 256 436 71 92 429 316 49 59 575 304 59 55 840 329 115 64 745 211 45 54 572 241 45 45 648 179 39 50 425 214 40 48 173 314 88 59 1003 172 92 48 1024 118 62 56
+classifier/samples/all/positive/1615900252.jpg 9 201 456 213 106 318 370 139 142 499 293 74 81 831 388 65 120 711 208 37 51 436 219 64 51 877 228 68 77 1014 196 101 70 1090 292 113 93
+classifier/samples/all/positive/1615900273.jpg 7 465 257 54 60 530 216 52 51 621 230 51 82 667 180 46 65 775 197 67 67 973 206 49 67 204 213 65 70
+classifier/samples/all/positive/1615900279.jpg 7 76 359 116 122 384 356 92 107 212 248 67 70 341 197 44 62 530 243 53 83 483 215 57 49 868 260 85 61
+classifier/samples/all/positive/1615900284.jpg 13 508 208 60 63 270 165 49 70 860 394 70 84 924 340 103 53 856 177 35 73 990 178 50 69 960 147 41 52 781 170 45 49 770 122 39 47 853 103 41 41 483 121 34 50 346 122 46 38 277 363 88 112
+classifier/samples/all/positive/1615900292.jpg 10 362 365 116 68 544 330 62 52 640 179 42 65 778 189 47 66 593 166 39 41 333 184 64 50 153 132 59 52 21 294 80 70 390 97 33 51 630 116 38 47
+classifier/samples/all/positive/1615900299.jpg 9 313 250 87 77 440 210 71 68 280 189 52 60 314 164 64 45 434 119 51 45 508 128 58 61 772 366 102 61 908 343 97 87 1045 139 44 74
+classifier/samples/all/positive/1615900308.jpg 12 618 243 64 89 777 292 85 68 854 207 64 76 819 174 48 49 689 136 51 53 625 163 49 63 348 102 74 60 260 123 72 50 28 174 67 69 1168 306 145 50 945 94 71 54 888 91 49 64
+classifier/samples/all/positive/1615900313.jpg 11 283 169 48 70 320 101 63 38 484 90 66 61 693 169 57 74 809 208 78 59 642 221 53 86 561 196 53 61 482 235 63 60 1036 232 66 75 1118 143 82 53 815 114 35 45
+classifier/samples/all/positive/1615900322.jpg 13 454 311 72 82 190 227 73 48 82 199 63 57 489 184 45 53 425 158 38 47 323 147 56 42 617 202 56 63 1097 282 123 120 1240 268 81 73 857 201 39 82 886 192 58 70 771 199 46 44 717 220 48 59
+classifier/samples/all/positive/1615900325.jpg 6 139 278 69 99 376 400 115 141 395 254 91 68 553 244 54 58 645 207 51 64 841 194 64 82
+classifier/samples/all/positive/1615900329.jpg 8 446 257 49 65 401 164 47 52 663 198 44 62 717 238 46 55 814 223 42 54 858 248 75 86 962 242 43 82 964 435 204 153
+classifier/samples/all/positive/1615900351.jpg 9 296 214 94 111 439 147 82 90 582 187 72 80 212 179 101 72 49 234 138 81 217 46 93 68 862 218 64 96 648 70 59 68 1002 104 95 67
+classifier/samples/all/positive/1615900359.jpg 5 791 240 71 108 554 245 71 87 296 235 74 92 923 148 70 59 1090 170 121 85
+classifier/samples/all/positive/1615900369.jpg 6 216 496 204 98 38 211 115 64 476 193 62 88 533 197 53 100 745 178 73 82 841 95 44 78
+classifier/samples/all/positive/1615900375.jpg 3 280 302 173 98 675 199 66 78 1118 215 132 80
+classifier/samples/all/positive/1615900425.jpg 5 784 239 90 76 658 133 45 66 523 51 48 56 242 55 62 79 1193 205 58 88
+classifier/samples/all/positive/1615900431.jpg 5 846 219 71 117 643 120 62 91 411 210 125 96 1079 163 122 108 924 62 77 65
+classifier/samples/all/positive/1615900435.jpg 6 498 186 74 123 807 320 163 128 1081 166 145 77 659 100 49 82 424 113 73 62 248 78 88 63
+classifier/samples/all/positive/1615900440.jpg 5 345 231 107 100 592 245 89 87 721 194 84 100 537 147 48 60 979 74 80 128
+classifier/samples/all/positive/1615900448.jpg 6 268 373 222 136 959 314 171 103 1162 189 101 85 810 182 81 100 713 142 68 79 636 45 54 75
+classifier/samples/all/positive/1615900458.jpg 5 300 219 136 153 906 233 214 170 829 12 119 109 668 65 61 75 577 34 73 84
+classifier/samples/all/positive/1615900462.jpg 4 319 227 152 224 1018 272 229 266 711 197 45 60 104 207 110 73
+classifier/samples/all/positive/1615900471.jpg 6 315 242 123 176 512 185 83 79 862 218 162 109 891 100 69 67 569 128 47 59 641 75 35 45
+classifier/samples/all/positive/1615900474.jpg 4 324 252 114 160 514 192 82 73 867 223 154 98 896 108 69 57
+classifier/samples/all/positive/1615900683.jpg 5 189 377 129 123 479 305 74 96 855 295 69 94 990 392 127 121 815 225 45 49
+classifier/samples/all/positive/1615900684.jpg 3 156 354 163 79 984 551 201 183 849 276 57 73
+classifier/samples/all/positive/1615900685.jpg 5 458 268 56 84 25 341 98 113 910 439 128 129 948 248 68 97 726 200 65 70
+classifier/samples/all/positive/1615900691.jpg 8 213 342 97 98 113 319 116 65 565 193 55 58 381 195 46 48 792 251 49 83 910 253 55 75 1067 344 104 57 608 168 43 52
+classifier/samples/all/positive/1615900692.jpg 6 290 226 60 60 503 240 74 71 568 196 55 60 818 322 63 113 957 324 74 81 1045 226 57 78
+classifier/samples/all/positive/1615900693.jpg 12 122 273 106 69 338 323 151 93 503 246 80 78 472 205 45 69 847 490 110 170 1078 460 129 123 1144 283 79 98 942 175 61 88 763 140 47 51 621 141 42 63 571 144 55 61 439 137 41 49
+classifier/samples/all/positive/1615900694.jpg 6 458 250 62 86 533 229 59 91 778 230 62 84 1131 376 135 124 293 207 55 65 18 486 181 162
+classifier/samples/all/positive/1615900695.jpg 5 299 354 94 116 431 314 83 140 772 319 106 102 120 265 92 80 28 245 68 59
+classifier/samples/all/positive/1615900700.jpg 4 187 256 110 61 748 284 59 66 841 226 59 70 996 211 74 53
+classifier/samples/all/positive/1615900701.jpg 7 770 359 63 78 869 260 67 79 1040 239 93 58 980 200 44 34 785 185 56 50 708 154 37 46 51 299 151 86
+classifier/samples/all/positive/1615900702.jpg 8 598 289 56 98 933 330 126 111 1143 281 160 76 1039 219 83 47 802 200 54 58 714 162 37 50 499 184 55 60 586 140 35 40
+classifier/samples/all/positive/1615900703.jpg 6 318 261 116 100 712 194 49 81 868 277 86 112 125 196 71 74 502 144 35 52 530 152 38 58
+classifier/samples/all/positive/1615900704.jpg 5 696 250 73 94 663 177 47 64 481 187 61 67 74 382 210 140 944 419 136 139
+classifier/samples/all/positive/1615900715.jpg 13 237 197 128 83 28 344 134 150 559 212 58 65 438 116 53 73 808 235 68 106 860 122 51 59 1043 125 61 53 1195 280 153 70 549 66 40 46 577 69 33 49 729 84 30 49 772 57 40 52 839 65 47 42
+classifier/samples/all/positive/1615900718.jpg 10 292 423 133 170 423 233 108 86 563 136 46 88 649 88 29 52 793 94 36 60 746 227 52 78 1035 252 92 112 941 133 62 63 1056 101 35 63 1099 133 65 55
+classifier/samples/all/positive/1615900722.jpg 11 376 243 86 64 460 225 84 80 631 168 39 55 807 167 38 61 778 411 103 134 1036 183 74 46 1032 367 143 74 165 212 90 78 241 164 61 44 599 134 44 56 641 112 35 52
+classifier/samples/all/positive/1615900723.jpg 8 131 357 181 87 288 313 139 116 576 200 73 77 813 198 50 71 1110 220 90 58 751 137 32 36 563 155 35 58 84 189 76 65
+classifier/samples/all/positive/1615900724.jpg 7 498 272 94 104 833 257 56 90 503 193 47 80 579 159 45 74 737 149 46 52 821 170 43 54 1203 278 137 68
+classifier/samples/all/positive/1615900725.jpg 7 836 310 67 104 421 356 125 113 448 229 57 96 551 185 52 82 733 171 49 53 819 188 50 63 1042 172 70 59
+classifier/samples/all/positive/1615900726.jpg 9 86 423 168 167 388 283 95 125 247 255 98 57 123 272 79 63 730 219 56 75 848 258 58 84 1146 243 121 64 1146 186 95 59 650 158 46 57
+classifier/samples/all/positive/1615900727.jpg 5 637 485 161 134 206 227 69 72 461 132 51 64 883 140 46 71 984 161 58 80
+classifier/samples/all/positive/1615901511.jpg 1 196 523 225 189
+classifier/samples/all/positive/1615901523.jpg 2 828 387 188 244 915 277 223 111
+classifier/samples/all/positive/1615901524.jpg 3 733 151 53 68 822 153 53 48 1030 141 56 49
+classifier/samples/all/positive/1615901525.jpg 5 381 224 98 93 554 184 62 67 998 232 90 125 802 184 53 55 232 201 65 61
+classifier/samples/all/positive/1615901526.jpg 6 344 267 142 128 581 205 57 69 850 203 79 67 1156 224 131 93 1222 285 138 180 66 196 105 65
+classifier/samples/all/positive/1615901528.jpg 11 306 432 295 243 666 242 86 103 868 174 64 54 1013 237 152 90 1215 185 104 81 324 319 131 139 124 252 112 118 178 213 79 71 197 172 79 55 403 145 37 52 488 156 53 70
+classifier/samples/all/positive/1615901529.jpg 7 310 461 203 261 774 289 151 126 512 155 70 85 413 151 55 57 149 174 111 73 135 235 112 79 48 288 136 146
+classifier/samples/all/positive/1615901530.jpg 5 561 171 72 92 424 140 60 83 94 193 136 78 1 279 166 121 1092 190 121 69
+classifier/samples/all/positive/1615901531.jpg 4 732 240 112 154 473 182 82 110 203 132 77 66 627 136 50 60
+classifier/samples/all/positive/1615901532.jpg 6 525 227 141 149 697 155 57 77 988 375 243 241 514 178 57 101 182 156 99 65 1169 145 99 58
+classifier/samples/all/positive/1615901537.jpg 2 392 189 81 94 897 106 62 53
+classifier/samples/all/positive/1615901538.jpg 5 506 292 87 101 577 151 56 66 699 121 37 55 846 104 40 56 942 118 56 49
+classifier/samples/all/positive/1615901540.jpg 5 439 215 110 102 666 144 53 79 867 120 61 69 1015 151 87 63 106 148 137 76
+classifier/samples/all/positive/1615901541.jpg 5 400 240 116 97 653 153 56 80 43 160 147 76 877 121 48 81 1031 154 94 81
+classifier/samples/all/positive/1615901545.jpg 8 317 211 159 115 754 149 69 70 896 287 127 203 1115 117 84 122 445 145 78 63 377 99 42 59 298 87 49 64 208 109 74 81
+classifier/samples/all/positive/1615901549.jpg 6 852 315 135 117 508 146 83 107 371 95 76 63 258 133 121 94 620 106 36 66 690 129 78 85
+classifier/samples/all/positive/1615901550.jpg 7 213 260 186 187 177 125 127 91 146 108 108 67 599 199 100 130 515 137 58 103 741 68 43 61 593 114 52 63
+classifier/samples/all/positive/1615901551.jpg 6 272 237 116 147 238 489 264 244 464 162 105 105 711 81 61 77 519 77 65 83 415 68 48 66
+classifier/samples/all/positive/1615901552.jpg 5 192 304 216 104 425 117 82 95 668 126 72 100 302 90 55 93 491 77 52 68
+classifier/samples/all/positive/1615901557.jpg 12 96 273 214 108 251 198 102 123 993 201 91 145 1026 136 120 88 764 141 82 101 685 99 46 68 466 136 70 61 456 128 36 61 916 72 60 55 867 66 39 61 730 81 35 43 605 81 36 45
+classifier/samples/all/positive/1615901560.jpg 8 95 328 227 122 329 253 107 133 91 186 114 71 648 176 65 77 915 174 109 89 1033 132 58 73 844 133 49 51 1059 363 303 143
+classifier/samples/all/positive/1615901561.jpg 5 850 249 154 124 1025 160 84 104 1000 105 71 71 778 143 78 71 471 235 86 100
+classifier/samples/all/positive/1615901564.jpg 4 820 404 173 229 487 261 93 105 906 172 104 92 804 124 72 72
+classifier/samples/all/positive/1615901565.jpg 4 418 287 105 100 892 178 110 96 796 123 58 74 791 480 177 251
+classifier/samples/all/positive/1615901567.jpg 3 409 322 141 158 29 278 120 121 1150 209 84 128
+classifier/samples/all/positive/1614019998.jpg 5 326 271 46 55 57 225 53 72 635 148 35 58 858 187 64 67 153 115 35 41
+classifier/samples/all/positive/1614020049.jpg 4 448 244 49 82 803 264 50 58 778 183 46 38 648 132 16 36
+classifier/samples/all/positive/1614020053.jpg 1 680 372 65 118
+classifier/samples/all/positive/1614020054.jpg 1 77 172 34 45
+classifier/samples/all/positive/1614020064.jpg 5 255 442 77 90 131 244 41 61 608 191 45 54 954 186 38 61 301 206 37 46
+classifier/samples/all/positive/1614020067.jpg 4 375 276 46 65 628 307 68 66 597 159 39 58 222 92 30 51
+classifier/samples/all/positive/1614020073.jpg 1 590 246 71 80
+classifier/samples/all/positive/1614020081.jpg 2 255 509 112 99 453 211 69 71
+classifier/samples/all/positive/1614020086.jpg 3 679 302 59 102 197 188 35 45 715 133 46 39
+classifier/samples/all/positive/1614020090.jpg 2 250 252 64 75 601 250 61 68
+classifier/samples/all/positive/1614020094.jpg 3 365 201 59 92 704 200 55 78 752 85 38 51
+classifier/samples/all/positive/1614020097.jpg 2 598 295 55 67 128 108 59 48
+classifier/samples/all/positive/1614020101.jpg 2 425 258 71 65 329 53 45 49
+classifier/samples/all/positive/1614020105.jpg 2 557 275 73 87 290 109 55 53
+classifier/samples/all/positive/1614020109.jpg 1 561 221 50 63
+classifier/samples/all/positive/1614020117.jpg 1 337 309 83 86
+classifier/samples/all/positive/1614020122.jpg 4 359 135 49 68 753 153 37 53 6 150 53 79 356 83 38 51
+classifier/samples/all/positive/1614020125.jpg 3 328 319 84 114 581 205 80 65 128 149 60 85
+classifier/samples/all/positive/1614020128.jpg 2 840 473 105 129 532 272 70 95
+classifier/samples/all/positive/1614020132.jpg 4 472 193 48 61 150 159 60 55 931 238 92 65 473 134 35 47
+classifier/samples/all/positive/1614020136.jpg 3 164 326 70 74 388 154 43 63 502 295 65 71
+classifier/samples/all/positive/1614020140.jpg 2 655 299 74 100 607 241 49 100
+classifier/samples/all/positive/1614020147.jpg 2 151 270 72 75 275 247 73 82
+classifier/samples/all/positive/1614020151.jpg 3 198 255 96 69 275 135 58 49 568 176 56 64
+classifier/samples/all/positive/1614020156.jpg 3 766 210 63 106 440 112 46 52 1 354 101 84
+classifier/samples/all/positive/1614020162.jpg 2 580 219 75 77 96 71 56 45
+classifier/samples/all/positive/1614020166.jpg 3 628 260 80 96 440 140 46 70 21 95 41 44
+classifier/samples/all/positive/1614020183.jpg 2 679 180 70 55 403 125 60 68
+classifier/samples/all/positive/1614020188.jpg 3 428 209 58 66 387 86 56 54 227 108 45 66
+classifier/samples/all/positive/1614020193.jpg 3 394 139 68 65 616 3 35 65 447 1 43 56
+classifier/samples/all/positive/1614020198.jpg 2 278 179 64 99 133 66 51 64
+classifier/samples/all/positive/1614020212.jpg 1 712 226 53 94
+classifier/samples/all/positive/1614020218.jpg 2 575 537 152 146 488 154 49 70
+classifier/samples/all/positive/1614020225.jpg 4 331 343 87 118 647 281 71 73 230 196 55 78 22 180 45 71
+classifier/samples/all/positive/1614020245.jpg 3 66 293 159 140 451 234 63 67 493 214 38 39
+classifier/samples/all/positive/1614020248.jpg 4 507 196 71 94 772 376 111 122 786 115 98 79 771 64 68 63
+classifier/samples/all/positive/1614020252.jpg 4 727 343 122 115 195 275 89 73 267 163 38 61 519 103 45 41
+classifier/samples/all/positive/1614020257.jpg 3 730 430 133 84 479 167 65 78 189 104 61 54
+classifier/samples/all/positive/1614020264.jpg 2 173 164 72 76 701 184 70 60
+classifier/samples/all/positive/1614020275.jpg 4 748 235 62 109 244 203 75 78 390 111 41 48 436 101 41 48
+classifier/samples/all/positive/1614020301.jpg 2 578 249 77 103 415 156 37 58
+classifier/samples/all/positive/1614020306.jpg 1 509 177 56 84
+classifier/samples/all/positive/1614020310.jpg 1 775 398 95 99
+classifier/samples/all/positive/1614020314.jpg 1 289 206 67 71
+classifier/samples/all/positive/1614020317.jpg 2 286 207 59 70 701 242 80 103
+classifier/samples/all/positive/1614020323.jpg 2 195 315 78 78 527 177 59 68
+classifier/samples/all/positive/1614020328.jpg 2 97 330 81 98 576 178 45 79
+classifier/samples/all/positive/1614020332.jpg 1 341 276 83 83
+classifier/samples/all/positive/1614020338.jpg 2 736 268 59 98 197 192 67 84
+classifier/samples/all/positive/1614020344.jpg 2 166 140 83 85 628 133 58 60
+classifier/samples/all/positive/1614020351.jpg 3 825 359 115 107 62 316 98 80 614 165 67 62
+classifier/samples/all/positive/1614020356.jpg 3 720 319 98 90 199 237 71 67 524 168 44 51
+classifier/samples/all/positive/1614020366.jpg 1 183 266 116 107
+classifier/samples/all/positive/1614020370.jpg 2 671 428 182 141 853 306 69 86
+classifier/samples/all/positive/1614020376.jpg 2 188 247 58 70 550 181 52 70
+classifier/samples/all/positive/1614020380.jpg 2 186 369 145 105 305 126 75 97
+classifier/samples/all/positive/1614020386.jpg 2 286 277 74 119 235 154 45 68
+classifier/samples/all/positive/1614020395.jpg 1 262 319 90 99
+classifier/samples/all/positive/1614020403.jpg 3 88 441 105 102 472 154 65 66 849 258 99 79
+classifier/samples/all/positive/1614020410.jpg 2 251 207 74 92 99 201 97 73
+classifier/samples/all/positive/1614020416.jpg 1 332 250 69 102
+classifier/samples/all/positive/1614020429.jpg 1 602 196 74 92
+classifier/samples/all/positive/1614020438.jpg 3 64 492 156 130 747 341 154 99 515 113 48 82
+classifier/samples/all/positive/1614020442.jpg 3 34 299 132 129 851 310 149 119 646 74 63 70
+classifier/samples/all/positive/1614020458.jpg 2 152 296 79 121 193 159 56 94
+classifier/samples/all/positive/1614020470.jpg 2 487 174 80 94 717 182 78 95
+classifier/samples/all/positive/1614020473.jpg 2 726 388 134 167 757 250 82 117
+classifier/samples/all/positive/1614020480.jpg 2 232 265 115 123 178 99 55 70
+classifier/samples/all/positive/1614020483.jpg 2 89 254 136 122 821 368 150 97
+classifier/samples/all/positive/1614020488.jpg 1 530 176 61 103
+classifier/samples/all/positive/1614020492.jpg 2 398 166 82 80 191 376 113 172
+classifier/samples/all/positive/1614020504.jpg 2 754 257 80 104 74 146 77 92
+classifier/samples/all/positive/1614020509.jpg 0
+classifier/samples/all/positive/1614020513.jpg 1 714 308 208 121
+classifier/samples/all/positive/1614020519.jpg 1 746 369 170 130
+classifier/samples/all/positive/1614020524.jpg 1 736 320 170 150
+classifier/samples/all/positive/1614020528.jpg 1 708 283 170 129
+classifier/samples/all/positive/1614020537.jpg 1 276 437 132 125
+classifier/samples/all/positive/1614020544.jpg 2 196 210 69 96 700 188 98 134
+classifier/samples/all/positive/1614020551.jpg 1 141 306 91 142
+classifier/samples/all/positive/1614020557.jpg 3 200 302 101 85 874 288 86 146 314 54 47 65
+classifier/samples/all/positive/1614020562.jpg 2 303 269 100 125 499 129 52 67
+classifier/samples/all/positive/1614020594.jpg 3 179 230 69 89 118 121 42 72 638 161 53 74
+classifier/samples/all/positive/1614020597.jpg 2 169 259 70 128 643 171 78 89
+classifier/samples/all/positive/1614020601.jpg 3 58 345 99 158 611 265 98 93 636 104 60 63
+classifier/samples/all/positive/1614020604.jpg 3 227 286 131 114 510 137 69 110 838 121 56 89
+classifier/samples/all/positive/1614020609.jpg 3 238 218 84 93 552 140 83 87 435 59 55 54
+classifier/samples/all/positive/1614020615.jpg 3 146 281 91 82 811 244 103 113 45 197 51 63
+classifier/samples/all/positive/1614020625.jpg 3 257 346 92 94 632 277 85 95 386 141 58 72
+classifier/samples/all/positive/1614020631.jpg 2 819 253 118 114 138 149 60 81
+classifier/samples/all/positive/1614020639.jpg 3 151 418 119 123 388 101 37 59 702 108 47 59
+classifier/samples/all/positive/1614020648.jpg 3 159 388 148 119 352 152 82 77 392 99 80 84
+classifier/samples/all/positive/1614020652.jpg 3 313 210 79 127 404 119 72 79 853 246 132 85
+classifier/samples/all/positive/1614020659.jpg 3 302 214 76 87 642 247 81 81 419 97 56 66
+classifier/samples/all/positive/1614020667.jpg 3 197 286 126 102 406 130 68 67 801 71 48 68
+classifier/samples/all/positive/1614020671.jpg 2 76 287 81 79 724 200 78 95
+classifier/samples/all/positive/1614020684.jpg 2 603 327 101 63 180 83 78 79
+classifier/samples/all/positive/1614020694.jpg 3 339 206 74 64 706 319 60 44 395 66 50 52
+classifier/samples/all/positive/1614020700.jpg 3 111 357 86 66 591 167 42 59 491 128 40 52
+classifier/samples/all/positive/1614020709.jpg 4 225 336 77 50 101 235 77 58 603 256 48 72 905 325 58 59
+classifier/samples/all/positive/1614020721.jpg 3 303 226 77 79 754 257 67 68 740 457 123 93
+classifier/samples/all/positive/1614021334.jpg 3 662 340 103 79 486 170 43 64 342 81 30 50
+classifier/samples/all/positive/1614021341.jpg 2 666 306 76 110 347 171 45 40
+classifier/samples/all/positive/1614021346.jpg 1 263 293 93 77
+classifier/samples/all/positive/1614021350.jpg 1 551 203 81 66
+classifier/samples/all/positive/1614032339.jpg 1 688 411 120 89
+classifier/samples/all/positive/1614032354.jpg 1 704 385 109 127
+classifier/samples/all/positive/1614032356.jpg 1 604 428 139 150
+classifier/samples/all/positive/1614032360.jpg 1 213 337 116 104
+classifier/samples/all/positive/1614032362.jpg 1 185 380 149 134
+classifier/samples/all/positive/1614032370.jpg 1 190 382 136 123
+classifier/samples/all/positive/1614032372.jpg 1 320 409 127 151
+classifier/samples/all/positive/1614032375.jpg 1 188 343 103 119
+classifier/samples/all/positive/1614032378.jpg 1 215 339 146 168
+classifier/samples/all/positive/1614032382.jpg 1 178 321 131 168
+classifier/samples/all/positive/1614032387.jpg 1 249 325 118 126
+classifier/samples/all/positive/1614032390.jpg 1 212 373 142 137
+classifier/samples/all/positive/1614032392.jpg 1 362 189 109 113
+classifier/samples/all/positive/1614032395.jpg 1 658 360 145 124
+classifier/samples/all/positive/1614032400.jpg 1 206 367 160 144
+classifier/samples/all/positive/1614032407.jpg 2 104 305 127 123 826 237 136 147
+classifier/samples/all/positive/1614032410.jpg 2 88 348 209 155 560 188 60 80
+classifier/samples/all/positive/1614032413.jpg 2 52 434 193 107 678 103 84 108
+classifier/samples/all/positive/1614032415.jpg 1 707 288 141 106
+classifier/samples/all/positive/1614032433.jpg 2 728 314 148 106 22 128 131 151
+classifier/samples/all/positive/1614032436.jpg 2 154 482 213 175 839 191 102 122
+classifier/samples/all/positive/1614032518.jpg 1 216 194 117 152
+classifier/samples/all/positive/1614032521.jpg 2 70 280 135 211 580 151 73 87
+classifier/samples/all/positive/1614032524.jpg 1 67 313 179 167
+classifier/samples/all/positive/1614032527.jpg 1 247 172 128 119
+classifier/samples/all/positive/1614032530.jpg 1 296 131 151 110
+classifier/samples/all/positive/1614032533.jpg 2 204 170 111 125 639 219 130 147
+classifier/samples/all/positive/1614032537.jpg 1 367 135 112 110
+classifier/samples/all/positive/1614032541.jpg 2 326 140 83 133 579 99 92 133
+classifier/samples/all/positive/1614032543.jpg 3 116 220 155 158 370 141 98 113 830 131 73 127
+classifier/samples/all/positive/1614032546.jpg 1 857 210 161 186
+classifier/samples/all/positive/1614032548.jpg 1 117 177 134 153
+classifier/samples/all/positive/1614032550.jpg 2 164 157 132 177 401 53 126 133
+classifier/samples/all/positive/1614032555.jpg 2 284 133 129 99 554 128 93 110
+classifier/samples/all/positive/1614032557.jpg 2 89 196 129 119 379 140 109 117
+classifier/samples/all/positive/1614032559.jpg 2 166 166 160 128 784 137 97 137
+classifier/samples/all/positive/1614032562.jpg 2 477 132 100 98 709 197 111 107
+classifier/samples/all/positive/1614032568.jpg 2 139 187 146 113 670 150 70 105
+classifier/samples/all/positive/1614032591.jpg 1 426 72 90 149
+classifier/samples/all/positive/1614032594.jpg 1 614 124 94 120
+classifier/samples/all/positive/1614032597.jpg 1 529 162 97 108
+classifier/samples/all/positive/1614032600.jpg 1 697 139 91 98
+classifier/samples/all/positive/1614032602.jpg 1 556 79 89 110
+classifier/samples/all/positive/1614032604.jpg 1 681 98 108 112
+classifier/samples/all/positive/1614032607.jpg 1 583 121 114 126
+classifier/samples/all/positive/1614032609.jpg 1 677 161 115 146
+classifier/samples/all/positive/1614032611.jpg 1 677 186 117 130
+classifier/samples/all/positive/1614032613.jpg 1 774 193 125 165
+classifier/samples/all/positive/1614032615.jpg 1 607 160 116 140
+classifier/samples/all/positive/1614032618.jpg 1 671 209 100 121
+classifier/samples/all/positive/1614032650.jpg 2 530 163 125 115 147 161 117 165
+classifier/samples/all/positive/1614032655.jpg 2 784 230 138 151 665 19 107 119
+classifier/samples/all/positive/1614032658.jpg 2 220 151 110 163 689 293 175 185
+classifier/samples/all/positive/1614032664.jpg 2 329 88 122 110 668 220 138 145
+classifier/samples/all/positive/1614032667.jpg 2 347 135 122 133 799 181 144 155
+classifier/samples/all/positive/1614032669.jpg 2 206 193 143 146 735 163 154 162
+classifier/samples/all/positive/1614032675.jpg 2 543 86 93 134 765 282 192 174
+classifier/samples/all/positive/1614032734.jpg 2 605 138 117 138 379 115 82 117
+classifier/samples/all/positive/1614032803.jpg 2 266 202 110 98 453 113 115 137
+classifier/samples/all/positive/1614032881.jpg 1 680 220 154 199
+classifier/samples/all/positive/1614032884.jpg 1 186 272 170 127
+classifier/samples/all/positive/1614032889.jpg 2 289 103 108 116 403 40 102 140
+classifier/samples/all/positive/1614032895.jpg 2 116 174 141 128 286 161 99 151
+classifier/samples/all/positive/1614032909.jpg 2 185 149 146 140 316 153 143 178
+classifier/samples/all/positive/1614032912.jpg 2 190 155 132 125 338 164 127 164
+classifier/samples/all/positive/1614032916.jpg 1 689 237 177 158
+classifier/samples/all/positive/1614032922.jpg 2 70 239 184 131 740 187 115 140
+classifier/samples/all/positive/1614032961.jpg 4 204 179 103 116 481 83 92 88 627 81 91 115 747 555 202 142
+classifier/samples/all/positive/1614032967.jpg 3 294 133 85 130 593 61 86 98 738 84 108 124
+classifier/samples/all/positive/1614032971.jpg 3 223 103 81 75 511 87 94 104 626 137 100 98
+classifier/samples/all/positive/1614033076.jpg 4 101 243 81 61 250 197 66 55 525 221 72 63 890 296 76 69
+classifier/samples/all/positive/1614033083.jpg 2 114 325 153 93 692 359 98 93
+classifier/samples/all/positive/1614033086.jpg 2 350 166 90 60 702 206 117 88
+classifier/samples/all/positive/1614033089.jpg 2 318 195 82 60 667 85 76 74
+classifier/samples/all/positive/1614033091.jpg 1 601 200 92 99
+classifier/samples/all/positive/1614033095.jpg 3 728 443 113 118 459 198 62 64 259 209 84 54
+classifier/samples/all/positive/1614033102.jpg 1 655 244 149 124
+classifier/samples/all/positive/1614033106.jpg 2 334 103 86 146 608 93 80 121
+classifier/samples/all/positive/1614033107.jpg 2 318 105 104 134 600 95 91 127
+classifier/samples/all/positive/1614033108.jpg 2 316 105 130 154 602 77 84 147
+classifier/samples/all/positive/1614033113.jpg 2 232 48 84 119 747 142 110 155
+classifier/samples/all/positive/1614033117.jpg 1 227 176 154 137
+classifier/samples/all/positive/1614033121.jpg 2 719 198 120 174 329 29 74 97
+classifier/samples/all/positive/1614033124.jpg 2 194 126 120 133 683 159 121 141
+classifier/samples/all/positive/1614033128.jpg 2 335 111 116 97 759 95 133 121
+classifier/samples/all/positive/1614033136.jpg 1 548 197 84 84
+classifier/samples/all/positive/1614033187.jpg 2 476 186 84 79 763 209 67 87
+classifier/samples/all/positive/1614033232.jpg 2 229 235 73 107 708 259 106 119
+classifier/samples/all/positive/1614033236.jpg 1 614 268 104 107
+classifier/samples/all/positive/1614033240.jpg 1 247 294 128 95
+classifier/samples/all/positive/1614033299.jpg 2 200 391 146 220 904 187 96 139
+classifier/samples/all/positive/1614033302.jpg 1 624 192 110 120
+classifier/samples/all/positive/1614033310.jpg 1 320 196 88 86
+classifier/samples/all/positive/1614033340.jpg 2 152 223 141 96 712 240 99 135
+classifier/samples/all/positive/1614033344.jpg 2 133 270 151 96 724 270 112 139
+classifier/samples/all/positive/1614033349.jpg 2 171 206 81 98 665 229 120 132
+classifier/samples/all/positive/1614033355.jpg 2 221 256 93 113 738 225 88 117
+classifier/samples/all/positive/1614033414.jpg 1 656 174 157 281
+classifier/samples/all/positive/1614033420.jpg 1 628 277 278 310
+classifier/samples/all/positive/1614033423.jpg 1 108 280 226 220
+classifier/samples/all/positive/1614033426.jpg 1 655 233 165 255
+classifier/samples/all/positive/1614033448.jpg 2 38 184 199 209 696 188 181 266
+classifier/samples/all/positive/1614033452.jpg 2 253 121 146 151 750 172 209 200
+classifier/samples/all/positive/1614033456.jpg 3 91 217 232 202 28 65 91 96 669 100 102 173
+classifier/samples/all/positive/1614033459.jpg 2 69 296 276 204 434 117 120 136
+classifier/samples/all/positive/1614033463.jpg 1 590 364 291 260
+classifier/samples/all/positive/1614033467.jpg 3 125 167 155 163 662 136 115 206 769 31 92 136
+classifier/samples/all/positive/1614033471.jpg 2 340 127 95 134 679 218 193 213
+classifier/samples/all/positive/1614033489.jpg 3 691 242 198 209 398 108 90 140 216 87 118 103
+classifier/samples/all/positive/1614033491.jpg 2 95 286 242 177 139 66 50 73
+classifier/samples/all/positive/1614033493.jpg 1 116 231 225 229
+classifier/samples/all/positive/1614033497.jpg 2 402 234 228 297 704 268 83 90
+classifier/samples/all/positive/1614033503.jpg 2 674 194 130 137 193 139 102 140
+classifier/samples/all/positive/1614033508.jpg 1 165 66 101 171
+classifier/samples/all/positive/1614033519.jpg 2 280 149 120 138 604 156 144 172
+classifier/samples/all/positive/1614033528.jpg 2 249 138 124 124 677 166 145 169
+classifier/samples/all/positive/1614033538.jpg 5 80 266 174 188 343 149 105 121 211 104 68 71 76 93 85 65 752 149 90 108
+classifier/samples/all/positive/1614033547.jpg 4 372 169 145 133 630 210 151 159 648 53 89 104 399 41 88 95
+classifier/samples/all/positive/1614033553.jpg 4 36 301 147 142 120 163 113 139 581 77 81 108 729 182 179 136
+classifier/samples/all/positive/1614033558.jpg 5 75 277 193 131 370 141 91 84 530 135 116 103 734 313 157 190 698 63 61 83
+classifier/samples/all/positive/1614033583.jpg 4 164 180 141 138 589 162 125 167 744 78 97 113 285 44 92 86
+classifier/samples/all/positive/1614033590.jpg 3 70 122 120 102 437 89 99 97 759 249 168 128
+classifier/samples/all/positive/1614033593.jpg 3 118 259 140 146 461 118 95 115 827 164 148 100
+classifier/samples/all/positive/1614033597.jpg 2 441 136 105 126 834 221 132 191
+classifier/samples/all/positive/1614033600.jpg 2 540 87 97 149 272 0 66 123
+classifier/samples/all/positive/1614033603.jpg 3 153 173 149 136 599 103 111 170 685 1 93 107
+classifier/samples/all/positive/1614033606.jpg 4 204 440 210 152 764 227 122 196 711 58 99 122 74 103 125 112
+classifier/samples/all/positive/1614033610.jpg 3 225 59 90 104 521 62 106 116 782 240 133 148
+classifier/samples/all/positive/1614033612.jpg 3 179 231 115 119 596 154 109 129 596 154 109 129
+classifier/samples/all/positive/1614033616.jpg 2 300 127 109 145 659 156 101 199
+classifier/samples/all/positive/1614033623.jpg 2 322 212 96 116 644 234 121 123
+classifier/samples/all/positive/1614033626.jpg 2 159 234 172 166 690 245 156 179
+classifier/samples/all/positive/1614033631.jpg 2 188 261 156 122 546 158 124 129
+classifier/samples/all/positive/1614033640.jpg 3 166 191 110 156 234 111 95 105 686 187 109 177
+classifier/samples/all/positive/1614033648.jpg 2 202 318 188 238 626 175 119 131
+classifier/samples/all/positive/1614033659.jpg 3 102 260 148 166 401 171 108 163 783 185 209 211
+classifier/samples/all/positive/1614033664.jpg 3 211 381 226 181 282 160 134 137 698 312 206 388
+classifier/samples/all/positive/1614033674.jpg 3 194 189 196 211 43 64 157 174 591 121 134 226
+classifier/samples/all/positive/1614033676.jpg 2 181 182 201 207 595 101 146 234
+classifier/samples/all/positive/1614033679.jpg 2 305 128 182 175 725 96 169 317
+classifier/samples/all/positive/1614033687.jpg 3 524 161 128 155 661 93 93 117 772 131 177 281
+classifier/samples/all/positive/1614033695.jpg 3 112 215 182 199 587 135 100 139 788 186 161 154
+classifier/samples/all/positive/1614033696.jpg 3 128 208 161 201 590 147 108 115 767 180 186 153
+classifier/samples/all/positive/1614033701.jpg 3 327 105 121 143 497 68 112 135 795 164 130 221
+classifier/samples/all/positive/1614033711.jpg 2 537 139 126 139 367 160 122 136
+classifier/samples/all/positive/1614033725.jpg 1 509 76 164 186
+classifier/samples/all/positive/1614033735.jpg 1 101 174 244 228
+classifier/samples/all/positive/1614033740.jpg 1 617 168 231 272
+classifier/samples/all/positive/1614033745.jpg 1 67 120 198 226
+classifier/samples/all/positive/1614033756.jpg 0
+classifier/samples/all/positive/1614033807.jpg 1 313 80 167 227
+classifier/samples/all/positive/1614033811.jpg 1 689 139 203 313
+classifier/samples/all/positive/1614033863.jpg 2 291 156 155 209 562 97 94 120
+classifier/samples/all/positive/1614033870.jpg 1 636 151 139 215
+classifier/samples/all/positive/1614033880.jpg 3 690 166 144 194 41 207 124 197 141 155 98 113
+classifier/samples/all/positive/1614033888.jpg 3 105 209 175 168 744 210 179 166 518 95 71 89
+classifier/samples/all/positive/1614033895.jpg 4 198 214 206 193 630 224 174 230 512 78 68 105 176 73 71 114
+classifier/samples/all/positive/1614033899.jpg 6 199 247 210 189 626 225 223 227 810 54 75 136 183 83 88 89 355 58 56 75 494 42 50 62
+classifier/samples/all/positive/1614033905.jpg 2 400 196 208 282 886 218 78 95
+classifier/samples/all/positive/1614033921.jpg 6 632 166 186 173 477 67 84 114 562 14 58 71 188 64 77 85 345 43 84 86 793 24 65 92
+classifier/samples/all/positive/1614033925.jpg 4 503 136 126 166 162 161 148 122 261 55 70 91 592 33 73 85
+classifier/samples/all/positive/1614034000.jpg 1 204 120 189 185
+classifier/samples/all/positive/1614034032.jpg 2 650 185 162 168 450 90 90 108
+classifier/samples/all/positive/1614034040.jpg 1 637 146 116 184
+classifier/samples/all/positive/1614034108.jpg 3 564 146 138 209 273 169 159 194 196 65 112 130
+classifier/samples/all/positive/1614034112.jpg 4 157 234 192 169 639 101 121 151 568 26 75 104 3 77 88 108
+classifier/samples/all/positive/1614034119.jpg 2 72 194 159 181 525 144 104 176
+classifier/samples/all/positive/1614034124.jpg 4 259 207 141 160 461 111 103 114 420 14 82 112 709 3 42 77
+classifier/samples/all/positive/1614034128.jpg 2 140 206 166 139 649 142 161 153
+classifier/samples/all/positive/1614034132.jpg 2 157 233 184 152 636 131 144 174
+classifier/samples/all/positive/1614034136.jpg 3 224 221 149 138 326 55 114 119 474 0 96 88
+classifier/samples/all/positive/1614034141.jpg 2 357 164 90 119 687 263 135 154
+classifier/samples/all/positive/1614034147.jpg 4 371 122 137 158 635 171 156 164 665 4 74 103 390 2 70 84
+classifier/samples/all/positive/1614034153.jpg 4 460 174 143 156 159 236 151 126 507 52 83 99 232 39 61 73
+classifier/samples/all/positive/1614034161.jpg 1 669 177 253 248
+classifier/samples/all/positive/1614034164.jpg 3 85 185 247 310 186 104 134 129 690 109 90 121
+classifier/samples/all/positive/1614034167.jpg 2 175 153 175 283 381 84 110 123
+classifier/samples/all/positive/1614034176.jpg 2 422 92 136 164 683 185 238 192
+classifier/samples/all/positive/1614034181.jpg 2 290 104 153 173 609 54 180 198
+classifier/samples/all/positive/1614034260.jpg 1 719 129 197 253
+classifier/samples/all/positive/1614034265.jpg 1 133 90 178 181
+classifier/samples/all/positive/1614034268.jpg 1 600 116 172 229
+classifier/samples/all/positive/1614034273.jpg 1 700 187 176 302
+classifier/samples/all/positive/1614034279.jpg 1 671 160 191 276
+classifier/samples/all/positive/1614034283.jpg 5 313 280 375 380 752 147 118 139 221 156 59 84 307 138 40 66 543 135 42 56
+classifier/samples/all/positive/1614034290.jpg 2 421 252 209 255 782 131 70 77
+classifier/samples/all/positive/1614034299.jpg 2 411 190 209 282 705 224 70 95
+classifier/samples/all/positive/1614034306.jpg 2 138 147 168 185 617 96 97 175
+classifier/samples/all/positive/1614034313.jpg 1 255 128 181 165
+classifier/samples/all/positive/1614034326.jpg 2 620 227 236 237 745 59 88 106
+classifier/samples/all/positive/1614034355.jpg 3 228 119 158 159 633 175 131 242 788 72 147 129
+classifier/samples/all/positive/1614034378.jpg 3 270 60 195 196 785 139 203 274 874 23 82 117
+classifier/samples/all/positive/1614034398.jpg 4 118 171 279 351 510 69 89 102 388 42 75 95 692 31 63 74
+classifier/samples/all/positive/1614034404.jpg 2 291 99 163 170 646 137 165 190
+classifier/samples/all/positive/1614034408.jpg 2 171 149 157 149 486 82 153 186
+classifier/samples/all/positive/1614034412.jpg 3 152 200 125 155 296 49 122 165 856 33 126 106
+classifier/samples/all/positive/1614034416.jpg 2 91 126 154 189 756 239 222 315
+classifier/samples/all/positive/1614034734.jpg 2 330 117 116 197 655 134 211 209
+classifier/samples/all/positive/1614034739.jpg 2 653 123 156 236 284 24 111 179
+classifier/samples/all/positive/1614034765.jpg 5 593 169 127 202 247 229 151 161 141 94 142 143 749 100 83 99 633 94 54 62
+classifier/samples/all/positive/1614034772.jpg 3 163 165 149 138 328 128 116 114 853 242 169 303
+classifier/samples/all/positive/1614034779.jpg 2 168 180 145 205 693 153 205 205
+classifier/samples/all/positive/1614034782.jpg 3 296 118 139 141 518 20 81 108 731 196 123 119
+classifier/samples/all/positive/1614034786.jpg 2 241 102 142 204 772 196 152 196
+classifier/samples/all/positive/1614034792.jpg 2 322 156 146 140 596 138 187 181
+classifier/samples/all/positive/1614034796.jpg 2 276 126 163 152 602 92 137 179
+classifier/samples/all/positive/1614034801.jpg 1 113 131 177 170
+classifier/samples/all/positive/1614034804.jpg 2 228 129 102 187 628 104 136 208
+classifier/samples/all/positive/1614034808.jpg 2 324 146 117 150 693 212 106 138
+classifier/samples/all/positive/1614034811.jpg 2 315 174 123 159 603 169 108 122
+classifier/samples/all/positive/1614034819.jpg 2 343 175 99 149 627 160 108 129
+classifier/samples/all/positive/1614034826.jpg 3 752 190 135 175 457 151 130 149 698 98 78 76
+classifier/samples/all/positive/1614034850.jpg 2 131 198 195 299 706 115 104 120
+classifier/samples/all/positive/1614034859.jpg 2 203 150 101 185 664 184 131 125
+classifier/samples/all/positive/1614034866.jpg 3 465 162 106 113 300 113 68 83 100 216 156 209
+classifier/samples/all/positive/1614034873.jpg 3 67 221 178 194 456 122 117 120 665 83 80 94
+classifier/samples/all/positive/1614034877.jpg 2 113 226 189 203 584 148 138 188
+classifier/samples/all/positive/1614034881.jpg 2 76 236 165 246 824 194 112 156
+classifier/samples/all/positive/1614034893.jpg 3 132 233 120 140 770 274 191 179 740 163 79 100
+classifier/samples/all/positive/1614034899.jpg 2 253 152 110 126 752 267 170 144
+classifier/samples/all/positive/1614034902.jpg 4 262 194 96 171 702 262 102 206 393 91 89 123 42 90 80 109
+classifier/samples/all/positive/1614034908.jpg 3 182 237 135 172 392 207 53 95 740 256 170 174
+classifier/samples/all/positive/1614034913.jpg 2 215 166 114 166 672 124 99 168
+classifier/samples/all/positive/1614034931.jpg 2 97 254 178 165 514 119 108 139
+classifier/samples/all/positive/1614034934.jpg 2 339 201 106 140 768 213 161 133
+classifier/samples/all/positive/1614034941.jpg 3 141 215 134 132 761 240 175 172 478 83 92 111
+classifier/samples/all/positive/1614034947.jpg 2 77 206 166 121 674 226 128 208
+classifier/samples/all/positive/1614034952.jpg 2 212 131 93 151 632 232 132 131
+classifier/samples/all/positive/1614034955.jpg 2 148 247 138 165 662 256 167 142
+classifier/samples/all/positive/1614034961.jpg 2 205 220 141 181 696 201 115 185
+classifier/samples/all/positive/1614034968.jpg 2 80 239 192 138 763 214 133 210
+classifier/samples/all/positive/1614034974.jpg 2 91 249 200 239 325 211 90 107
+classifier/samples/all/positive/1614034978.jpg 7 103 249 165 165 496 150 100 120 810 245 163 228 448 117 54 83 263 118 54 75 600 108 43 64 818 122 70 79
+classifier/samples/all/positive/1614034984.jpg 5 342 203 115 136 367 72 65 81 508 48 50 68 601 25 51 68 656 189 147 170
+classifier/samples/all/positive/1614034989.jpg 3 179 211 157 147 739 190 114 148 688 49 62 72
+classifier/samples/all/positive/1614035016.jpg 2 392 133 135 133 691 181 155 175
+classifier/samples/all/positive/1614035020.jpg 2 648 163 133 197 63 97 48 64
+classifier/samples/all/positive/1614035024.jpg 4 368 152 99 166 374 23 87 93 186 32 87 88 753 55 75 84
+classifier/samples/all/positive/1614035028.jpg 2 587 166 112 133 216 89 75 100
+classifier/samples/all/positive/1614035032.jpg 1 113 232 164 196
+classifier/samples/all/positive/1614035038.jpg 6 235 268 167 160 674 250 146 205 775 169 83 85 694 145 44 62 500 166 47 57 7 183 86 77
+classifier/samples/all/positive/1614035042.jpg 3 259 217 108 143 623 271 164 184 454 94 54 78
+classifier/samples/all/positive/1614035047.jpg 1 223 231 167 148
+classifier/samples/all/positive/1614035051.jpg 3 239 249 151 187 406 105 77 109 527 62 54 76
+classifier/samples/all/positive/1614035060.jpg 3 227 135 89 164 600 126 111 149 739 52 71 111
+classifier/samples/all/positive/1614035073.jpg 4 214 280 145 165 735 253 208 149 470 97 53 111 831 101 54 87
+classifier/samples/all/positive/1614035079.jpg 3 238 194 140 231 705 266 143 157 921 305 102 118
+classifier/samples/all/positive/1614035085.jpg 2 252 235 121 176 730 225 103 166
+classifier/samples/all/positive/1614035089.jpg 3 60 256 196 158 367 108 109 121 558 24 91 90
+classifier/samples/all/positive/1614035095.jpg 2 65 218 205 143 736 213 115 196
+classifier/samples/all/positive/1614035099.jpg 2 714 194 144 186 409 54 95 109
+classifier/samples/all/positive/1614035107.jpg 2 188 173 106 134 489 123 92 105
+classifier/samples/all/positive/1614035113.jpg 4 170 252 122 183 677 199 135 136 581 99 61 96 173 108 59 99
+classifier/samples/all/positive/1614035116.jpg 4 257 167 81 141 379 96 56 107 671 197 96 175 36 106 62 94
+classifier/samples/all/positive/1614035120.jpg 3 190 214 139 162 530 127 93 121 726 91 78 102
+classifier/samples/all/positive/1614035124.jpg 1 663 132 92 128
+classifier/samples/all/positive/1614035136.jpg 1 754 141 111 139
+classifier/samples/all/positive/1614035154.jpg 6 209 246 129 124 216 140 65 101 572 126 77 86 730 291 108 141 704 106 56 88 422 82 35 63
+classifier/samples/all/positive/1614035161.jpg 3 297 170 92 135 184 99 66 107 689 175 120 109
+classifier/samples/all/positive/1614035165.jpg 2 316 182 79 154 664 235 112 140
+classifier/samples/all/positive/1614035167.jpg 2 386 144 83 136 716 150 106 149
+classifier/samples/all/positive/1614035171.jpg 6 173 255 139 168 412 165 98 95 343 101 53 79 804 194 87 94 626 83 66 72 729 82 49 63
+classifier/samples/all/positive/1614035177.jpg 4 497 179 98 101 735 214 133 128 216 94 64 98 583 67 47 77
+classifier/samples/all/positive/1614035183.jpg 6 102 291 117 110 296 174 114 96 586 93 86 77 826 238 117 149 399 66 54 72 149 95 58 83
+classifier/samples/all/positive/1614035190.jpg 3 94 273 170 126 632 217 106 130 940 200 76 135
+classifier/samples/all/positive/1614035195.jpg 4 109 272 149 99 660 224 136 152 74 65 56 79 570 24 58 66
+classifier/samples/all/positive/1614035200.jpg 8 38 266 152 97 354 205 110 119 674 105 72 83 854 198 118 93 750 60 72 79 424 90 60 76 357 59 44 60 178 101 58 65
+classifier/samples/all/positive/1614035204.jpg 6 219 232 108 166 49 142 106 95 247 78 62 68 317 42 49 58 721 124 108 89 703 227 122 157
+classifier/samples/all/positive/1614035211.jpg 7 105 261 151 158 378 150 86 90 324 71 51 89 778 180 71 107 618 55 71 73 464 21 34 57 732 53 45 70
+classifier/samples/all/positive/1614035216.jpg 3 153 232 114 159 349 166 88 120 814 116 71 93
+classifier/samples/all/positive/1614035228.jpg 7 89 165 83 96 527 162 46 76 593 256 116 98 804 105 75 82 499 59 67 69 272 73 63 78 187 41 34 70
+classifier/samples/all/positive/1614035240.jpg 7 109 171 80 92 203 70 51 68 300 96 50 64 513 84 68 68 520 163 68 89 595 268 110 97 824 122 69 85
+classifier/samples/all/positive/1614035245.jpg 7 45 149 63 81 233 150 85 95 451 109 65 75 159 288 137 123 645 191 65 77 823 241 121 100 757 118 54 61
+classifier/samples/all/positive/1614035250.jpg 4 62 370 116 162 340 180 77 119 632 167 81 85 199 139 72 89
+classifier/samples/all/positive/1614035258.jpg 3 318 257 82 113 604 369 97 148 727 198 45 72
+classifier/samples/all/positive/1614035263.jpg 3 262 184 80 132 607 231 101 95 214 105 54 93
+classifier/samples/all/positive/1614035269.jpg 3 361 202 63 122 631 197 85 118 751 113 69 89
+classifier/samples/all/positive/1614035274.jpg 5 208 240 102 136 456 161 87 81 463 55 44 72 746 61 92 77 820 256 91 94
+classifier/samples/all/positive/1614035280.jpg 3 485 132 84 125 261 173 105 116 199 22 66 70
+classifier/samples/all/positive/1614035287.jpg 5 242 294 111 100 108 530 137 127 786 283 109 122 462 112 77 79 226 86 46 92
+classifier/samples/all/positive/1614035294.jpg 3 143 248 120 212 713 257 182 174 36 226 100 130
+classifier/samples/all/positive/1614035299.jpg 2 243 247 149 206 740 267 170 211
+classifier/samples/all/positive/1614035315.jpg 2 275 47 500 597 146 248 123 150
+classifier/samples/all/positive/1614035322.jpg 2 215 46 437 542 852 245 129 115
+classifier/samples/all/positive/1614035327.jpg 2 357 166 294 471 817 219 109 125
+classifier/samples/all/positive/1614035333.jpg 3 428 218 223 304 224 160 114 153 409 152 76 95
+classifier/samples/all/positive/1614035337.jpg 1 341 243 292 355
+classifier/samples/all/positive/1614035341.jpg 1 410 256 217 369
+classifier/samples/all/positive/1614035346.jpg 1 364 264 295 321
+classifier/samples/all/positive/1614035353.jpg 3 153 202 101 169 701 189 157 178 731 59 125 107
+classifier/samples/all/positive/1614035362.jpg 2 196 233 112 144 651 229 144 150

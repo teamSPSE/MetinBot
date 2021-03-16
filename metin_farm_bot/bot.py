@@ -220,9 +220,9 @@ class MetinFarmBot:
                     self.started_hitting_time = time.time()
 
                 result = self.get_mob_info()
-                if result is None:
-                    time.sleep(0.1)  # double check
-                    result = self.get_mob_info()
+                # if result is None:
+                #     time.sleep(0.1)  # double check
+                #     result = self.get_mob_info()
                 if result is None or time.time() - self.started_hitting_time >= self.maxMetinTime:
                     self.started_hitting_time = None
                     if self.debug:
@@ -449,10 +449,8 @@ class MetinFarmBot:
                   'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]}  # cerveny les
         for coord in coords[self.metin][self.metinLocType]:
             self.metin_window.mouse_move(coord[0], coord[1])
-            print(coord)
             time.sleep(0.7)
             self.metin_window.mouse_click()
-            print("click")
             time.sleep(1)
 
         if self.metinLocType == 0:
@@ -490,6 +488,8 @@ class MetinFarmBot:
             time.sleep(0.1)
             self.metin_window.mouse_click()
             time.sleep(3)
+            self.runRecall_mount()
+            self.close_minimap()
 
         self.metin_window.deactivate()
 

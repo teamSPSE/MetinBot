@@ -138,7 +138,7 @@ class MetinWindow(Window):
             sleep(0.05)
             self.mouse_click()
         else:
-            sleep(3)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
+            sleep(1.8)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
             self.activate()
 
     def deactivate(self):  # odemceni
@@ -197,19 +197,19 @@ class OskWindow(Window):
         self.press_key(button='Ctrl', mode='click')
         sleep(0.2)
         self.press_key(button='b', mode='click')
-        sleep(0.4)
+        sleep(1)
 
     def call_mount(self):
         self.press_key(button='Fn', mode='click')
         sleep(0.2)
         self.press_key(button='1', mode='click')
-        sleep(0.4)
+        sleep(1)
 
     def un_mount(self):
         self.press_key(button='Ctrl', mode='click')
         sleep(0.2)
         self.press_key(button='h', mode='click')
-        sleep(0.4)
+        sleep(1)
 
     def recall_mount(self):
         self.send_mount_away()
