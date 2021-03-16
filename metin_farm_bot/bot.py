@@ -57,7 +57,7 @@ class MetinFarmBot:
         self.calibrate_count = 0
         self.calibrate_threshold = 2
         self.rotate_count = 0
-        self.rotate_threshold = 5
+        self.rotate_threshold = 6
         self.gm_message_threshold = 0.097
 
         self.started_hitting_time = None
@@ -349,10 +349,10 @@ class MetinFarmBot:
         time.sleep(utils.get_relative_time(0.3))
         self.osk_window.stop_rotating_down()
         self.osk_window.start_zooming_out()
-        time.sleep(utils.get_relative_time(0.8))
+        time.sleep(utils.get_relative_time(1))
         self.osk_window.stop_zooming_out()
         self.osk_window.start_zooming_in()
-        time.sleep(utils.get_relative_time(0.01))
+        time.sleep(utils.get_relative_time(0.005))
         self.osk_window.stop_zooming_in()
 
         self.metin_window.deactivate()
