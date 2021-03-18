@@ -138,7 +138,7 @@ class MetinWindow(Window):
             sleep(0.05)
             self.mouse_click()
         else:
-            sleep(1.8)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
+            sleep(3)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
             self.activate()
 
     def deactivate(self):  # odemceni

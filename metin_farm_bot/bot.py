@@ -351,9 +351,9 @@ class MetinFarmBot:
         self.osk_window.start_zooming_out()
         time.sleep(utils.get_relative_time(1))
         self.osk_window.stop_zooming_out()
-        self.osk_window.start_zooming_in()
-        time.sleep(utils.get_relative_time(0.005))
-        self.osk_window.stop_zooming_in()
+        # self.osk_window.start_zooming_in()
+        # time.sleep(utils.get_relative_time(0.001))
+        # self.osk_window.stop_zooming_in()
 
         self.metin_window.deactivate()
 
@@ -445,7 +445,7 @@ class MetinFarmBot:
         # for 800x600
         coords = {'lv_40': [[(400, 320), (400, 320)], [(400, 320), (400, 290)]],  # udoli orku
                   'lv_60': [[(400, 380), (400, 380)], [(400, 380), (400, 410)]],  # predposledni chram hwang
-                  'lv_70': [[(540, 330), (400, 230),  (400, 290)], [(540, 330), (400, 220), (400, 320)]],  # ohniva zeme
+                  'lv_70': [[(540, 330), (400, 230),  (400, 290)], [(540, 330), (400, 230), (400, 320)]],  # ohniva zeme
                   'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]}  # cerveny les
         for coord in coords[self.metin][self.metinLocType]:
             self.metin_window.mouse_move(coord[0], coord[1])
@@ -488,8 +488,10 @@ class MetinFarmBot:
             time.sleep(0.1)
             self.metin_window.mouse_click()
             time.sleep(3)
-            self.runRecall_mount()
-            self.close_minimap()
+            self.osk_window.recall_mount()
+            self.metin_window.mouse_move(788, 16)  # 1012, 11 for 1024x768 | 788x16 for 800x600
+            time.sleep(0.1)
+            self.metin_window.mouse_click()
 
         self.metin_window.deactivate()
 

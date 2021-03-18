@@ -86,7 +86,7 @@ def main():
         ]
         # print(clients)
         saveSetting(clients)
-        startApp(clients)
+        startApp(clients, False)
 
     testPid = utils.get_pid_by_name('Aeldra')
     # print(testPid)
@@ -285,6 +285,7 @@ def startApp(clients, debug=False):
     # AI
     hsv_filter = None  # SnowManFilter() if metin_selection != 'lv_90' else SnowManFilterRedForest()  MobInfoFilter()
     cascade_path = 'classifier/cascadeMetinSoul/cascade2424/cascade.xml'
+    # cascade_path = 'classifier/cascadeMetinAll/cascade/cascade.xml'
 
     # Countdown
     utils.countdown()
@@ -329,7 +330,6 @@ def startApp(clients, debug=False):
             bot2.detection_info_update(screenshot2, screenshot_time2, detection2, detection_time2)
 
         if debug:
-            print(window_focus_locked)
             continue
             if detection_image1 is None:
                 continue
