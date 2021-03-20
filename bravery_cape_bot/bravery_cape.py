@@ -19,7 +19,7 @@ def main():
     aeldra = MetinWindow('Aeldra')
     print('aeldra test ok')
 
-    for i in range(5):
+    while True:
         print(f'\nIteration {i}:')
 
         print('Pulling mobs')
