@@ -219,12 +219,13 @@ class MetinFarmBot:
                 if self.started_hitting_time is None:
                     self.started_hitting_time = time.time()
 
-                # result = self.get_mob_info()
-                # if result is None:
-                #     time.sleep(0.1)  # double check
-                #     result = self.get_mob_info()
+                result = self.get_mob_info()
+                if result is None:
+                    time.sleep(0.1)  # double check
+                    result = self.get_mob_info()
+                if result is None:
                 # if result is None or (time.time() - self.started_hitting_time) >= self.maxMetinTime:
-                if (time.time() - self.started_hitting_time) >= self.maxMetinTime:
+                # if (time.time() - self.started_hitting_time) >= self.maxMetinTime:
                     self.started_hitting_time = None
                     if self.debug:
                         self.put_info_text('Finished -> Collect drop')
