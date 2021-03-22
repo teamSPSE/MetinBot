@@ -166,7 +166,7 @@ class OskWindow(Window):
                         'a': (50, 110), 's': (75, 110), 'd': (100, 110), 'f': (120, 110), 'g': (140, 110),
                         'h': (165, 110), 'j': (185, 110), 'k': (210, 110), 'l': (230, 110),
                         'y': (65, 130), 'x': (90, 130), 'c': (110, 130), 'v': (130, 130), 'b': (150, 130),
-                        'n': (175, 130), 'm': (200, 130)
+                        'n': (175, 130), 'm': (200, 130), ',': (220, 130)
 
                         }
 
@@ -288,7 +288,7 @@ class OskWindow(Window):
             elif ord(char) == ord('?'):
                 self.press_key(button='Shift')
                 sleep(0.1)
-                self.press_key(button=char)
+                self.press_key(button=',')
             else:
                 self.press_key(button=char)
             sleep(0.1)

@@ -32,6 +32,7 @@ def main():
 
     count = {'p': 0, 'n': 0}
 
+
     while True:
         loop_time = time.time()
         if USE_SCREEN:

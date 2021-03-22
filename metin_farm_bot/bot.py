@@ -223,16 +223,13 @@ class MetinFarmBot:
                 if result is None:
                     time.sleep(0.1)  # double check
                     result = self.get_mob_info()
-                if result is None:
-                # if result is None or (time.time() - self.started_hitting_time) >= self.maxMetinTime:
-                # if (time.time() - self.started_hitting_time) >= self.maxMetinTime:
+                if result is None or (time.time() - self.started_hitting_time) >= self.maxMetinTime:
                     self.started_hitting_time = None
                     if self.debug:
                         self.put_info_text('Finished -> Collect drop')
                     self.metin_count += 1
                     total = int(time.time() - self.started)
                     avg = round(total / self.metin_count, 1)
-                    # self.send_telegram_message(f'{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
                     print(f'[{self.account_id}]{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
                     self.last_metin_time = time.time()
                     self.switch_state(BotState.COLLECTING_DROP)
@@ -447,8 +444,8 @@ class MetinFarmBot:
         # for 800x600
         coords = {'lv_40': [[(400, 350), (400, 320)], [(400, 350), (400, 290)]],  # udoli orku
                   'lv_60': [[(400, 380), (400, 380)], [(400, 380), (400, 410)]],  # predposledni chram hwang
-                  'lv_70': [[(540, 330), (400, 255),  (400, 290)], [(540, 330), (400, 255), (400, 320)]],  # ohniva zeme
-                  'lv_90': [[(540, 330), (400, 290), (400, 350)], [(540, 330), (400, 290), (400, 380)]]}  # cerveny les
+                  'lv_70': [[(540, 330), (400, 255), (400, 290)], [(540, 330), (400, 255), (400, 320)]],  # ohniva zeme
+                  'lv_90': [[(540, 330), (400, 320), (400, 290)]]}            # , [(540, 330), (400, 320), (400, 320)]]}  # cerveny les
         for coord in coords[self.metin][self.metinLocType]:
             self.metin_window.mouse_move(coord[0], coord[1])
             time.sleep(0.7)
@@ -471,14 +468,16 @@ class MetinFarmBot:
         screenshot = self.screenshot
         self.info_lock.release()
         # print(utils.get_respawn_needle_path(),screenshot)
-        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
+        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(),
+                                                                cv.TM_SQDIFF_NORMED)
         while match_val is None or match_val > 0.005:
             if tries > 3:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
             self.info_lock.release()
-            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(), cv.TM_SQDIFF_NORMED)
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(),
+                                                                    cv.TM_SQDIFF_NORMED)
             tries += 1
 
         if match_loc is not None and match_val is not None and 0.005 > match_val:
@@ -505,14 +504,16 @@ class MetinFarmBot:
         screenshot = self.screenshot
         self.info_lock.release()
         # print(utils.get_login_needle_800_path(),screenshot)
-        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
-        while match_val is None or match_val > 0.001 :
+        match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(),
+                                                                method=cv.TM_SQDIFF_NORMED)
+        while match_val is None or match_val > 0.001:
             if tries > 4:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
             self.info_lock.release()
-            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(), method=cv.TM_SQDIFF_NORMED)
+            match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(),
+                                                                    method=cv.TM_SQDIFF_NORMED)
             tries += 1
 
         if match_loc is not None and 0.001 > match_val > -0.001:
