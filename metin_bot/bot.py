@@ -498,7 +498,7 @@ class MetinBot:
             self.metinLocType = 1
         else:
             self.metinLocType = 0
-        time.sleep(9)
+        time.sleep(15)
 
         self.metin_window.deactivate()
 
