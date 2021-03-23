@@ -6,8 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
-metin_farm_bot/setting.txt
-metin_farm_bot/classifier/samples
+metin_bot/setting.txt
+metin_bot/classifier/samples
 
 # Distribution / packaging
 .Python

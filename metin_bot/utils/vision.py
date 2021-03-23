@@ -7,7 +7,7 @@ from pathlib import Path
 
 class HsvFilter:
     def __init__(self, hMin=None, sMin=None, vMin=None, hMax=None, sMax=None, vMax=None,
-                    sAdd=None, sSub=None, vAdd=None, vSub=None):
+                 sAdd=None, sSub=None, vAdd=None, vSub=None):
         self.hMin = hMin
         self.sMin = sMin
         self.vMin = vMin
@@ -33,6 +33,7 @@ class SnowManFilter(HsvFilter):
         self.vAdd = 255
         self.vSub = 0
 
+
 class SnowManFilterRedForest(HsvFilter):
     # Night mode acitve
     def __init__(self):
@@ -47,12 +48,13 @@ class SnowManFilterRedForest(HsvFilter):
         self.vAdd = 255
         self.vSub = 0
 
+
 class TestFilter(HsvFilter):
     def __init__(self):
-        self.hMin = 130
-        self.sMin = 0
-        self.vMin = 0
-        self.hMax = 138
+        self.hMin = 20
+        self.sMin = 50
+        self.vMin = 50
+        self.hMax = 28
         self.sMax = 255
         self.vMax = 255
         self.sAdd = 0
@@ -193,7 +195,6 @@ class Vision:
             bottom_right = (x + w, y + h)
             cv.rectangle(haystack_img, top_left, bottom_right, bgr_color, lineType=cv.LINE_4)
 
-
     def add_rectangles_to_image(self, image, rectangles):
         if len(rectangles > 0):
             image_with_matches = self.draw_rectangles(image, [rectangles[0]], bgr_color=(0, 0, 255))
@@ -206,15 +207,33 @@ class Vision:
         # cv.rectangle(image, top_left, bottom_right, (255, 0, 0), cv.LINE_4)
 
     def extract_section(self, image, top_left, bottom_right):
-        return image[top_left[1] : bottom_right[1], top_left[0] : bottom_right[0]]
+        try:
+            return image[top_left[1]: bottom_right[1], top_left[0]: bottom_right[0]]
+        except:
+            return None
 
-    def template_match_alpha(self, haystack_img, needle_path):
+    def template_match_alpha(self, haystack_img, needle_path, method=cv.TM_SQDIFF):
+        # return None, None
+        if haystack_img is None or needle_path is None:
+            print("null values in template_match_alpha")
+            if haystack_img is None:
+                print("haystack_img null")
+            if needle_path is None:
+                print("needle_path null")
+            return None, None
         needle = cv.imread(needle_path, cv.IMREAD_UNCHANGED)
-        result = cv.matchTemplate(haystack_img, needle[:, :, :3], cv.TM_SQDIFF, mask=needle[:, :, 3])
-        match_val, _, match_loc, _ = cv.minMaxLoc(result)
+        if needle is None:
+            print("failed to load needle")
+            return None, None
+        # print(needle)
+
+        try:
+            result = cv.matchTemplate(haystack_img, needle[:, :, :3], method, mask=needle[:, :, 3])
+            match_val, _, match_loc, _ = cv.minMaxLoc(result)
+        except:
+            return None, None
 
         if match_val > 10_000:
             return None, match_val
         else:
             return match_loc, match_val
-

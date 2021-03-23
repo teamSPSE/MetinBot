@@ -20,11 +20,12 @@ class BotState(enum.Enum):
     HITTING = 4
     COLLECTING_DROP = 5
     RESTART = 6
+    PULL_MOBS = 7
     ERROR = 100
     DEBUG = 101
 
 
-class MetinFarmBot:
+class MetinBot:
 
     def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime, skipInit, skillDuration):
         self.metinLocType = 0
@@ -71,16 +72,60 @@ class MetinFarmBot:
         self.overlay_lock = Lock()
 
         self.started = time.time()
-        print('Started')
         self.metin_count = 0
+
+        self.time_to_kill_mobs = 7
+        self.relog_if_loggout_tries = 3
+        self.respawn_if_dead_tries = 2
 
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
 
         self.time_entered_state = None
         self.state = None
-        self.switch_state(BotState.INITIALIZING)
 
-    def run(self):
+        if self.metin is None:
+            self.switch_state(BotState.PULL_MOBS)
+        else:
+            self.switch_state(BotState.INITIALIZING)
+
+        print('Started')
+
+    def runExp(self):
+        self.relog_if_loggout_tries = -1
+        self.respawn_if_dead_tries = -1
+
+        while not self.stopped:
+            if self.state == BotState.PULL_MOBS:
+                self.relog_if_loggout(self.account_id)
+                self.respawn_if_dead()
+                self.handle_gm_message()
+
+                if (time.time() - self.last_buff) > utils.get_relative_time(self.buff_interval):
+                    self.turn_on_buffs()
+
+                self.osk_window.pull_mobs()
+                self.switch_state(BotState.HITTING)
+
+            if self.state == BotState.HITTING:
+                self.osk_window.start_hitting()
+                time.sleep(utils.get_relative_time(self.time_to_kill_mobs))
+                self.osk_window.stop_hitting()
+                self.switch_state(BotState.COLLECTING_DROP)
+
+            if self.state == BotState.COLLECTING_DROP:
+                self.osk_window.pick_up()
+                self.switch_state(BotState.PULL_MOBS)
+
+    def startExp(self):
+        self.stopped = False
+        t = Thread(target=self.runExp)
+        t.start()
+
+    def stop(self):
+        self.stopped = True
+
+    def runFarm(self):
+        print("in")
         while not self.stopped:
             if self.state == BotState.INITIALIZING:
                 if self.skipInit == 0:
@@ -277,13 +322,10 @@ class MetinFarmBot:
                 #     time.sleep(1)
                 self.stop()
 
-    def start(self):
+    def startFarm(self):
         self.stopped = False
-        t = Thread(target=self.run)
+        t = Thread(target=self.runFarm)
         t.start()
-
-    def stop(self):
-        self.stopped = True
 
     def detection_info_update(self, screenshot, screenshot_time, result, result_time):
         self.info_lock.acquire()
@@ -471,7 +513,7 @@ class MetinFarmBot:
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_respawn_needle_path(),
                                                                 cv.TM_SQDIFF_NORMED)
         while match_val is None or match_val > 0.005:
-            if tries > 3:
+            if tries > self.respawn_if_dead_tries:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot
@@ -507,7 +549,7 @@ class MetinFarmBot:
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(),
                                                                 method=cv.TM_SQDIFF_NORMED)
         while match_val is None or match_val > 0.001:
-            if tries > 4:
+            if tries > self.relog_if_loggout_tries:
                 break
             self.info_lock.acquire()
             screenshot = self.screenshot

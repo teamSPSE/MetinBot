@@ -2,7 +2,7 @@ import random
 
 import numpy as np
 
-from metin_farm_bot.utils import utils
+from metin_bot.utils import utils
 from utils.window import MetinWindow, OskWindow
 import pyautogui
 import time

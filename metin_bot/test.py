@@ -1,7 +1,7 @@
 import win32gui
 
-from metin_farm_bot.utils import Vision
-from metin_farm_bot.utils.window import MetinWindow
+from metin_bot.utils import Vision
+from metin_bot.utils.window import MetinWindow
 
 
 def main():

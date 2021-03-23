@@ -177,7 +177,9 @@ class OskWindow(Window):
         self.press_key(button='space', mode='up')
 
     def pull_mobs(self):
-        self.press_key(button='2', mode='click', count=3)
+        self.press_key(button='Fn', mode='click')
+        sleep(0.2)
+        self.press_key(button='2', mode='click')
 
     def pick_up(self):
         self.press_key(button='y', mode='click', count=1)
