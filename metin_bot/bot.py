@@ -73,6 +73,7 @@ class MetinBot:
 
         self.started = time.time()
         self.metin_count = 0
+        self.pos_to_check = (0,0)
 
         self.time_to_kill_mobs = 7
         self.relog_if_loggout_tries = 3
@@ -125,7 +126,6 @@ class MetinBot:
         self.stopped = True
 
     def runFarm(self):
-        print("in")
         while not self.stopped:
             if self.state == BotState.INITIALIZING:
                 if self.skipInit == 0:
@@ -149,14 +149,13 @@ class MetinBot:
                     if self.detection_result is not None and self.detection_result['click_pos'] is not None:
                         # self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
 
-                        self.metin_window.activate()  # aktivace
                         try:
-                            self.metin_window.mouse_move(*self.detection_result['click_pos'])
-                        except:
+                            self.metin_window.activate()  # aktivace
+                            self.pos_to_check = self.detection_result['click_pos']
                             self.metin_window.deactivate()
+                            self.switch_state(BotState.CHECKING_MATCH)
+                        except:
                             self.switch_state(BotState.ERROR)
-                        time.sleep(0.1)
-                        self.switch_state(BotState.CHECKING_MATCH)
                     else:
                         if self.debug:
                             self.put_info_text('No metin found, will rotate!')
@@ -180,8 +179,11 @@ class MetinBot:
 
             if self.state == BotState.CHECKING_MATCH:
                 if self.screenshot_time > self.time_entered_state:
+
+                    self.metin_window.activate()
+                    self.metin_window.mouse_move(*self.pos_to_check)
                     pos = self.metin_window.get_relative_mouse_pos()
-                    self.metin_window.deactivate()  # deaktivace z search
+                    self.metin_window.deactivate()
 
                     # velikost obdelniku, kde budu hledat needle_metin
                     width = 190
@@ -220,8 +222,6 @@ class MetinBot:
                             self.switch_state(BotState.ERROR)
                         else:
                             self.switch_state(BotState.SEARCHING)
-                else:
-                    self.metin_window.deactivate()  # uvolnim, protoze jsem prisel do CHECKING_MATCH se zamknutym UVIDIM JESTE
 
             if self.state == BotState.MOVING:
                 if self.started_moving_time is None:
@@ -392,9 +392,9 @@ class MetinBot:
         self.osk_window.start_zooming_out()
         time.sleep(utils.get_relative_time(1))
         self.osk_window.stop_zooming_out()
-        # self.osk_window.start_zooming_in()
-        # time.sleep(utils.get_relative_time(0.001))
-        # self.osk_window.stop_zooming_in()
+        self.osk_window.start_zooming_in()
+        time.sleep(utils.get_relative_time(0.05))
+        self.osk_window.stop_zooming_in()
 
         self.metin_window.deactivate()
 
@@ -487,7 +487,7 @@ class MetinBot:
         coords = {'lv_40': [[(400, 350), (400, 320)], [(400, 350), (400, 290)]],  # udoli orku
                   'lv_60': [[(400, 380), (400, 380)], [(400, 380), (400, 410)]],  # predposledni chram hwang
                   'lv_70': [[(540, 330), (400, 255), (400, 290)], [(540, 330), (400, 255), (400, 320)]],  # ohniva zeme
-                  'lv_90': [[(540, 330), (400, 320), (400, 290)]]}            # , [(540, 330), (400, 320), (400, 320)]]}  # cerveny les
+                  'lv_90': [[(540, 330), (400, 320), (400, 290)],[(540, 330), (400, 320), (400, 290)]]}            # , [(540, 330), (400, 320), (400, 320)]]}  # cerveny les
         for coord in coords[self.metin][self.metinLocType]:
             self.metin_window.mouse_move(coord[0], coord[1])
             time.sleep(0.7)

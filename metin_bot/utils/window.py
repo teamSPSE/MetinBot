@@ -126,8 +126,6 @@ class MetinWindow(Window):
         self.window_focus_locked[0] = val
 
     def activate(self):
-        # if(win32gui.GetForegroundWindow() != self.hwnd):
-        #    win32gui.SetForegroundWindow(self.hwnd)
         if self.getWindow_focus_locked() == 0:
             self.setWindow_focus_locked(1)  # zamceni
             if self.x != win32gui.GetWindowRect(self.hwnd)[0] + 8 or \
@@ -138,7 +136,7 @@ class MetinWindow(Window):
             sleep(0.05)
             self.mouse_click()
         else:
-            sleep(3)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
+            sleep(0.1)  # prevence toho aby se preply jen kdyz jeden hittuje metin, v budoucnu predelat
             self.activate()
 
     def deactivate(self):  # odemceni
