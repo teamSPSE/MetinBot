@@ -9,6 +9,7 @@ import numpy as np
 import pythoncom
 import cv2 as cv
 import utils
+from waiting import wait
 
 
 class Window:
@@ -126,8 +127,9 @@ class MetinWindow(Window):
         self.window_focus_locked[0] = val
 
     def activate(self):
-        while self.getWindow_focus_locked() == 1:
-            sleep(0.4)
+        wait(lambda: self.getWindow_focus_locked() == 0)
+        # while self.getWindow_focus_locked() == 1:
+        #     sleep(0.4)
 
         if self.getWindow_focus_locked() == 0:
             self.setWindow_focus_locked(1)  # zamceni

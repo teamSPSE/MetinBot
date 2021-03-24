@@ -17,3 +17,4 @@ opencv-python~=4.4.0.46
 numpy~=1.19.3
 pytesseract~=0.3.7
 psutil~=5.8.0
+waiting~=1.4.1
