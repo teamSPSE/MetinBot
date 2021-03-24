@@ -76,8 +76,9 @@ class MetinBot:
         self.pos_to_check = (0,0)
 
         self.time_to_kill_mobs = 7
-        self.relog_if_loggout_tries = 3
-        self.respawn_if_dead_tries = 2
+        self.relog_if_loggout_tries = 1
+        self.respawn_if_dead_tries = 1
+        self.check_match_tries = 1
 
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
 
@@ -198,7 +199,7 @@ class MetinBot:
                     match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                             utils.get_metin_needle_path())
                     while match_val is None:
-                        if tries > 3:
+                        if tries > self.check_match_tries:
                             break
                         self.info_lock.acquire()
                         mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
