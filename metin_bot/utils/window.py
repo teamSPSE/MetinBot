@@ -43,6 +43,8 @@ class Window:
         self.shell.SendKeys('%')
         win32gui.SetForegroundWindow(self.hwnd)
 
+        self.debug = False
+
     def get_relative_mouse_pos(self):
         curr_x, curr_y = pyautogui.position()
         return curr_x - self.x, curr_y - self.y
@@ -128,8 +130,6 @@ class MetinWindow(Window):
 
     def activate(self):
         wait(lambda: self.getWindow_focus_locked() == 0)
-        # while self.getWindow_focus_locked() == 1:
-        #     sleep(0.4)
 
         if self.getWindow_focus_locked() == 0:
             self.setWindow_focus_locked(1)  # zamceni
@@ -140,9 +140,13 @@ class MetinWindow(Window):
             self.mouse_move(40, -15)
             sleep(0.05)
             self.mouse_click()
+            if self.debug:
+                print("activated", self.getWindow_focus_locked())
 
     def deactivate(self):  # odemceni
         self.setWindow_focus_locked(0)
+        if self.debug:
+            print("deactivated", self.getWindow_focus_locked())
 
 
 class OskWindow(Window):

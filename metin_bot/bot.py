@@ -22,7 +22,6 @@ class BotState(enum.Enum):
     RESTART = 6
     PULL_MOBS = 7
     ERROR = 100
-    DEBUG = 101
 
 
 class MetinBot:
@@ -130,6 +129,8 @@ class MetinBot:
         while not self.stopped:
             if self.state == BotState.INITIALIZING:
                 if self.skipInit == 0:
+                    if self.debug:
+                        print(self.account_id, self.state)
                     self.relog_if_loggout(self.account_id)
                     self.respawn_if_dead()
                     self.handle_gm_message()
@@ -143,6 +144,8 @@ class MetinBot:
                 self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.SEARCHING:
+                if self.debug:
+                    print(self.account_id, self.state)
                 # print(self.screenshot is not None, self.detection_time is not None,  self.detection_time, self.time_entered_state)
                 # Check if screenshot is recent
                 if self.screenshot is not None and self.detection_time is not None and self.detection_time > self.time_entered_state + 0.1:
@@ -150,16 +153,17 @@ class MetinBot:
                     if self.detection_result is not None and self.detection_result['click_pos'] is not None:
                         # self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
 
+                        self.metin_window.activate()  # aktivace
                         try:
-                            self.metin_window.activate()  # aktivace
                             self.pos_to_check = self.detection_result['click_pos']
-                            self.metin_window.deactivate()
                             self.switch_state(BotState.CHECKING_MATCH)
                         except:
                             self.switch_state(BotState.ERROR)
+                        self.metin_window.deactivate()
                     else:
                         if self.debug:
                             self.put_info_text('No metin found, will rotate!')
+                            print('No metin found, will rotate!')
 
                         if self.rotate_count >= self.rotate_threshold:
                             if self.debug:
@@ -167,7 +171,7 @@ class MetinBot:
                             if self.calibrate_count >= self.calibrate_threshold:
                                 if self.debug:
                                     self.put_info_text(f'Recalibrated {self.calibrate_count} times -> Error!')
-                                print('Entering error mode because no metin could be found!')
+                                    print('Entering error mode because no metin could be found!')
                                 self.switch_state(BotState.ERROR)
                             else:
                                 self.calibrate_count += 1
@@ -179,6 +183,8 @@ class MetinBot:
                             self.time_entered_state = time.time()
 
             if self.state == BotState.CHECKING_MATCH:
+                if self.debug:
+                    print(self.account_id, self.state)
                 if self.screenshot_time > self.time_entered_state:
 
                     self.metin_window.activate()
@@ -225,6 +231,8 @@ class MetinBot:
                             self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.MOVING:
+                if self.debug:
+                    print(self.account_id, self.state)
                 if self.started_moving_time is None:
                     self.started_moving_time = time.time()
 
@@ -244,8 +252,7 @@ class MetinBot:
                         self.move_fail_count = 0
                         if self.debug:
                             self.put_info_text(f'Failed to move to metin {self.move_fail_count} times -> Error!')
-                        # self.send_telegram_message('Entering error mode because couldn\'t move to metin!')
-                        print('Entering error mode because couldn\'t move to metin!')
+                            print('Entering error mode because couldn\'t move to metin!')
                         self.switch_state(BotState.ERROR)
                     else:
                         if self.debug:
@@ -258,6 +265,8 @@ class MetinBot:
                             self.switch_state(BotState.SEARCHING)
 
             if self.state == BotState.HITTING:
+                if self.debug:
+                    print(self.account_id, self.state)
                 self.rotate_count = 0
                 self.calibrate_count = 0
                 self.move_fail_count = 0
@@ -281,11 +290,19 @@ class MetinBot:
                     self.switch_state(BotState.COLLECTING_DROP)
 
             if self.state == BotState.COLLECTING_DROP:
+                if self.debug:
+                    print(self.account_id, self.state)
                 self.runPick_up()
+                if self.debug:
+                    print("finished pickup")
                 self.handle_gm_message()
+                if self.debug:
+                    print("finished gm message")
                 self.switch_state(BotState.RESTART)
 
             if self.state == BotState.RESTART:
+                if self.debug:
+                    print(self.account_id, self.state)
                 if (time.time() - self.last_buff) > utils.get_relative_time(self.buff_interval):
                     if self.debug:
                         self.put_info_text('Turning on buffs...')
@@ -295,6 +312,8 @@ class MetinBot:
 
             if self.state == BotState.ERROR:
                 if self.debug:
+                    print(self.account_id, self.state)
+                if self.debug:
                     self.put_info_text('Went into error mode!')
                     print('Went into error mode')
                     self.put_info_text('Error not persistent! Will restart!')
@@ -302,26 +321,33 @@ class MetinBot:
 
                 self.rotate_count = 0
                 self.calibrate_count = 0
+                if self.debug:
+                    print(self.account_id, "in error", self.metin_window.getWindow_focus_locked())
                 self.relog_if_loggout(self.account_id)
+                if self.debug:
+                    print('Finished into relog_if_loggout')
                 self.respawn_if_dead()
+                if self.debug:
+                    print('Finished respawn_if_dead')
                 self.handle_gm_message()
+                if self.debug:
+                    print('Finished into handle_gm_message!')
                 self.teleport_back()
+                if self.debug:
+                    print('Finished into teleport_back!')
                 self.close_minimap()
+                if self.debug:
+                    print('Finished into close_minimap!')
                 self.runRecall_mount()
+                if self.debug:
+                    print('Finished into runRecall_mount!')
                 self.turn_on_buffs()
+                if self.debug:
+                    print('Finished into turn_on_buffs!')
                 self.calibrate_view()
+                if self.debug:
+                    print('Finished into calibrate_view!')
                 self.switch_state(BotState.SEARCHING)
-
-            if self.state == BotState.DEBUG:
-                self.metin_window.activate()
-                time.sleep(3)
-                # self.rotate_view()
-                time.sleep(3)
-                self.calibrate_view()
-                # while True:
-                #     self.put_info_text(str(self.metin_window.get_relative_mouse_pos()))
-                #     time.sleep(1)
-                self.stop()
 
     def startFarm(self):
         self.stopped = False
@@ -524,10 +550,9 @@ class MetinBot:
             tries += 1
 
         if match_loc is not None and match_val is not None and 0.005 > match_val:
-            # self.send_telegram_message('Respawn cause dead!')
-            print('Respawn cause dead!')
             if self.debug:
                 self.put_info_text('Respawn!')
+                print('Respawn cause dead!')
             self.metin_window.mouse_move(match_loc[0], match_loc[1] + 5)
             time.sleep(0.1)
             self.metin_window.mouse_click()
@@ -541,7 +566,8 @@ class MetinBot:
 
     def relog_if_loggout(self, fkey):
         self.metin_window.activate()
-
+        if self.debug:
+            print("relog activated")
         tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
@@ -549,6 +575,8 @@ class MetinBot:
         # print(utils.get_login_needle_800_path(),screenshot)
         match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(),
                                                                 method=cv.TM_SQDIFF_NORMED)
+        if self.debug:
+            print("relog template_match_alpha")
         while match_val is None or match_val > 0.001:
             if tries > self.relog_if_loggout_tries:
                 break
@@ -557,6 +585,8 @@ class MetinBot:
             self.info_lock.release()
             match_loc, match_val = self.vision.template_match_alpha(screenshot, utils.get_login_needle_800_path(),
                                                                     method=cv.TM_SQDIFF_NORMED)
+            if self.debug:
+                print("relog template repeat ", tries)
             tries += 1
 
         if match_loc is not None and 0.001 > match_val > -0.001:
@@ -592,7 +622,11 @@ class MetinBot:
         self.metin_window.deactivate()
 
     def runPick_up(self):
+        if self.debug:
+            print("in runPick_up")
         self.metin_window.activate()
+        if self.debug:
+            print("in runPick_up activated")
         self.osk_window.pick_up()
         self.metin_window.deactivate()
 
