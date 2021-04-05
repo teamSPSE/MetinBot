@@ -418,9 +418,9 @@ def startExp(clients, debug=False):
                         skillDuration1)
         capt_detect1.start()
         bot1.startExp()
-
+    stared_time = time.time()
     while True:
-        if MainStop:
+        if MainStop or time.time() - started_time > 10:
             stopBot(capt_detect1, None, bot1, None)
             break
 
