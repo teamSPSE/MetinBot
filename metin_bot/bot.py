@@ -27,6 +27,8 @@ class BotState(enum.Enum):
 class MetinBot:
 
     def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime, skipInit, skillDuration):
+        self.check_gm_message = 0
+        self.check_thresh_windows = 0
         self.metinLocType = 0
         self.account_id = account_id
         self.maxMetinTime = maxMetinTime
@@ -57,10 +59,11 @@ class MetinBot:
         self.calibrate_count = 0
         self.calibrate_threshold = 2
         self.rotate_count = 0
-        self.rotate_threshold = 6
+        self.rotate_threshold = 12   # bylo 6
         self.gm_message_threshold = 0.097
 
         self.started_hitting_time = None
+        self.last_check_hitting_time = None
         self.started_moving_time = None
         self.next_metin = None
         self.last_metin_time = time.time()
@@ -72,12 +75,14 @@ class MetinBot:
 
         self.started = time.time()
         self.metin_count = 0
-        self.pos_to_check = (0,0)
+        self.pos_to_check = (0, 0)
 
         self.time_to_kill_mobs = 7
         self.relog_if_loggout_tries = 1
         self.respawn_if_dead_tries = 1
-        self.check_match_tries = 1
+        self.check_match_tries = 3
+
+        self.started_time = None
 
         pytesseract.pytesseract.tesseract_cmd = utils.get_tesseract_path()
 
@@ -127,6 +132,13 @@ class MetinBot:
 
     def runFarm(self):
         while not self.stopped:
+            # if self.started_time is None:
+            #     self.started_time = time.time()
+            # if time.time() - self.started_time < 0.02:
+            #     continue
+            # else:
+            #     self.started_time = time.time()
+
             if self.state == BotState.INITIALIZING:
                 if self.skipInit == 0:
                     if self.debug:
@@ -146,13 +158,16 @@ class MetinBot:
             if self.state == BotState.SEARCHING:
                 if self.debug:
                     print(self.account_id, self.state)
-                # print(self.screenshot is not None, self.detection_time is not None,  self.detection_time, self.time_entered_state)
-                # Check if screenshot is recent
+                # print(self.screenshot is not None, self.detection_time is not None,  self.detection_time,
+                # self.time_entered_state) Check if screenshot is recent
                 if self.screenshot is not None and self.detection_time is not None and self.detection_time > self.time_entered_state + 0.1:
-                    # If no matches were found
-                    if self.detection_result is not None and self.detection_result['click_pos'] is not None:
-                        # self.put_info_text(f'Best match width: {self.detection_result["best_rectangle"][2]}')
+                    # print(self.check_thresh_windows)
+                    if self.check_thresh_windows > 50:
+                        self.close_thresh_windows()
+                    else:
+                        self.check_thresh_windows += 1
 
+                    if self.detection_result is not None and self.detection_result['click_pos'] is not None:
                         self.metin_window.activate()  # aktivace
                         try:
                             self.pos_to_check = self.detection_result['click_pos']
@@ -180,6 +195,7 @@ class MetinBot:
                         else:
                             self.rotate_count += 1
                             self.rotate_view()
+                            self.respawn_if_dead()
                             self.time_entered_state = time.time()
 
             if self.state == BotState.CHECKING_MATCH:
@@ -190,7 +206,6 @@ class MetinBot:
                     self.metin_window.activate()
                     self.metin_window.mouse_move(*self.pos_to_check)
                     pos = self.metin_window.get_relative_mouse_pos()
-                    self.metin_window.deactivate()
 
                     # velikost obdelniku, kde budu hledat needle_metin
                     width = 190
@@ -198,6 +213,7 @@ class MetinBot:
                     top_left = self.metin_window.limit_coordinate((int(pos[0] - width / 2), pos[1] - height))
                     bottom_right = self.metin_window.limit_coordinate((int(pos[0] + width / 2), pos[1]))
 
+                    time.sleep(0.2)
                     tries = 0
                     self.info_lock.acquire()
                     mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
@@ -207,12 +223,15 @@ class MetinBot:
                     while match_val is None:
                         if tries > self.check_match_tries:
                             break
+                        time.sleep(0.5)
                         self.info_lock.acquire()
                         mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
                         self.info_lock.release()
                         match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                                 utils.get_metin_needle_path())
                         tries += 1
+
+                    self.metin_window.deactivate()
 
                     if match_loc is not None:
                         if self.debug:
@@ -225,6 +244,7 @@ class MetinBot:
                             self.put_info_text('No metin found -> rotate and search again!')
                         self.rotate_count += 1
                         self.rotate_view()
+                        self.respawn_if_dead()
                         if self.rotate_count > self.rotate_threshold:
                             self.switch_state(BotState.ERROR)
                         else:
@@ -259,6 +279,7 @@ class MetinBot:
                             self.put_info_text(f'Failed to move to metin ({self.move_fail_count} time) -> search again')
                         self.rotate_count += 1
                         self.rotate_view()
+                        self.respawn_if_dead()
                         if self.rotate_count > self.rotate_threshold:
                             self.switch_state(BotState.ERROR)
                         else:
@@ -274,20 +295,25 @@ class MetinBot:
                 if self.started_hitting_time is None:
                     self.started_hitting_time = time.time()
 
-                result = self.get_mob_info()
-                if result is None:
-                    time.sleep(0.1)  # double check
+                if self.last_check_hitting_time is None:
+                    self.last_check_hitting_time = time.time()
+
+                if time.time() - self.last_check_hitting_time > 2:
                     result = self.get_mob_info()
-                if result is None or (time.time() - self.started_hitting_time) >= self.maxMetinTime:
-                    self.started_hitting_time = None
-                    if self.debug:
-                        self.put_info_text('Finished -> Collect drop')
-                    self.metin_count += 1
-                    total = int(time.time() - self.started)
-                    avg = round(total / self.metin_count, 1)
-                    print(f'[{self.account_id}]{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
-                    self.last_metin_time = time.time()
-                    self.switch_state(BotState.COLLECTING_DROP)
+                    if result is None:
+                        time.sleep(0.2)  # double check
+                        result = self.get_mob_info()
+                    if result is None or (time.time() - self.started_hitting_time) >= self.maxMetinTime:
+                        self.started_hitting_time = None
+                        self.last_check_hitting_time = None
+                        if self.debug:
+                            self.put_info_text('Finished -> Collect drop')
+                        self.metin_count += 1
+                        total = int(time.time() - self.started)
+                        avg = round(total / self.metin_count, 1)
+                        print(f'[{self.account_id}]{self.metin_count} - {datetime.timedelta(seconds=total)} - {avg}s/Metin')
+                        self.last_metin_time = time.time()
+                        self.switch_state(BotState.COLLECTING_DROP)
 
             if self.state == BotState.COLLECTING_DROP:
                 if self.debug:
@@ -295,7 +321,10 @@ class MetinBot:
                 self.runPick_up()
                 if self.debug:
                     print("finished pickup")
-                self.handle_gm_message()
+                if self.check_gm_message > 50:
+                    self.handle_gm_message()
+                else:
+                    self.check_gm_message += 1
                 if self.debug:
                     print("finished gm message")
                 self.switch_state(BotState.RESTART)
@@ -525,9 +554,8 @@ class MetinBot:
             self.metinLocType = 1
         else:
             self.metinLocType = 0
-        time.sleep(15)
-
         self.metin_window.deactivate()
+        time.sleep(15)
 
     def respawn_if_dead(self):
         self.metin_window.activate()
@@ -561,6 +589,9 @@ class MetinBot:
             self.metin_window.mouse_move(788, 16)  # 1012, 11 for 1024x768 | 788x16 for 800x600
             time.sleep(0.1)
             self.metin_window.mouse_click()
+
+            self.rotate_threshold = 0
+            self.calibrate_threshold = 0
 
         self.metin_window.deactivate()
 
@@ -632,6 +663,7 @@ class MetinBot:
 
     def handle_gm_message(self):
         self.metin_window.activate()
+        self.check_gm_message = 0
 
         # overeni jestli nenapsal GM
         self.info_lock.acquire()
@@ -668,3 +700,14 @@ class MetinBot:
                 self.osk_window.press_key(button='Esc', mode='click')
 
         self.metin_window.deactivate()
+
+    def close_thresh_windows(self):
+        # print("in close_thresh_windows")
+        self.check_thresh_windows = 0
+        close_match_loc, close_match_val = self.vision.template_match_alpha(self.screenshot,
+                                                                            utils.get_close_btn_needle_path(),
+                                                                            method=cv.TM_SQDIFF_NORMED)
+        if close_match_loc is not None and close_match_val < 0.001:
+            self.metin_window.mouse_move(close_match_loc[0] + 7, close_match_loc[1] + 7)
+            time.sleep(0.1)
+            self.metin_window.mouse_click()

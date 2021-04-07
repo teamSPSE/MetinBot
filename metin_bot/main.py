@@ -349,7 +349,6 @@ def startFarm(clients, debug=False):
             bot2.detection_info_update(screenshot2, screenshot_time2, detection2, detection_time2)
 
         if debug:
-            continue
             if detection_image1 is None:
                 continue
             # print(detection_image)
