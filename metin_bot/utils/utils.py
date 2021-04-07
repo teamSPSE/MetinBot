@@ -56,7 +56,7 @@ def get_hwnds_for_pid(pid):
 
     hwnds = []
     win32gui.EnumWindows(callback, hwnds)
-    return hwnds[0]+1
+    return hwnds[0]
 
 
 def get_pid_by_name(processName):
