@@ -448,9 +448,9 @@ class MetinBot:
         self.osk_window.start_zooming_out()
         time.sleep(utils.get_relative_time(1))
         self.osk_window.stop_zooming_out()
-        self.osk_window.start_zooming_in()
-        time.sleep(utils.get_relative_time(0.05))
-        self.osk_window.stop_zooming_in()
+        # self.osk_window.start_zooming_in()
+        # time.sleep(utils.get_relative_time(0.05))
+        # self.osk_window.stop_zooming_in()
 
         self.metin_window.deactivate()
 
