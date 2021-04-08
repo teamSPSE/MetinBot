@@ -58,7 +58,7 @@ class MetinBot:
         self.move_fail_count = 0
 
         self.calibrate_count = 0
-        self.calibrate_threshold = 2
+        self.calibrate_threshold = 3
         self.rotate_count = 0
         self.rotate_threshold = 15   # bylo 6
         self.gm_message_threshold = 0.097
@@ -604,8 +604,8 @@ class MetinBot:
             time.sleep(0.1)
             self.metin_window.mouse_click()
 
-            self.rotate_threshold = 0
-            self.calibrate_threshold = 0
+            self.rotate_count = 0
+            self.calibrate_count = 0
 
         self.metin_window.deactivate()
 
