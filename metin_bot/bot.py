@@ -1,6 +1,5 @@
 import time
 import cv2 as cv
-import pyautogui
 
 from utils.vision import MobInfoFilter, Vision
 import utils.utils
@@ -29,6 +28,8 @@ class MetinBot:
     def __init__(self, metin_window, osk_window, metin_selection, account_id, maxMetinTime, skipInit, skillDuration):
         self.check_gm_message = 0
         self.check_thresh_windows = 0
+        self.check_if_dead = 0
+        self.check_if_dead_max = 15
         self.metinLocType = 0
         self.account_id = account_id
         self.maxMetinTime = maxMetinTime
@@ -195,7 +196,10 @@ class MetinBot:
                         else:
                             self.rotate_count += 1
                             self.rotate_view()
-                            self.respawn_if_dead()
+                            if self.check_if_dead > self.check_if_dead_max:
+                                self.respawn_if_dead()
+                            else:
+                                self.check_if_dead += 1
                             self.time_entered_state = time.time()
 
             if self.state == BotState.CHECKING_MATCH:
@@ -246,7 +250,10 @@ class MetinBot:
                             self.put_info_text('No metin found -> rotate and search again!')
                         self.rotate_count += 1
                         self.rotate_view()
-                        self.respawn_if_dead()
+                        if self.check_if_dead > self.check_if_dead_max:
+                            self.respawn_if_dead()
+                        else:
+                            self.check_if_dead += 1
                         if self.rotate_count > self.rotate_threshold:
                             self.switch_state(BotState.ERROR)
                         else:
@@ -281,7 +288,10 @@ class MetinBot:
                             self.put_info_text(f'Failed to move to metin ({self.move_fail_count} time) -> search again')
                         self.rotate_count += 1
                         self.rotate_view()
-                        self.respawn_if_dead()
+                        if self.check_if_dead > self.check_if_dead_max:
+                            self.respawn_if_dead()
+                        else:
+                            self.check_if_dead += 1
                         if self.rotate_count > self.rotate_threshold:
                             self.switch_state(BotState.ERROR)
                         else:
@@ -372,7 +382,8 @@ class MetinBot:
                 self.runRecall_mount()
                 if self.debug:
                     print('Finished into runRecall_mount!')
-                self.turn_on_buffs()
+                if time.time() - self.last_buff >= self.buff_interval:
+                    self.turn_on_buffs()
                 if self.debug:
                     print('Finished into turn_on_buffs!')
                 self.calibrate_view()
@@ -562,6 +573,7 @@ class MetinBot:
     def respawn_if_dead(self):
         self.metin_window.activate()
 
+        self.check_if_dead = 0
         tries = 0
         self.info_lock.acquire()
         screenshot = self.screenshot
