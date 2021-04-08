@@ -162,7 +162,7 @@ class MetinBot:
                 # self.time_entered_state) Check if screenshot is recent
                 if self.screenshot is not None and self.detection_time is not None and self.detection_time > self.time_entered_state + 0.1:
                     # print(self.check_thresh_windows)
-                    if self.check_thresh_windows > 50:
+                    if self.check_thresh_windows > 20:
                         self.close_thresh_windows()
                     else:
                         self.check_thresh_windows += 1
@@ -213,18 +213,20 @@ class MetinBot:
                     top_left = self.metin_window.limit_coordinate((int(pos[0] - width / 2), pos[1] - height))
                     bottom_right = self.metin_window.limit_coordinate((int(pos[0] + width / 2), pos[1]))
 
-                    time.sleep(0.2)
                     tries = 0
                     self.info_lock.acquire()
                     mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
                     self.info_lock.release()
                     match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
                                                                             utils.get_metin_needle_path())
-                    while match_val is None:
+                    while match_loc is None:
                         if tries > self.check_match_tries:
                             break
-                        time.sleep(0.5)
                         self.info_lock.acquire()
+                        if self.debug:
+                            print("in check try", tries)
+                        self.metin_window.mouse_move(*self.pos_to_check)
+                        time.sleep(0.3)
                         mob_title_box = self.vision.extract_section(self.screenshot, top_left, bottom_right)
                         self.info_lock.release()
                         match_loc, match_val = self.vision.template_match_alpha(mob_title_box,
