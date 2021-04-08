@@ -60,7 +60,7 @@ class MetinBot:
         self.calibrate_count = 0
         self.calibrate_threshold = 2
         self.rotate_count = 0
-        self.rotate_threshold = 12   # bylo 6
+        self.rotate_threshold = 15   # bylo 6
         self.gm_message_threshold = 0.097
 
         self.started_hitting_time = None
@@ -174,7 +174,7 @@ class MetinBot:
                             self.pos_to_check = self.detection_result['click_pos']
                             self.switch_state(BotState.CHECKING_MATCH)
                         except:
-                            self.switch_state(BotState.ERROR)
+                            self.switch_state(BotState.SEARCHING)
                         self.metin_window.deactivate()
                     else:
                         if self.debug:
@@ -277,7 +277,7 @@ class MetinBot:
                     self.started_moving_time = None
                     self.runPick_up()
                     self.move_fail_count += 1
-                    if self.move_fail_count >= 4:
+                    if self.move_fail_count >= 6:
                         self.move_fail_count = 0
                         if self.debug:
                             self.put_info_text(f'Failed to move to metin {self.move_fail_count} times -> Error!')
